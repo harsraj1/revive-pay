@@ -1,0 +1,2415 @@
+{
+  "strategy": "naive_fixed_interval_retry_every_failure",
+  "source_dataset": "data/failed_mandates.json",
+  "total_mandates": 100,
+  "total_at_risk_amount": 4223068,
+  "recovered_count": 15,
+  "recovered_amount": 713036,
+  "recovery_rate_by_count": 15.0,
+  "recovery_rate_by_amount": 16.88,
+  "executed_attempt_count": 41,
+  "rejected_attempt_count": 147,
+  "retry_interval_hours": 8,
+  "maximum_total_attempts": 3,
+  "simulation_seed": 20260829,
+  "mandate_results": [
+    {
+      "mandate_id": "MANDATE-0001",
+      "category": "sip",
+      "amount": 22107,
+      "failure_reason": "insufficient_balance",
+      "attempts_already_made": 2,
+      "attempts": [
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-27T12:08:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0002",
+      "category": "emi",
+      "amount": 5763,
+      "failure_reason": "daily_limit_exceeded",
+      "attempts_already_made": 1,
+      "attempts": [
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-13T16:48:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-14T00:48:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0003",
+      "category": "sip",
+      "amount": 37648,
+      "failure_reason": "insufficient_balance",
+      "attempts_already_made": 0,
+      "attempts": [
+        {
+          "attempt_num": 1,
+          "scheduled_at": "2026-07-25T13:56:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-25T21:56:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-26T05:56:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0004",
+      "category": "credit_card",
+      "amount": 57960,
+      "failure_reason": "daily_limit_exceeded",
+      "attempts_already_made": 2,
+      "attempts": [
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-06T05:59:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0005",
+      "category": "insurance",
+      "amount": 49990,
+      "failure_reason": "insufficient_balance",
+      "attempts_already_made": 2,
+      "attempts": [
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-14T17:22:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0006",
+      "category": "emi",
+      "amount": 92006,
+      "failure_reason": "daily_limit_exceeded",
+      "attempts_already_made": 2,
+      "attempts": [
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-02T07:01:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.7,
+          "random_draw": 0.386053,
+          "outcome": "success"
+        }
+      ],
+      "final_status": "recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0007",
+      "category": "insurance",
+      "amount": 41994,
+      "failure_reason": "insufficient_balance",
+      "attempts_already_made": 0,
+      "attempts": [
+        {
+          "attempt_num": 1,
+          "scheduled_at": "2026-07-02T16:38:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-03T00:38:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-03T08:38:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0008",
+      "category": "credit_card",
+      "amount": 47039,
+      "failure_reason": "daily_limit_exceeded",
+      "attempts_already_made": 2,
+      "attempts": [
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-03T12:25:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0009",
+      "category": "subscription",
+      "amount": 2678,
+      "failure_reason": "technical_decline",
+      "attempts_already_made": 2,
+      "attempts": [
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-12T08:01:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.65,
+          "random_draw": 0.76474,
+          "outcome": "failure"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0010",
+      "category": "insurance",
+      "amount": 48821,
+      "failure_reason": "insufficient_balance",
+      "attempts_already_made": 2,
+      "attempts": [
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-15T10:57:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0011",
+      "category": "insurance",
+      "amount": 61844,
+      "failure_reason": "user_declined",
+      "attempts_already_made": 2,
+      "attempts": [
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-25T15:47:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.0,
+          "random_draw": 0.12519,
+          "outcome": "failure"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0012",
+      "category": "subscription",
+      "amount": 2121,
+      "failure_reason": "technical_decline",
+      "attempts_already_made": 1,
+      "attempts": [
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-30T02:47:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-30T10:47:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0013",
+      "category": "sip",
+      "amount": 4145,
+      "failure_reason": "user_declined",
+      "attempts_already_made": 1,
+      "attempts": [
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-14T14:42:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.0,
+          "random_draw": 0.289657,
+          "outcome": "failure"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-14T22:42:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.0,
+          "random_draw": 0.961239,
+          "outcome": "failure"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0014",
+      "category": "subscription",
+      "amount": 2790,
+      "failure_reason": "insufficient_balance",
+      "attempts_already_made": 0,
+      "attempts": [
+        {
+          "attempt_num": 1,
+          "scheduled_at": "2026-07-20T11:13:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-20T19:13:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-21T03:13:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0015",
+      "category": "subscription",
+      "amount": 2034,
+      "failure_reason": "bank_server_down",
+      "attempts_already_made": 0,
+      "attempts": [
+        {
+          "attempt_num": 1,
+          "scheduled_at": "2026-07-14T17:43:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-15T01:43:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-15T09:43:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0016",
+      "category": "insurance",
+      "amount": 73738,
+      "failure_reason": "mandate_expired",
+      "attempts_already_made": 1,
+      "attempts": [
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-07T12:12:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-07T20:12:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0017",
+      "category": "emi",
+      "amount": 23501,
+      "failure_reason": "insufficient_balance",
+      "attempts_already_made": 2,
+      "attempts": [
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-09T05:57:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0018",
+      "category": "credit_card",
+      "amount": 139129,
+      "failure_reason": "bank_server_down",
+      "attempts_already_made": 1,
+      "attempts": [
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-02T14:56:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.8,
+          "random_draw": 0.461706,
+          "outcome": "success"
+        }
+      ],
+      "final_status": "recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0019",
+      "category": "insurance",
+      "amount": 28485,
+      "failure_reason": "mandate_expired",
+      "attempts_already_made": 2,
+      "attempts": [
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-13T10:00:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0020",
+      "category": "insurance",
+      "amount": 48547,
+      "failure_reason": "user_declined",
+      "attempts_already_made": 0,
+      "attempts": [
+        {
+          "attempt_num": 1,
+          "scheduled_at": "2026-07-25T22:08:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.0,
+          "random_draw": 0.634248,
+          "outcome": "failure"
+        },
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-26T06:08:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.0,
+          "random_draw": 0.982462,
+          "outcome": "failure"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-26T14:08:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.0,
+          "random_draw": 0.691466,
+          "outcome": "failure"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0021",
+      "category": "insurance",
+      "amount": 17421,
+      "failure_reason": "daily_limit_exceeded",
+      "attempts_already_made": 0,
+      "attempts": [
+        {
+          "attempt_num": 1,
+          "scheduled_at": "2026-07-11T20:27:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-12T04:27:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-12T12:27:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0022",
+      "category": "insurance",
+      "amount": 9657,
+      "failure_reason": "insufficient_balance",
+      "attempts_already_made": 1,
+      "attempts": [
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-29T11:33:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-29T19:33:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0023",
+      "category": "credit_card",
+      "amount": 36498,
+      "failure_reason": "bank_server_down",
+      "attempts_already_made": 2,
+      "attempts": [
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-29T00:01:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0024",
+      "category": "credit_card",
+      "amount": 145001,
+      "failure_reason": "insufficient_balance",
+      "attempts_already_made": 1,
+      "attempts": [
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-12T07:51:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.45,
+          "random_draw": 0.971765,
+          "outcome": "failure"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-12T15:51:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.45,
+          "random_draw": 0.02697,
+          "outcome": "success"
+        }
+      ],
+      "final_status": "recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0025",
+      "category": "subscription",
+      "amount": 2630,
+      "failure_reason": "bank_server_down",
+      "attempts_already_made": 0,
+      "attempts": [
+        {
+          "attempt_num": 1,
+          "scheduled_at": "2026-07-24T23:12:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.8,
+          "random_draw": 0.412502,
+          "outcome": "success"
+        }
+      ],
+      "final_status": "recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0026",
+      "category": "credit_card",
+      "amount": 109781,
+      "failure_reason": "mandate_expired",
+      "attempts_already_made": 1,
+      "attempts": [
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-16T01:32:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-16T09:32:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0027",
+      "category": "subscription",
+      "amount": 2290,
+      "failure_reason": "bank_server_down",
+      "attempts_already_made": 1,
+      "attempts": [
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-27T03:58:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-27T11:58:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0028",
+      "category": "credit_card",
+      "amount": 131770,
+      "failure_reason": "insufficient_balance",
+      "attempts_already_made": 1,
+      "attempts": [
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-07T21:08:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-08T05:08:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0029",
+      "category": "insurance",
+      "amount": 20942,
+      "failure_reason": "insufficient_balance",
+      "attempts_already_made": 1,
+      "attempts": [
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-10T01:57:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-10T09:57:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0030",
+      "category": "sip",
+      "amount": 44219,
+      "failure_reason": "technical_decline",
+      "attempts_already_made": 2,
+      "attempts": [
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-16T12:25:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0031",
+      "category": "subscription",
+      "amount": 1609,
+      "failure_reason": "account_frozen",
+      "attempts_already_made": 0,
+      "attempts": [
+        {
+          "attempt_num": 1,
+          "scheduled_at": "2026-07-16T07:35:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.0,
+          "random_draw": 0.44649,
+          "outcome": "failure"
+        },
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-16T15:35:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.0,
+          "random_draw": 0.868465,
+          "outcome": "failure"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-16T23:35:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0032",
+      "category": "insurance",
+      "amount": 43127,
+      "failure_reason": "user_declined",
+      "attempts_already_made": 1,
+      "attempts": [
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-18T22:32:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.0,
+          "random_draw": 0.288866,
+          "outcome": "failure"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-19T06:32:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.0,
+          "random_draw": 0.197197,
+          "outcome": "failure"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0033",
+      "category": "credit_card",
+      "amount": 63195,
+      "failure_reason": "daily_limit_exceeded",
+      "attempts_already_made": 0,
+      "attempts": [
+        {
+          "attempt_num": 1,
+          "scheduled_at": "2026-07-24T02:28:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-24T10:28:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-24T18:28:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0034",
+      "category": "insurance",
+      "amount": 31925,
+      "failure_reason": "insufficient_balance",
+      "attempts_already_made": 2,
+      "attempts": [
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-15T16:46:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0035",
+      "category": "insurance",
+      "amount": 49546,
+      "failure_reason": "bank_server_down",
+      "attempts_already_made": 1,
+      "attempts": [
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-24T06:20:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.8,
+          "random_draw": 0.493527,
+          "outcome": "success"
+        }
+      ],
+      "final_status": "recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0036",
+      "category": "subscription",
+      "amount": 218,
+      "failure_reason": "technical_decline",
+      "attempts_already_made": 2,
+      "attempts": [
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-06T04:06:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0037",
+      "category": "sip",
+      "amount": 22625,
+      "failure_reason": "user_declined",
+      "attempts_already_made": 1,
+      "attempts": [
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-16T03:50:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-16T11:50:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0038",
+      "category": "sip",
+      "amount": 30970,
+      "failure_reason": "insufficient_balance",
+      "attempts_already_made": 0,
+      "attempts": [
+        {
+          "attempt_num": 1,
+          "scheduled_at": "2026-07-20T00:28:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-20T08:28:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.45,
+          "random_draw": 0.701209,
+          "outcome": "failure"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-20T16:28:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0039",
+      "category": "credit_card",
+      "amount": 149493,
+      "failure_reason": "insufficient_balance",
+      "attempts_already_made": 1,
+      "attempts": [
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-28T02:34:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-28T10:34:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0040",
+      "category": "insurance",
+      "amount": 44905,
+      "failure_reason": "daily_limit_exceeded",
+      "attempts_already_made": 1,
+      "attempts": [
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-30T12:57:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-30T20:57:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0041",
+      "category": "sip",
+      "amount": 1022,
+      "failure_reason": "insufficient_balance",
+      "attempts_already_made": 0,
+      "attempts": [
+        {
+          "attempt_num": 1,
+          "scheduled_at": "2026-07-09T18:43:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-10T02:43:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-10T10:43:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0042",
+      "category": "insurance",
+      "amount": 66600,
+      "failure_reason": "bank_server_down",
+      "attempts_already_made": 0,
+      "attempts": [
+        {
+          "attempt_num": 1,
+          "scheduled_at": "2026-07-07T17:19:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-08T01:19:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-08T09:19:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0043",
+      "category": "emi",
+      "amount": 51286,
+      "failure_reason": "bank_server_down",
+      "attempts_already_made": 1,
+      "attempts": [
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-13T11:02:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-13T19:02:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0044",
+      "category": "sip",
+      "amount": 8085,
+      "failure_reason": "mandate_expired",
+      "attempts_already_made": 1,
+      "attempts": [
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-31T04:49:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-31T12:49:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0045",
+      "category": "credit_card",
+      "amount": 120365,
+      "failure_reason": "insufficient_balance",
+      "attempts_already_made": 0,
+      "attempts": [
+        {
+          "attempt_num": 1,
+          "scheduled_at": "2026-07-05T23:48:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-06T07:48:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.45,
+          "random_draw": 0.558546,
+          "outcome": "failure"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-06T15:48:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.45,
+          "random_draw": 0.788988,
+          "outcome": "failure"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0046",
+      "category": "emi",
+      "amount": 50597,
+      "failure_reason": "insufficient_balance",
+      "attempts_already_made": 1,
+      "attempts": [
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-27T04:01:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-27T12:01:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0047",
+      "category": "credit_card",
+      "amount": 117940,
+      "failure_reason": "insufficient_balance",
+      "attempts_already_made": 0,
+      "attempts": [
+        {
+          "attempt_num": 1,
+          "scheduled_at": "2026-07-19T00:18:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-19T08:18:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.45,
+          "random_draw": 0.989558,
+          "outcome": "failure"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-19T16:18:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0048",
+      "category": "emi",
+      "amount": 5721,
+      "failure_reason": "user_declined",
+      "attempts_already_made": 2,
+      "attempts": [
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-02T17:34:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0049",
+      "category": "subscription",
+      "amount": 905,
+      "failure_reason": "daily_limit_exceeded",
+      "attempts_already_made": 2,
+      "attempts": [
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-01T10:45:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0050",
+      "category": "sip",
+      "amount": 34100,
+      "failure_reason": "bank_server_down",
+      "attempts_already_made": 0,
+      "attempts": [
+        {
+          "attempt_num": 1,
+          "scheduled_at": "2026-07-02T23:17:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.8,
+          "random_draw": 0.42121,
+          "outcome": "success"
+        }
+      ],
+      "final_status": "recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0051",
+      "category": "sip",
+      "amount": 8411,
+      "failure_reason": "bank_server_down",
+      "attempts_already_made": 0,
+      "attempts": [
+        {
+          "attempt_num": 1,
+          "scheduled_at": "2026-07-01T16:26:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-02T00:26:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-02T08:26:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.8,
+          "random_draw": 0.338201,
+          "outcome": "success"
+        }
+      ],
+      "final_status": "recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0052",
+      "category": "sip",
+      "amount": 34063,
+      "failure_reason": "mandate_expired",
+      "attempts_already_made": 0,
+      "attempts": [
+        {
+          "attempt_num": 1,
+          "scheduled_at": "2026-07-28T10:03:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-28T18:03:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-29T02:03:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0053",
+      "category": "insurance",
+      "amount": 72435,
+      "failure_reason": "mandate_expired",
+      "attempts_already_made": 2,
+      "attempts": [
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-23T05:50:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0054",
+      "category": "sip",
+      "amount": 29529,
+      "failure_reason": "technical_decline",
+      "attempts_already_made": 1,
+      "attempts": [
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-11T13:06:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-11T21:06:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0055",
+      "category": "subscription",
+      "amount": 677,
+      "failure_reason": "insufficient_balance",
+      "attempts_already_made": 2,
+      "attempts": [
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-30T10:01:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0056",
+      "category": "credit_card",
+      "amount": 52235,
+      "failure_reason": "bank_server_down",
+      "attempts_already_made": 2,
+      "attempts": [
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-05T12:27:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0057",
+      "category": "emi",
+      "amount": 13850,
+      "failure_reason": "technical_decline",
+      "attempts_already_made": 1,
+      "attempts": [
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-09T13:06:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-09T21:06:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0058",
+      "category": "insurance",
+      "amount": 60235,
+      "failure_reason": "insufficient_balance",
+      "attempts_already_made": 2,
+      "attempts": [
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-12T13:06:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0059",
+      "category": "emi",
+      "amount": 79220,
+      "failure_reason": "account_frozen",
+      "attempts_already_made": 0,
+      "attempts": [
+        {
+          "attempt_num": 1,
+          "scheduled_at": "2026-07-17T16:27:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-18T00:27:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-18T08:27:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.0,
+          "random_draw": 0.971881,
+          "outcome": "failure"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0060",
+      "category": "subscription",
+      "amount": 1692,
+      "failure_reason": "insufficient_balance",
+      "attempts_already_made": 2,
+      "attempts": [
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-22T21:04:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0061",
+      "category": "subscription",
+      "amount": 2368,
+      "failure_reason": "account_frozen",
+      "attempts_already_made": 0,
+      "attempts": [
+        {
+          "attempt_num": 1,
+          "scheduled_at": "2026-07-30T02:12:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-30T10:12:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-30T18:12:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0062",
+      "category": "credit_card",
+      "amount": 56711,
+      "failure_reason": "daily_limit_exceeded",
+      "attempts_already_made": 0,
+      "attempts": [
+        {
+          "attempt_num": 1,
+          "scheduled_at": "2026-07-19T05:28:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-19T13:28:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-19T21:28:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0063",
+      "category": "insurance",
+      "amount": 24456,
+      "failure_reason": "user_declined",
+      "attempts_already_made": 0,
+      "attempts": [
+        {
+          "attempt_num": 1,
+          "scheduled_at": "2026-07-17T13:29:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-17T21:29:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-18T05:29:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0064",
+      "category": "subscription",
+      "amount": 1094,
+      "failure_reason": "bank_server_down",
+      "attempts_already_made": 0,
+      "attempts": [
+        {
+          "attempt_num": 1,
+          "scheduled_at": "2026-07-03T14:51:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.8,
+          "random_draw": 0.064172,
+          "outcome": "success"
+        }
+      ],
+      "final_status": "recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0065",
+      "category": "subscription",
+      "amount": 2333,
+      "failure_reason": "insufficient_balance",
+      "attempts_already_made": 2,
+      "attempts": [
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-13T16:40:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0066",
+      "category": "insurance",
+      "amount": 4130,
+      "failure_reason": "daily_limit_exceeded",
+      "attempts_already_made": 0,
+      "attempts": [
+        {
+          "attempt_num": 1,
+          "scheduled_at": "2026-07-30T22:23:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.7,
+          "random_draw": 0.941804,
+          "outcome": "failure"
+        },
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-31T06:23:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.7,
+          "random_draw": 0.455711,
+          "outcome": "success"
+        }
+      ],
+      "final_status": "recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0067",
+      "category": "credit_card",
+      "amount": 94841,
+      "failure_reason": "bank_server_down",
+      "attempts_already_made": 1,
+      "attempts": [
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-05T15:10:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.8,
+          "random_draw": 0.123726,
+          "outcome": "success"
+        }
+      ],
+      "final_status": "recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0068",
+      "category": "emi",
+      "amount": 75328,
+      "failure_reason": "insufficient_balance",
+      "attempts_already_made": 1,
+      "attempts": [
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-07T05:56:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-07T13:56:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0069",
+      "category": "emi",
+      "amount": 83793,
+      "failure_reason": "insufficient_balance",
+      "attempts_already_made": 0,
+      "attempts": [
+        {
+          "attempt_num": 1,
+          "scheduled_at": "2026-07-17T16:27:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-18T00:27:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-18T08:27:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.45,
+          "random_draw": 0.330273,
+          "outcome": "success"
+        }
+      ],
+      "final_status": "recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0070",
+      "category": "insurance",
+      "amount": 26025,
+      "failure_reason": "user_declined",
+      "attempts_already_made": 2,
+      "attempts": [
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-03T08:16:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.0,
+          "random_draw": 0.078915,
+          "outcome": "failure"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0071",
+      "category": "insurance",
+      "amount": 26931,
+      "failure_reason": "mandate_expired",
+      "attempts_already_made": 1,
+      "attempts": [
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-03T21:43:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-04T05:43:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0072",
+      "category": "subscription",
+      "amount": 2612,
+      "failure_reason": "account_frozen",
+      "attempts_already_made": 2,
+      "attempts": [
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-24T15:52:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.0,
+          "random_draw": 0.555887,
+          "outcome": "failure"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0073",
+      "category": "credit_card",
+      "amount": 7415,
+      "failure_reason": "insufficient_balance",
+      "attempts_already_made": 2,
+      "attempts": [
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-17T00:36:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0074",
+      "category": "subscription",
+      "amount": 1193,
+      "failure_reason": "insufficient_balance",
+      "attempts_already_made": 0,
+      "attempts": [
+        {
+          "attempt_num": 1,
+          "scheduled_at": "2026-07-25T08:05:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.45,
+          "random_draw": 0.087969,
+          "outcome": "success"
+        }
+      ],
+      "final_status": "recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0075",
+      "category": "subscription",
+      "amount": 2794,
+      "failure_reason": "mandate_expired",
+      "attempts_already_made": 0,
+      "attempts": [
+        {
+          "attempt_num": 1,
+          "scheduled_at": "2026-07-11T08:25:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.0,
+          "random_draw": 0.955579,
+          "outcome": "failure"
+        },
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-11T16:25:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-12T00:25:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0076",
+      "category": "sip",
+      "amount": 29367,
+      "failure_reason": "insufficient_balance",
+      "attempts_already_made": 1,
+      "attempts": [
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-17T17:27:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-18T01:27:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0077",
+      "category": "credit_card",
+      "amount": 133015,
+      "failure_reason": "technical_decline",
+      "attempts_already_made": 1,
+      "attempts": [
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-24T02:51:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-24T10:51:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0078",
+      "category": "insurance",
+      "amount": 54681,
+      "failure_reason": "insufficient_balance",
+      "attempts_already_made": 0,
+      "attempts": [
+        {
+          "attempt_num": 1,
+          "scheduled_at": "2026-07-27T19:29:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-28T03:29:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-28T11:29:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0079",
+      "category": "credit_card",
+      "amount": 133938,
+      "failure_reason": "insufficient_balance",
+      "attempts_already_made": 1,
+      "attempts": [
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-18T17:35:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-19T01:35:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0080",
+      "category": "sip",
+      "amount": 14077,
+      "failure_reason": "account_frozen",
+      "attempts_already_made": 2,
+      "attempts": [
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-23T17:31:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0081",
+      "category": "emi",
+      "amount": 26018,
+      "failure_reason": "bank_server_down",
+      "attempts_already_made": 1,
+      "attempts": [
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-14T09:57:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-14T17:57:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0082",
+      "category": "insurance",
+      "amount": 4445,
+      "failure_reason": "daily_limit_exceeded",
+      "attempts_already_made": 0,
+      "attempts": [
+        {
+          "attempt_num": 1,
+          "scheduled_at": "2026-07-15T18:26:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-16T02:26:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-16T10:26:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0083",
+      "category": "sip",
+      "amount": 5904,
+      "failure_reason": "daily_limit_exceeded",
+      "attempts_already_made": 2,
+      "attempts": [
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-19T15:21:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.7,
+          "random_draw": 0.560812,
+          "outcome": "success"
+        }
+      ],
+      "final_status": "recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0084",
+      "category": "credit_card",
+      "amount": 120589,
+      "failure_reason": "insufficient_balance",
+      "attempts_already_made": 2,
+      "attempts": [
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-24T13:05:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0085",
+      "category": "subscription",
+      "amount": 1522,
+      "failure_reason": "technical_decline",
+      "attempts_already_made": 2,
+      "attempts": [
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-01T22:26:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.65,
+          "random_draw": 0.43874,
+          "outcome": "success"
+        }
+      ],
+      "final_status": "recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0086",
+      "category": "credit_card",
+      "amount": 82637,
+      "failure_reason": "insufficient_balance",
+      "attempts_already_made": 2,
+      "attempts": [
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-23T23:49:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0087",
+      "category": "sip",
+      "amount": 26917,
+      "failure_reason": "bank_server_down",
+      "attempts_already_made": 1,
+      "attempts": [
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-11T01:05:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-11T09:05:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0088",
+      "category": "credit_card",
+      "amount": 34050,
+      "failure_reason": "bank_server_down",
+      "attempts_already_made": 2,
+      "attempts": [
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-22T16:47:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0089",
+      "category": "insurance",
+      "amount": 72036,
+      "failure_reason": "user_declined",
+      "attempts_already_made": 0,
+      "attempts": [
+        {
+          "attempt_num": 1,
+          "scheduled_at": "2026-07-09T11:58:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-09T19:58:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-10T03:58:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0090",
+      "category": "credit_card",
+      "amount": 72522,
+      "failure_reason": "user_declined",
+      "attempts_already_made": 0,
+      "attempts": [
+        {
+          "attempt_num": 1,
+          "scheduled_at": "2026-07-27T16:33:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-28T00:33:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-28T08:33:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0091",
+      "category": "subscription",
+      "amount": 1286,
+      "failure_reason": "insufficient_balance",
+      "attempts_already_made": 2,
+      "attempts": [
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-23T19:45:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0092",
+      "category": "credit_card",
+      "amount": 88099,
+      "failure_reason": "daily_limit_exceeded",
+      "attempts_already_made": 0,
+      "attempts": [
+        {
+          "attempt_num": 1,
+          "scheduled_at": "2026-07-18T18:52:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-19T02:52:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-19T10:52:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0093",
+      "category": "credit_card",
+      "amount": 118220,
+      "failure_reason": "insufficient_balance",
+      "attempts_already_made": 2,
+      "attempts": [
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-19T03:01:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0094",
+      "category": "sip",
+      "amount": 39058,
+      "failure_reason": "user_declined",
+      "attempts_already_made": 1,
+      "attempts": [
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-02T05:36:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-02T13:36:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0095",
+      "category": "subscription",
+      "amount": 1007,
+      "failure_reason": "insufficient_balance",
+      "attempts_already_made": 0,
+      "attempts": [
+        {
+          "attempt_num": 1,
+          "scheduled_at": "2026-07-19T15:58:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.45,
+          "random_draw": 0.530841,
+          "outcome": "failure"
+        },
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-19T23:58:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-20T07:58:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.45,
+          "random_draw": 0.752418,
+          "outcome": "failure"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0096",
+      "category": "sip",
+      "amount": 49736,
+      "failure_reason": "insufficient_balance",
+      "attempts_already_made": 2,
+      "attempts": [
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-03T06:15:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.45,
+          "random_draw": 0.279577,
+          "outcome": "success"
+        }
+      ],
+      "final_status": "recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0097",
+      "category": "insurance",
+      "amount": 39133,
+      "failure_reason": "user_declined",
+      "attempts_already_made": 0,
+      "attempts": [
+        {
+          "attempt_num": 1,
+          "scheduled_at": "2026-07-15T06:14:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.0,
+          "random_draw": 0.233548,
+          "outcome": "failure"
+        },
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-15T14:14:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.0,
+          "random_draw": 0.903963,
+          "outcome": "failure"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-15T22:14:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "retry_executed",
+          "success_probability": 0.0,
+          "random_draw": 0.681495,
+          "outcome": "failure"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0098",
+      "category": "credit_card",
+      "amount": 18014,
+      "failure_reason": "technical_decline",
+      "attempts_already_made": 1,
+      "attempts": [
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-06T12:55:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-06T20:55:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0099",
+      "category": "emi",
+      "amount": 40076,
+      "failure_reason": "insufficient_balance",
+      "attempts_already_made": 1,
+      "attempts": [
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-18T11:43:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-18T19:43:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    },
+    {
+      "mandate_id": "MANDATE-0100",
+      "category": "insurance",
+      "amount": 45567,
+      "failure_reason": "insufficient_balance",
+      "attempts_already_made": 0,
+      "attempts": [
+        {
+          "attempt_num": 1,
+          "scheduled_at": "2026-07-02T03:50:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 2,
+          "scheduled_at": "2026-07-02T11:50:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        },
+        {
+          "attempt_num": 3,
+          "scheduled_at": "2026-07-02T19:50:00+05:30",
+          "strategy": "fixed_8_hour_interval",
+          "decision": "rejected",
+          "outcome": "rejected_restricted_execution_period"
+        }
+      ],
+      "final_status": "not_recovered"
+    }
+  ]
+}

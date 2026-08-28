@@ -1,0 +1,12 @@
+{
+  "dataset": "data/failed_mandates.json",
+  "total_mandates": 100,
+  "total_at_risk_amount": 4223068,
+  "smart_recovery_rate": 42.0,
+  "baseline_recovery_rate": 15.0,
+  "percentage_point_uplift": 27.0,
+  "smart_recovered_amount": 1414448,
+  "baseline_recovered_amount": 713036,
+  "incremental_recovered_amount": 701412,
+  "fair_experiment_explanation": "Both strategies must use the same failed mandates so they face identical customers, amounts, failure reasons, timestamps, and prior-attempt counts. Otherwise differences in dataset difficulty could be mistaken for strategy uplift. Sharing the outcome probabilities and deterministic seed further isolates retry policy as the variable being compared."
+}
