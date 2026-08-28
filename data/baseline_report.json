@@ -19,6 +19,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-28T04:08:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -35,6 +36,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-14T00:48:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -42,6 +44,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-14T08:48:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -58,6 +61,7 @@
         {
           "attempt_num": 1,
           "scheduled_at": "2026-07-25T13:56:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -65,6 +69,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-25T21:56:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -72,6 +77,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-26T05:56:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -88,6 +94,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-06T21:59:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -104,6 +111,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-15T09:22:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -120,6 +128,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-02T23:01:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "late_night",
           "decision": "retry_executed",
           "success_probability": 0.7,
@@ -138,6 +147,7 @@
         {
           "attempt_num": 1,
           "scheduled_at": "2026-07-02T16:38:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -145,6 +155,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-03T00:38:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -152,6 +163,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-03T08:38:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -168,6 +180,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-04T04:25:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -184,6 +197,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-13T00:01:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -200,6 +214,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-16T02:57:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -216,6 +231,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-26T07:47:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "early_morning",
           "decision": "retry_executed",
           "success_probability": 0.0,
@@ -234,6 +250,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-30T10:47:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -241,6 +258,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-30T18:47:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -257,6 +275,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-14T22:42:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "late_night",
           "decision": "retry_executed",
           "success_probability": 0.0,
@@ -266,6 +285,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-15T06:42:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "early_morning",
           "decision": "retry_executed",
           "success_probability": 0.0,
@@ -284,6 +304,7 @@
         {
           "attempt_num": 1,
           "scheduled_at": "2026-07-20T11:13:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -291,6 +312,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-20T19:13:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -298,6 +320,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-21T03:13:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -314,6 +337,7 @@
         {
           "attempt_num": 1,
           "scheduled_at": "2026-07-14T17:43:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -321,6 +345,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-15T01:43:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -328,6 +353,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-15T09:43:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -344,6 +370,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-07T20:12:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -351,6 +378,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-08T04:12:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -367,6 +395,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-09T21:57:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -383,6 +412,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-02T22:56:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "late_night",
           "decision": "retry_executed",
           "success_probability": 0.8,
@@ -401,6 +431,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-14T02:00:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -417,6 +448,7 @@
         {
           "attempt_num": 1,
           "scheduled_at": "2026-07-25T22:08:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "late_night",
           "decision": "retry_executed",
           "success_probability": 0.0,
@@ -426,6 +458,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-26T06:08:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "early_morning",
           "decision": "retry_executed",
           "success_probability": 0.0,
@@ -435,6 +468,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-26T14:08:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "afternoon",
           "decision": "retry_executed",
           "success_probability": 0.0,
@@ -453,6 +487,7 @@
         {
           "attempt_num": 1,
           "scheduled_at": "2026-07-11T20:27:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -460,6 +495,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-12T04:27:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -467,6 +503,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-12T12:27:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -483,6 +520,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-29T19:33:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -490,6 +528,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-30T03:33:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -506,6 +545,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-29T16:01:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -522,6 +562,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-12T15:51:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "afternoon",
           "decision": "retry_executed",
           "success_probability": 0.45,
@@ -531,6 +572,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-12T23:51:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -547,6 +589,7 @@
         {
           "attempt_num": 1,
           "scheduled_at": "2026-07-24T23:12:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "late_night",
           "decision": "retry_executed",
           "success_probability": 0.8,
@@ -565,6 +608,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-16T09:32:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -572,6 +616,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-16T17:32:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -588,6 +633,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-27T11:58:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -595,6 +641,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-27T19:58:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -611,6 +658,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-08T05:08:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -618,6 +666,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-08T13:08:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -634,6 +683,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-10T09:57:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -641,6 +691,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-10T17:57:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -657,6 +708,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-17T04:25:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -673,6 +725,7 @@
         {
           "attempt_num": 1,
           "scheduled_at": "2026-07-16T07:35:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "early_morning",
           "decision": "retry_executed",
           "success_probability": 0.0,
@@ -682,6 +735,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-16T15:35:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "afternoon",
           "decision": "retry_executed",
           "success_probability": 0.0,
@@ -691,6 +745,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-16T23:35:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -707,6 +762,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-19T06:32:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "early_morning",
           "decision": "retry_executed",
           "success_probability": 0.0,
@@ -716,6 +772,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-19T14:32:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "afternoon",
           "decision": "retry_executed",
           "success_probability": 0.0,
@@ -734,6 +791,7 @@
         {
           "attempt_num": 1,
           "scheduled_at": "2026-07-24T02:28:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -741,6 +799,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-24T10:28:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -748,6 +807,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-24T18:28:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -764,6 +824,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-16T08:46:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -780,6 +841,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-24T14:20:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "afternoon",
           "decision": "retry_executed",
           "success_probability": 0.8,
@@ -798,6 +860,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-06T20:06:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -814,6 +877,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-16T11:50:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -821,6 +885,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-16T19:50:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -837,6 +902,7 @@
         {
           "attempt_num": 1,
           "scheduled_at": "2026-07-20T00:28:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -844,6 +910,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-20T08:28:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "early_morning",
           "decision": "retry_executed",
           "success_probability": 0.45,
@@ -853,6 +920,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-20T16:28:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -869,6 +937,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-28T10:34:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -876,6 +945,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-28T18:34:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -892,6 +962,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-30T20:57:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -899,6 +970,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-31T04:57:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -915,6 +987,7 @@
         {
           "attempt_num": 1,
           "scheduled_at": "2026-07-09T18:43:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -922,6 +995,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-10T02:43:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -929,6 +1003,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-10T10:43:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -945,6 +1020,7 @@
         {
           "attempt_num": 1,
           "scheduled_at": "2026-07-07T17:19:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -952,6 +1028,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-08T01:19:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -959,6 +1036,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-08T09:19:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -975,6 +1053,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-13T19:02:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -982,6 +1061,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-14T03:02:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -998,6 +1078,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-31T12:49:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1005,6 +1086,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-31T20:49:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1021,6 +1103,7 @@
         {
           "attempt_num": 1,
           "scheduled_at": "2026-07-05T23:48:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1028,6 +1111,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-06T07:48:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "early_morning",
           "decision": "retry_executed",
           "success_probability": 0.45,
@@ -1037,6 +1121,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-06T15:48:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "afternoon",
           "decision": "retry_executed",
           "success_probability": 0.45,
@@ -1055,6 +1140,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-27T12:01:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1062,6 +1148,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-27T20:01:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1078,6 +1165,7 @@
         {
           "attempt_num": 1,
           "scheduled_at": "2026-07-19T00:18:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1085,6 +1173,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-19T08:18:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "early_morning",
           "decision": "retry_executed",
           "success_probability": 0.45,
@@ -1094,6 +1183,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-19T16:18:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1110,6 +1200,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-03T09:34:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1126,6 +1217,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-02T02:45:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1142,6 +1234,7 @@
         {
           "attempt_num": 1,
           "scheduled_at": "2026-07-02T23:17:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "late_night",
           "decision": "retry_executed",
           "success_probability": 0.8,
@@ -1160,6 +1253,7 @@
         {
           "attempt_num": 1,
           "scheduled_at": "2026-07-01T16:26:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1167,6 +1261,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-02T00:26:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1174,6 +1269,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-02T08:26:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "early_morning",
           "decision": "retry_executed",
           "success_probability": 0.8,
@@ -1192,6 +1288,7 @@
         {
           "attempt_num": 1,
           "scheduled_at": "2026-07-28T10:03:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1199,6 +1296,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-28T18:03:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1206,6 +1304,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-29T02:03:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1222,6 +1321,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-23T21:50:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1238,6 +1338,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-11T21:06:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1245,6 +1346,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-12T05:06:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1261,6 +1363,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-31T02:01:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1277,6 +1380,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-06T04:27:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1293,6 +1397,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-09T21:06:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1300,6 +1405,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-10T05:06:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1316,6 +1422,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-13T05:06:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1332,6 +1439,7 @@
         {
           "attempt_num": 1,
           "scheduled_at": "2026-07-17T16:27:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1339,6 +1447,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-18T00:27:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1346,6 +1455,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-18T08:27:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "early_morning",
           "decision": "retry_executed",
           "success_probability": 0.0,
@@ -1364,6 +1474,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-23T13:04:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1380,6 +1491,7 @@
         {
           "attempt_num": 1,
           "scheduled_at": "2026-07-30T02:12:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1387,6 +1499,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-30T10:12:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1394,6 +1507,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-30T18:12:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1410,6 +1524,7 @@
         {
           "attempt_num": 1,
           "scheduled_at": "2026-07-19T05:28:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1417,6 +1532,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-19T13:28:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1424,6 +1540,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-19T21:28:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1440,6 +1557,7 @@
         {
           "attempt_num": 1,
           "scheduled_at": "2026-07-17T13:29:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1447,6 +1565,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-17T21:29:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1454,6 +1573,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-18T05:29:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1470,6 +1590,7 @@
         {
           "attempt_num": 1,
           "scheduled_at": "2026-07-03T14:51:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "afternoon",
           "decision": "retry_executed",
           "success_probability": 0.8,
@@ -1488,6 +1609,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-14T08:40:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1504,6 +1626,7 @@
         {
           "attempt_num": 1,
           "scheduled_at": "2026-07-30T22:23:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "late_night",
           "decision": "retry_executed",
           "success_probability": 0.7,
@@ -1513,6 +1636,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-31T06:23:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "early_morning",
           "decision": "retry_executed",
           "success_probability": 0.7,
@@ -1531,6 +1655,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-05T23:10:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "late_night",
           "decision": "retry_executed",
           "success_probability": 0.8,
@@ -1549,6 +1674,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-07T13:56:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1556,6 +1682,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-07T21:56:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1572,6 +1699,7 @@
         {
           "attempt_num": 1,
           "scheduled_at": "2026-07-17T16:27:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1579,6 +1707,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-18T00:27:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1586,6 +1715,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-18T08:27:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "early_morning",
           "decision": "retry_executed",
           "success_probability": 0.45,
@@ -1604,6 +1734,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-04T00:16:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1620,6 +1751,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-04T05:43:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1627,6 +1759,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-04T13:43:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1643,6 +1776,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-25T07:52:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "early_morning",
           "decision": "retry_executed",
           "success_probability": 0.0,
@@ -1661,6 +1795,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-17T16:36:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1677,6 +1812,7 @@
         {
           "attempt_num": 1,
           "scheduled_at": "2026-07-25T08:05:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "early_morning",
           "decision": "retry_executed",
           "success_probability": 0.45,
@@ -1695,6 +1831,7 @@
         {
           "attempt_num": 1,
           "scheduled_at": "2026-07-11T08:25:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "early_morning",
           "decision": "retry_executed",
           "success_probability": 0.0,
@@ -1704,6 +1841,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-11T16:25:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1711,6 +1849,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-12T00:25:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1727,6 +1866,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-18T01:27:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1734,6 +1874,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-18T09:27:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1750,6 +1891,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-24T10:51:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1757,6 +1899,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-24T18:51:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1773,6 +1916,7 @@
         {
           "attempt_num": 1,
           "scheduled_at": "2026-07-27T19:29:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1780,6 +1924,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-28T03:29:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1787,6 +1932,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-28T11:29:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1803,6 +1949,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-19T01:35:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1810,6 +1957,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-19T09:35:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1826,6 +1974,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-24T09:31:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1842,6 +1991,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-14T17:57:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1849,6 +1999,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-15T01:57:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1865,6 +2016,7 @@
         {
           "attempt_num": 1,
           "scheduled_at": "2026-07-15T18:26:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1872,6 +2024,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-16T02:26:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1879,6 +2032,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-16T10:26:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1895,6 +2049,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-20T07:21:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "early_morning",
           "decision": "retry_executed",
           "success_probability": 0.7,
@@ -1913,6 +2068,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-25T05:05:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1929,6 +2085,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-02T14:26:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "afternoon",
           "decision": "retry_executed",
           "success_probability": 0.65,
@@ -1947,6 +2104,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-24T15:49:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "afternoon",
           "decision": "retry_executed",
           "success_probability": 0.45,
@@ -1965,6 +2123,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-11T09:05:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1972,6 +2131,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-11T17:05:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -1988,6 +2148,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-23T08:47:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -2004,6 +2165,7 @@
         {
           "attempt_num": 1,
           "scheduled_at": "2026-07-09T11:58:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -2011,6 +2173,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-09T19:58:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -2018,6 +2181,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-10T03:58:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -2034,6 +2198,7 @@
         {
           "attempt_num": 1,
           "scheduled_at": "2026-07-27T16:33:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -2041,6 +2206,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-28T00:33:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -2048,6 +2214,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-28T08:33:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -2064,6 +2231,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-24T11:45:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -2080,6 +2248,7 @@
         {
           "attempt_num": 1,
           "scheduled_at": "2026-07-18T18:52:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -2087,6 +2256,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-19T02:52:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -2094,6 +2264,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-19T10:52:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -2110,6 +2281,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-19T19:01:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -2126,6 +2298,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-02T13:36:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -2133,6 +2306,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-02T21:36:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -2149,6 +2323,7 @@
         {
           "attempt_num": 1,
           "scheduled_at": "2026-07-19T15:58:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "afternoon",
           "decision": "retry_executed",
           "success_probability": 0.45,
@@ -2158,6 +2333,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-19T23:58:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -2165,6 +2341,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-20T07:58:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "early_morning",
           "decision": "retry_executed",
           "success_probability": 0.45,
@@ -2183,6 +2360,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-03T22:15:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "late_night",
           "decision": "retry_executed",
           "success_probability": 0.45,
@@ -2201,6 +2379,7 @@
         {
           "attempt_num": 1,
           "scheduled_at": "2026-07-15T06:14:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "early_morning",
           "decision": "retry_executed",
           "success_probability": 0.0,
@@ -2210,6 +2389,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-15T14:14:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "afternoon",
           "decision": "retry_executed",
           "success_probability": 0.0,
@@ -2219,6 +2399,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-15T22:14:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": "late_night",
           "decision": "retry_executed",
           "success_probability": 0.0,
@@ -2237,6 +2418,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-06T20:55:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -2244,6 +2426,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-07T04:55:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -2260,6 +2443,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-18T19:43:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -2267,6 +2451,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-19T03:43:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -2283,6 +2468,7 @@
         {
           "attempt_num": 1,
           "scheduled_at": "2026-07-02T03:50:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -2290,6 +2476,7 @@
         {
           "attempt_num": 2,
           "scheduled_at": "2026-07-02T11:50:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"
@@ -2297,6 +2484,7 @@
         {
           "attempt_num": 3,
           "scheduled_at": "2026-07-02T19:50:00+05:30",
+          "timezone": "Asia/Kolkata",
           "window_label": null,
           "decision": "rejected_restricted_time",
           "outcome": "rejected"

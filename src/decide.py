@@ -4,17 +4,30 @@ from __future__ import annotations
 
 import json
 import os
-from datetime import date, datetime, time, timedelta
+from datetime import datetime, time, timedelta
 from pathlib import Path
 from typing import Any, Mapping, TypedDict
 
 try:
-    from .constants import FAILURE_REASONS, MAX_RETRIES, PERMITTED_EXECUTION_WINDOWS
-except ImportError:  # Supports direct execution: python src/decide.py
-    from constants import (  # type: ignore[no-redef]
+    from .constants import (
+        EXECUTION_TIMEZONE,
         FAILURE_REASONS,
         MAX_RETRIES,
         PERMITTED_EXECUTION_WINDOWS,
+    )
+    from .time_utils import combine_ist, ist_isoformat, localize_ist, parse_ist_datetime
+except ImportError:  # Supports direct execution: python src/decide.py
+    from constants import (  # type: ignore[no-redef]
+        EXECUTION_TIMEZONE,
+        FAILURE_REASONS,
+        MAX_RETRIES,
+        PERMITTED_EXECUTION_WINDOWS,
+    )
+    from time_utils import (  # type: ignore[no-redef]
+        combine_ist,
+        ist_isoformat,
+        localize_ist,
+        parse_ist_datetime,
     )
 
 
@@ -51,13 +64,15 @@ class ScheduledAttempt(TypedDict):
     attempt_num: int
     scheduled_date: str
     scheduled_time: str
+    scheduled_at: str
+    timezone: str
     window_label: str
 
 
 def _parse_clock(value: str) -> time:
     """Parse a centrally configured HH:MM clock value."""
 
-    return datetime.strptime(value, "%H:%M").time()
+    return time.fromisoformat(value)
 
 
 def _round_up_to_minute(value: datetime) -> datetime:
@@ -71,21 +86,22 @@ def _round_up_to_minute(value: datetime) -> datetime:
 def _next_permitted_datetime(candidate: datetime) -> tuple[datetime, str]:
     """Move a candidate forward to the earliest permitted execution time."""
 
-    candidate = _round_up_to_minute(candidate)
+    candidate = _round_up_to_minute(localize_ist(candidate))
     search_date = candidate.date()
 
     # Seven iterations are far more than needed because windows exist every
     # day, while still preventing an accidental infinite loop after bad config.
     for _ in range(7):
         for window in PERMITTED_EXECUTION_WINDOWS:
-            start = datetime.combine(search_date, _parse_clock(window["start"]), candidate.tzinfo)
-            end = datetime.combine(search_date, _parse_clock(window["end"]), candidate.tzinfo)
+            assert window["timezone"] == EXECUTION_TIMEZONE
+            start = combine_ist(search_date, _parse_clock(window["start"]))
+            end = combine_ist(search_date, _parse_clock(window["end"]))
 
             if candidate <= end:
                 return max(candidate, start), window["label"]
 
         search_date += timedelta(days=1)
-        candidate = datetime.combine(search_date, time.min, candidate.tzinfo)
+        candidate = combine_ist(search_date, time.min)
 
     raise ValueError("No permitted execution window could be found")
 
@@ -99,7 +115,7 @@ def _daily_limit_candidate(failed_at: datetime, attempt_num: int) -> datetime:
     window = next(
         item for item in PERMITTED_EXECUTION_WINDOWS if item["label"] == preferred_label
     )
-    return datetime.combine(retry_date, _parse_clock(window["start"]), failed_at.tzinfo)
+    return combine_ist(retry_date, _parse_clock(window["start"]))
 
 
 def build_retry_schedule(record: Mapping[str, Any]) -> list[ScheduledAttempt]:
@@ -114,7 +130,7 @@ def build_retry_schedule(record: Mapping[str, Any]) -> list[ScheduledAttempt]:
         return []
 
     try:
-        failed_at = datetime.fromisoformat(str(record["failed_at"]))
+        failed_at = parse_ist_datetime(str(record["failed_at"]))
         attempts_already_made = int(record.get("attempts_already_made", 0))
     except (KeyError, TypeError, ValueError) as error:
         raise ValueError("record has invalid failed_at or attempts_already_made") from error
@@ -149,6 +165,8 @@ def build_retry_schedule(record: Mapping[str, Any]) -> list[ScheduledAttempt]:
                 "attempt_num": attempt_num,
                 "scheduled_date": scheduled_at.date().isoformat(),
                 "scheduled_time": scheduled_at.strftime("%H:%M"),
+                "scheduled_at": ist_isoformat(scheduled_at),
+                "timezone": EXECUTION_TIMEZONE,
                 "window_label": window_label,
             }
         )
@@ -169,10 +187,11 @@ def validate_schedule(schedule: list[ScheduledAttempt]) -> None:
         assert isinstance(attempt_num, int), "attempt_num must be an integer"
         assert previous_attempt < attempt_num <= MAX_RETRIES, "attempt numbers are invalid"
 
-        scheduled_at = datetime.combine(
-            date.fromisoformat(attempt["scheduled_date"]),
-            _parse_clock(attempt["scheduled_time"]),
-        )
+        assert attempt["timezone"] == EXECUTION_TIMEZONE, "retry timezone must be Asia/Kolkata"
+        scheduled_at = parse_ist_datetime(attempt["scheduled_at"])
+        assert scheduled_at.utcoffset() == timedelta(hours=5, minutes=30)
+        assert scheduled_at.date().isoformat() == attempt["scheduled_date"]
+        assert scheduled_at.strftime("%H:%M") == attempt["scheduled_time"]
         if previous is not None:
             assert scheduled_at > previous, "retry times must be strictly increasing"
 
@@ -185,6 +204,7 @@ def validate_schedule(schedule: list[ScheduledAttempt]) -> None:
             None,
         )
         assert matching_window is not None, "unknown execution window label"
+        assert matching_window["timezone"] == EXECUTION_TIMEZONE
         assert (
             _parse_clock(matching_window["start"])
             <= scheduled_at.time()

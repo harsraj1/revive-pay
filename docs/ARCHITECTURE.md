@@ -54,6 +54,11 @@ Construction and validation are separate. `validate_schedule()` independently en
 - known window labels;
 - inclusive configured time boundaries.
 
+Timezone handling is centralized in `src/time_utils.py`. Naive source values are
+explicitly interpreted as Asia/Kolkata, aware values from other zones are
+converted to Asia/Kolkata, and serialized schedules include both the named zone
+and an ISO-8601 `+05:30` offset. Host-local timezone settings are never consulted.
+
 ## Escalation and execution
 
 Escalation policy is attached before execution but does not alter the schedule. During simulation, the engine checks the threshold before each next attempt. Recovery stops execution immediately; reaching the threshold stops another blind attempt and assigns human escalation.

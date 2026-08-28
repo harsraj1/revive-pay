@@ -1,6 +1,6 @@
 """Tests for the synthetic failed-mandate generator."""
 
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from src.constants import (
     CATEGORIES,
@@ -48,7 +48,9 @@ def test_generated_records_follow_schema_and_domain_rules() -> None:
         category_policy = CATEGORY_POLICIES[record["category"]]
         assert category_policy["amount_min"] <= record["amount"]
         assert record["amount"] <= category_policy["amount_max"]
-        assert datetime.fromisoformat(record["failed_at"]).tzinfo is not None
+        failed_at = datetime.fromisoformat(record["failed_at"])
+        assert failed_at.tzinfo is not None
+        assert failed_at.utcoffset() == timedelta(hours=5, minutes=30)
 
 
 def test_count_validation() -> None:

@@ -1,5 +1,7 @@
 """Tests for deterministic execution simulation and stopping behavior."""
 
+from datetime import datetime, timedelta
+
 from src.act import deterministic_draw, simulate_execution, simulate_mandate
 from src.constants import SUCCESS_PROBABILITIES
 
@@ -66,3 +68,21 @@ def test_non_retriable_mandate_never_executes() -> None:
     result = simulate_mandate(record)
     assert result["final_status"] == "non_retriable"
     assert result["attempts_made"] == []
+
+
+def test_audit_timestamps_are_explicitly_ist_aware() -> None:
+    result = simulate_mandate(_record("bank_server_down"), seed=0)
+    assert result["audit_timezone"] == "Asia/Kolkata"
+    assert datetime.fromisoformat(result["failed_at"]).utcoffset() == timedelta(
+        hours=5, minutes=30
+    )
+    for attempt in result["scheduled_retries"]:
+        assert attempt["timezone"] == "Asia/Kolkata"
+        assert datetime.fromisoformat(attempt["scheduled_at"]).utcoffset() == timedelta(
+            hours=5, minutes=30
+        )
+    for attempt in result["attempts_made"]:
+        assert attempt["timezone"] == "Asia/Kolkata"
+        assert datetime.fromisoformat(attempt["executed_at"]).utcoffset() == timedelta(
+            hours=5, minutes=30
+        )

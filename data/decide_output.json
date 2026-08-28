@@ -17,6 +17,8 @@
         "attempt_num": 3,
         "scheduled_date": "2026-08-01",
         "scheduled_time": "06:00",
+        "scheduled_at": "2026-08-01T06:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       }
     ],
@@ -40,12 +42,16 @@
         "attempt_num": 2,
         "scheduled_date": "2026-07-15",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-15T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-16",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-16T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       }
     ],
@@ -69,18 +75,24 @@
         "attempt_num": 1,
         "scheduled_date": "2026-07-26",
         "scheduled_time": "06:00",
+        "scheduled_at": "2026-07-26T06:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       },
       {
         "attempt_num": 2,
         "scheduled_date": "2026-07-28",
         "scheduled_time": "06:00",
+        "scheduled_at": "2026-07-28T06:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-30",
         "scheduled_time": "06:00",
+        "scheduled_at": "2026-07-30T06:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       }
     ],
@@ -104,6 +116,8 @@
         "attempt_num": 3,
         "scheduled_date": "2026-07-08",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-08T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       }
     ],
@@ -127,6 +141,8 @@
         "attempt_num": 3,
         "scheduled_date": "2026-07-19",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-19T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       }
     ],
@@ -150,6 +166,8 @@
         "attempt_num": 3,
         "scheduled_date": "2026-07-04",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-04T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       }
     ],
@@ -173,18 +191,24 @@
         "attempt_num": 1,
         "scheduled_date": "2026-07-03",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-03T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       },
       {
         "attempt_num": 2,
         "scheduled_date": "2026-07-05",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-05T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-07",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-07T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       }
     ],
@@ -208,6 +232,8 @@
         "attempt_num": 3,
         "scheduled_date": "2026-07-06",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-06T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       }
     ],
@@ -231,6 +257,8 @@
         "attempt_num": 3,
         "scheduled_date": "2026-07-13",
         "scheduled_time": "06:01",
+        "scheduled_at": "2026-07-13T06:01:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       }
     ],
@@ -254,6 +282,8 @@
         "attempt_num": 3,
         "scheduled_date": "2026-07-20",
         "scheduled_time": "06:00",
+        "scheduled_at": "2026-07-20T06:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       }
     ],
@@ -293,12 +323,16 @@
         "attempt_num": 2,
         "scheduled_date": "2026-07-30",
         "scheduled_time": "06:47",
+        "scheduled_at": "2026-07-30T06:47:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-31",
         "scheduled_time": "06:00",
+        "scheduled_at": "2026-07-31T06:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       }
     ],
@@ -338,18 +372,24 @@
         "attempt_num": 1,
         "scheduled_date": "2026-07-21",
         "scheduled_time": "06:00",
+        "scheduled_at": "2026-07-21T06:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       },
       {
         "attempt_num": 2,
         "scheduled_date": "2026-07-23",
         "scheduled_time": "06:00",
+        "scheduled_at": "2026-07-23T06:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-25",
         "scheduled_time": "06:00",
+        "scheduled_at": "2026-07-25T06:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       }
     ],
@@ -373,18 +413,24 @@
         "attempt_num": 1,
         "scheduled_date": "2026-07-14",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-14T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       },
       {
         "attempt_num": 2,
         "scheduled_date": "2026-07-14",
         "scheduled_time": "15:43",
+        "scheduled_at": "2026-07-14T15:43:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-15",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-15T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       }
     ],
@@ -424,6 +470,8 @@
         "attempt_num": 3,
         "scheduled_date": "2026-07-13",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-13T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       }
     ],
@@ -447,12 +495,16 @@
         "attempt_num": 2,
         "scheduled_date": "2026-07-02",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-02T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-03",
         "scheduled_time": "06:56",
+        "scheduled_at": "2026-07-03T06:56:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       }
     ],
@@ -508,18 +560,24 @@
         "attempt_num": 1,
         "scheduled_date": "2026-07-12",
         "scheduled_time": "06:00",
+        "scheduled_at": "2026-07-12T06:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       },
       {
         "attempt_num": 2,
         "scheduled_date": "2026-07-13",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-13T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-14",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-14T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       }
     ],
@@ -543,12 +601,16 @@
         "attempt_num": 2,
         "scheduled_date": "2026-08-01",
         "scheduled_time": "06:00",
+        "scheduled_at": "2026-08-01T06:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-08-03",
         "scheduled_time": "06:00",
+        "scheduled_at": "2026-08-03T06:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       }
     ],
@@ -572,6 +634,8 @@
         "attempt_num": 3,
         "scheduled_date": "2026-07-29",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-29T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       }
     ],
@@ -595,12 +659,16 @@
         "attempt_num": 2,
         "scheduled_date": "2026-07-15",
         "scheduled_time": "06:00",
+        "scheduled_at": "2026-07-15T06:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-17",
         "scheduled_time": "06:00",
+        "scheduled_at": "2026-07-17T06:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       }
     ],
@@ -624,18 +692,24 @@
         "attempt_num": 1,
         "scheduled_date": "2026-07-24",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-24T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       },
       {
         "attempt_num": 2,
         "scheduled_date": "2026-07-24",
         "scheduled_time": "22:01",
+        "scheduled_at": "2026-07-24T22:01:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-25",
         "scheduled_time": "15:12",
+        "scheduled_at": "2026-07-25T15:12:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       }
     ],
@@ -675,12 +749,16 @@
         "attempt_num": 2,
         "scheduled_date": "2026-07-27",
         "scheduled_time": "06:00",
+        "scheduled_at": "2026-07-27T06:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-27",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-27T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       }
     ],
@@ -704,12 +782,16 @@
         "attempt_num": 2,
         "scheduled_date": "2026-07-10",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-10T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-12",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-12T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       }
     ],
@@ -733,12 +815,16 @@
         "attempt_num": 2,
         "scheduled_date": "2026-07-12",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-12T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-14",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-14T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       }
     ],
@@ -762,6 +848,8 @@
         "attempt_num": 3,
         "scheduled_date": "2026-07-17",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-17T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       }
     ],
@@ -817,18 +905,24 @@
         "attempt_num": 1,
         "scheduled_date": "2026-07-24",
         "scheduled_time": "06:00",
+        "scheduled_at": "2026-07-24T06:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       },
       {
         "attempt_num": 2,
         "scheduled_date": "2026-07-25",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-25T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-26",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-26T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       }
     ],
@@ -852,6 +946,8 @@
         "attempt_num": 3,
         "scheduled_date": "2026-07-20",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-20T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       }
     ],
@@ -875,12 +971,16 @@
         "attempt_num": 2,
         "scheduled_date": "2026-07-24",
         "scheduled_time": "06:00",
+        "scheduled_at": "2026-07-24T06:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-24",
         "scheduled_time": "22:20",
+        "scheduled_at": "2026-07-24T22:20:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       }
     ],
@@ -904,6 +1004,8 @@
         "attempt_num": 3,
         "scheduled_date": "2026-07-07",
         "scheduled_time": "06:00",
+        "scheduled_at": "2026-07-07T06:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       }
     ],
@@ -943,18 +1045,24 @@
         "attempt_num": 1,
         "scheduled_date": "2026-07-20",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-20T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       },
       {
         "attempt_num": 2,
         "scheduled_date": "2026-07-22",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-22T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-24",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-24T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       }
     ],
@@ -978,12 +1086,16 @@
         "attempt_num": 2,
         "scheduled_date": "2026-07-30",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-30T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-08-01",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-08-01T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       }
     ],
@@ -1007,12 +1119,16 @@
         "attempt_num": 2,
         "scheduled_date": "2026-08-01",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-08-01T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-08-02",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-08-02T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       }
     ],
@@ -1036,18 +1152,24 @@
         "attempt_num": 1,
         "scheduled_date": "2026-07-10",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-10T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       },
       {
         "attempt_num": 2,
         "scheduled_date": "2026-07-12",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-12T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-14",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-14T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       }
     ],
@@ -1071,18 +1193,24 @@
         "attempt_num": 1,
         "scheduled_date": "2026-07-07",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-07T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       },
       {
         "attempt_num": 2,
         "scheduled_date": "2026-07-07",
         "scheduled_time": "15:19",
+        "scheduled_at": "2026-07-07T15:19:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-08",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-08T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       }
     ],
@@ -1106,12 +1234,16 @@
         "attempt_num": 2,
         "scheduled_date": "2026-07-13",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-13T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-14",
         "scheduled_time": "06:00",
+        "scheduled_at": "2026-07-14T06:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       }
     ],
@@ -1151,18 +1283,24 @@
         "attempt_num": 1,
         "scheduled_date": "2026-07-06",
         "scheduled_time": "15:48",
+        "scheduled_at": "2026-07-06T15:48:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       },
       {
         "attempt_num": 2,
         "scheduled_date": "2026-07-08",
         "scheduled_time": "15:48",
+        "scheduled_at": "2026-07-08T15:48:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-10",
         "scheduled_time": "15:48",
+        "scheduled_at": "2026-07-10T15:48:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       }
     ],
@@ -1186,12 +1324,16 @@
         "attempt_num": 2,
         "scheduled_date": "2026-07-29",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-29T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-31",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-31T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       }
     ],
@@ -1215,18 +1357,24 @@
         "attempt_num": 1,
         "scheduled_date": "2026-07-19",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-19T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       },
       {
         "attempt_num": 2,
         "scheduled_date": "2026-07-21",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-21T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-23",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-23T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       }
     ],
@@ -1266,6 +1414,8 @@
         "attempt_num": 3,
         "scheduled_date": "2026-07-04",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-04T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       }
     ],
@@ -1289,18 +1439,24 @@
         "attempt_num": 1,
         "scheduled_date": "2026-07-02",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-02T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       },
       {
         "attempt_num": 2,
         "scheduled_date": "2026-07-02",
         "scheduled_time": "22:01",
+        "scheduled_at": "2026-07-02T22:01:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-03",
         "scheduled_time": "15:17",
+        "scheduled_at": "2026-07-03T15:17:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       }
     ],
@@ -1324,18 +1480,24 @@
         "attempt_num": 1,
         "scheduled_date": "2026-07-01",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-01T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       },
       {
         "attempt_num": 2,
         "scheduled_date": "2026-07-01",
         "scheduled_time": "14:26",
+        "scheduled_at": "2026-07-01T14:26:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-02",
         "scheduled_time": "08:26",
+        "scheduled_at": "2026-07-02T08:26:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       }
     ],
@@ -1391,12 +1553,16 @@
         "attempt_num": 2,
         "scheduled_date": "2026-07-11",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-11T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-12",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-12T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       }
     ],
@@ -1420,6 +1586,8 @@
         "attempt_num": 3,
         "scheduled_date": "2026-08-04",
         "scheduled_time": "06:00",
+        "scheduled_at": "2026-08-04T06:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       }
     ],
@@ -1443,6 +1611,8 @@
         "attempt_num": 3,
         "scheduled_date": "2026-07-06",
         "scheduled_time": "06:00",
+        "scheduled_at": "2026-07-06T06:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       }
     ],
@@ -1466,12 +1636,16 @@
         "attempt_num": 2,
         "scheduled_date": "2026-07-09",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-09T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-10",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-10T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       }
     ],
@@ -1495,6 +1669,8 @@
         "attempt_num": 3,
         "scheduled_date": "2026-07-17",
         "scheduled_time": "06:00",
+        "scheduled_at": "2026-07-17T06:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       }
     ],
@@ -1534,6 +1710,8 @@
         "attempt_num": 3,
         "scheduled_date": "2026-07-27",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-27T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       }
     ],
@@ -1573,18 +1751,24 @@
         "attempt_num": 1,
         "scheduled_date": "2026-07-19",
         "scheduled_time": "06:00",
+        "scheduled_at": "2026-07-19T06:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       },
       {
         "attempt_num": 2,
         "scheduled_date": "2026-07-20",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-20T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-21",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-21T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       }
     ],
@@ -1624,18 +1808,24 @@
         "attempt_num": 1,
         "scheduled_date": "2026-07-03",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-03T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       },
       {
         "attempt_num": 2,
         "scheduled_date": "2026-07-03",
         "scheduled_time": "14:01",
+        "scheduled_at": "2026-07-03T14:01:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-04",
         "scheduled_time": "06:51",
+        "scheduled_at": "2026-07-04T06:51:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       }
     ],
@@ -1659,6 +1849,8 @@
         "attempt_num": 3,
         "scheduled_date": "2026-07-18",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-18T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       }
     ],
@@ -1682,18 +1874,24 @@
         "attempt_num": 1,
         "scheduled_date": "2026-07-31",
         "scheduled_time": "06:00",
+        "scheduled_at": "2026-07-31T06:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       },
       {
         "attempt_num": 2,
         "scheduled_date": "2026-08-01",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-08-01T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-08-02",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-08-02T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       }
     ],
@@ -1717,12 +1915,16 @@
         "attempt_num": 2,
         "scheduled_date": "2026-07-05",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-05T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-06",
         "scheduled_time": "07:10",
+        "scheduled_at": "2026-07-06T07:10:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       }
     ],
@@ -1746,12 +1948,16 @@
         "attempt_num": 2,
         "scheduled_date": "2026-07-09",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-09T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-11",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-11T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       }
     ],
@@ -1775,18 +1981,24 @@
         "attempt_num": 1,
         "scheduled_date": "2026-07-18",
         "scheduled_time": "08:27",
+        "scheduled_at": "2026-07-18T08:27:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       },
       {
         "attempt_num": 2,
         "scheduled_date": "2026-07-20",
         "scheduled_time": "08:27",
+        "scheduled_at": "2026-07-20T08:27:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-22",
         "scheduled_time": "08:27",
+        "scheduled_at": "2026-07-22T08:27:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       }
     ],
@@ -1858,6 +2070,8 @@
         "attempt_num": 3,
         "scheduled_date": "2026-07-21",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-21T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       }
     ],
@@ -1881,18 +2095,24 @@
         "attempt_num": 1,
         "scheduled_date": "2026-07-26",
         "scheduled_time": "06:00",
+        "scheduled_at": "2026-07-26T06:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       },
       {
         "attempt_num": 2,
         "scheduled_date": "2026-07-28",
         "scheduled_time": "06:00",
+        "scheduled_at": "2026-07-28T06:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-30",
         "scheduled_time": "06:00",
+        "scheduled_at": "2026-07-30T06:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       }
     ],
@@ -1932,12 +2152,16 @@
         "attempt_num": 2,
         "scheduled_date": "2026-07-20",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-20T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-22",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-22T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       }
     ],
@@ -1961,12 +2185,16 @@
         "attempt_num": 2,
         "scheduled_date": "2026-07-24",
         "scheduled_time": "06:51",
+        "scheduled_at": "2026-07-24T06:51:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-25",
         "scheduled_time": "06:00",
+        "scheduled_at": "2026-07-25T06:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       }
     ],
@@ -1990,18 +2218,24 @@
         "attempt_num": 1,
         "scheduled_date": "2026-07-28",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-28T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       },
       {
         "attempt_num": 2,
         "scheduled_date": "2026-07-30",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-30T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-08-01",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-08-01T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       }
     ],
@@ -2025,12 +2259,16 @@
         "attempt_num": 2,
         "scheduled_date": "2026-07-21",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-21T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-23",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-23T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       }
     ],
@@ -2070,12 +2308,16 @@
         "attempt_num": 2,
         "scheduled_date": "2026-07-14",
         "scheduled_time": "07:57",
+        "scheduled_at": "2026-07-14T07:57:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-15",
         "scheduled_time": "06:00",
+        "scheduled_at": "2026-07-15T06:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       }
     ],
@@ -2099,18 +2341,24 @@
         "attempt_num": 1,
         "scheduled_date": "2026-07-16",
         "scheduled_time": "06:00",
+        "scheduled_at": "2026-07-16T06:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       },
       {
         "attempt_num": 2,
         "scheduled_date": "2026-07-17",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-17T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-18",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-18T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       }
     ],
@@ -2134,6 +2382,8 @@
         "attempt_num": 3,
         "scheduled_date": "2026-07-22",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-22T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       }
     ],
@@ -2157,6 +2407,8 @@
         "attempt_num": 3,
         "scheduled_date": "2026-07-29",
         "scheduled_time": "06:00",
+        "scheduled_at": "2026-07-29T06:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       }
     ],
@@ -2180,6 +2432,8 @@
         "attempt_num": 3,
         "scheduled_date": "2026-07-02",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-02T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       }
     ],
@@ -2203,6 +2457,8 @@
         "attempt_num": 3,
         "scheduled_date": "2026-07-28",
         "scheduled_time": "15:49",
+        "scheduled_at": "2026-07-28T15:49:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       }
     ],
@@ -2226,12 +2482,16 @@
         "attempt_num": 2,
         "scheduled_date": "2026-07-10",
         "scheduled_time": "23:05",
+        "scheduled_at": "2026-07-10T23:05:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-11",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-11T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       }
     ],
@@ -2255,6 +2515,8 @@
         "attempt_num": 3,
         "scheduled_date": "2026-07-23",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-23T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       }
     ],
@@ -2310,6 +2572,8 @@
         "attempt_num": 3,
         "scheduled_date": "2026-07-28",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-28T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       }
     ],
@@ -2333,18 +2597,24 @@
         "attempt_num": 1,
         "scheduled_date": "2026-07-19",
         "scheduled_time": "06:00",
+        "scheduled_at": "2026-07-19T06:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       },
       {
         "attempt_num": 2,
         "scheduled_date": "2026-07-20",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-20T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-21",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-21T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       }
     ],
@@ -2368,6 +2638,8 @@
         "attempt_num": 3,
         "scheduled_date": "2026-07-23",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-23T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       }
     ],
@@ -2407,18 +2679,24 @@
         "attempt_num": 1,
         "scheduled_date": "2026-07-20",
         "scheduled_time": "07:58",
+        "scheduled_at": "2026-07-20T07:58:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       },
       {
         "attempt_num": 2,
         "scheduled_date": "2026-07-22",
         "scheduled_time": "07:58",
+        "scheduled_at": "2026-07-22T07:58:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-24",
         "scheduled_time": "07:58",
+        "scheduled_at": "2026-07-24T07:58:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       }
     ],
@@ -2442,6 +2720,8 @@
         "attempt_num": 3,
         "scheduled_date": "2026-07-07",
         "scheduled_time": "22:15",
+        "scheduled_at": "2026-07-07T22:15:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       }
     ],
@@ -2481,12 +2761,16 @@
         "attempt_num": 2,
         "scheduled_date": "2026-07-06",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-06T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-07",
         "scheduled_time": "14:00",
+        "scheduled_at": "2026-07-07T14:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "afternoon"
       }
     ],
@@ -2510,12 +2794,16 @@
         "attempt_num": 2,
         "scheduled_date": "2026-07-21",
         "scheduled_time": "06:00",
+        "scheduled_at": "2026-07-21T06:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-23",
         "scheduled_time": "06:00",
+        "scheduled_at": "2026-07-23T06:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "early_morning"
       }
     ],
@@ -2539,18 +2827,24 @@
         "attempt_num": 1,
         "scheduled_date": "2026-07-02",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-02T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       },
       {
         "attempt_num": 2,
         "scheduled_date": "2026-07-04",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-04T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       },
       {
         "attempt_num": 3,
         "scheduled_date": "2026-07-06",
         "scheduled_time": "22:00",
+        "scheduled_at": "2026-07-06T22:00:00+05:30",
+        "timezone": "Asia/Kolkata",
         "window_label": "late_night"
       }
     ],

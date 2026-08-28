@@ -22,6 +22,7 @@ class ExecutionWindow(TypedDict):
     label: str
     start: str
     end: str
+    timezone: str
 
 
 class CategoryPolicy(TypedDict):
@@ -89,12 +90,28 @@ FAILURE_REASON_WEIGHTS: Final[dict[str, int]] = {
 }
 
 MAX_RETRIES: Final[int] = 3
+EXECUTION_TIMEZONE: Final[str] = "Asia/Kolkata"
 
 # Boundaries are inclusive. Windows deliberately avoid daytime banking peaks.
 PERMITTED_EXECUTION_WINDOWS: Final[tuple[ExecutionWindow, ...]] = (
-    {"label": "early_morning", "start": "06:00", "end": "08:30"},
-    {"label": "afternoon", "start": "14:00", "end": "16:00"},
-    {"label": "late_night", "start": "22:00", "end": "23:30"},
+    {
+        "label": "early_morning",
+        "start": "06:00",
+        "end": "08:30",
+        "timezone": EXECUTION_TIMEZONE,
+    },
+    {
+        "label": "afternoon",
+        "start": "14:00",
+        "end": "16:00",
+        "timezone": EXECUTION_TIMEZONE,
+    },
+    {
+        "label": "late_night",
+        "start": "22:00",
+        "end": "23:30",
+        "timezone": EXECUTION_TIMEZONE,
+    },
 )
 
 CATEGORY_POLICIES: Final[dict[str, CategoryPolicy]] = {

@@ -5,13 +5,25 @@ from __future__ import annotations
 import hashlib
 import json
 import random
+from datetime import date as datetime_date
+from datetime import time as datetime_time
 from pathlib import Path
 from typing import Any, Mapping
 
 try:
-    from .constants import SIMULATION_SEED, SUCCESS_PROBABILITIES
+    from .constants import EXECUTION_TIMEZONE, SIMULATION_SEED, SUCCESS_PROBABILITIES
+    from .time_utils import combine_ist, ist_isoformat, parse_ist_datetime
 except ImportError:  # Supports direct execution: python src/act.py
-    from constants import SIMULATION_SEED, SUCCESS_PROBABILITIES  # type: ignore[no-redef]
+    from constants import (  # type: ignore[no-redef]
+        EXECUTION_TIMEZONE,
+        SIMULATION_SEED,
+        SUCCESS_PROBABILITIES,
+    )
+    from time_utils import (  # type: ignore[no-redef]
+        combine_ist,
+        ist_isoformat,
+        parse_ist_datetime,
+    )
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -32,8 +44,31 @@ def deterministic_draw(seed: int, mandate_id: str, attempt_num: int) -> float:
     return random.Random(attempt_seed).random()
 
 
+def _normalize_scheduled_attempt(attempt: Mapping[str, Any]) -> dict[str, Any]:
+    """Return a schedule entry with one canonical, explicitly IST timestamp."""
+
+    if attempt.get("scheduled_at"):
+        scheduled_at = parse_ist_datetime(str(attempt["scheduled_at"]))
+    else:
+        scheduled_at = combine_ist(
+            datetime_date.fromisoformat(str(attempt["scheduled_date"])),
+            datetime_time.fromisoformat(str(attempt["scheduled_time"])),
+        )
+    return {
+        **attempt,
+        "scheduled_date": scheduled_at.date().isoformat(),
+        "scheduled_time": scheduled_at.strftime("%H:%M"),
+        "scheduled_at": ist_isoformat(scheduled_at),
+        "timezone": EXECUTION_TIMEZONE,
+    }
+
+
 def _base_audit_entry(record: Mapping[str, Any]) -> dict[str, Any]:
     """Preserve the context required to explain every execution decision."""
+
+    scheduled_retries = record.get("retry_schedule", [])
+    if not isinstance(scheduled_retries, list):
+        raise ValueError(f"Mandate {record.get('mandate_id')} has an invalid retry schedule")
 
     return {
         "mandate_id": record["mandate_id"],
@@ -41,7 +76,8 @@ def _base_audit_entry(record: Mapping[str, Any]) -> dict[str, Any]:
         "category": record["category"],
         "amount": record["amount"],
         "failure_reason": record["failure_reason"],
-        "failed_at": record["failed_at"],
+        "failed_at": ist_isoformat(parse_ist_datetime(str(record["failed_at"]))),
+        "audit_timezone": EXECUTION_TIMEZONE,
         "retriable": record.get("retriable", False),
         "retry_rule_explanation": record.get("rule_explanation"),
         "schedule_justification": record.get("schedule_justification"),
@@ -49,7 +85,9 @@ def _base_audit_entry(record: Mapping[str, Any]) -> dict[str, Any]:
         "urgency_priority": record.get("urgency_priority"),
         "escalate_after_attempts": record.get("escalate_after_attempts"),
         "attempts_already_made": record.get("attempts_already_made", 0),
-        "scheduled_retries": record.get("retry_schedule", []),
+        "scheduled_retries": [
+            _normalize_scheduled_attempt(attempt) for attempt in scheduled_retries
+        ],
         "attempts_made": [],
         "final_status": None,
         "stop_reason": None,
@@ -78,6 +116,7 @@ def simulate_mandate(
     probability = SUCCESS_PROBABILITIES.get(str(record.get("failure_reason")), 0.0)
 
     for scheduled_attempt in schedule:
+        normalized_attempt = _normalize_scheduled_attempt(scheduled_attempt)
         attempts_so_far = attempts_before_simulation + len(audit["attempts_made"])
 
         # Check before executing the next payment. Reaching the threshold means
@@ -85,12 +124,12 @@ def simulate_mandate(
         if attempts_so_far >= threshold:
             audit["final_status"] = "escalated"
             audit["stop_reason"] = (
-                f"Escalated before attempt {scheduled_attempt['attempt_num']} because "
+                f"Escalated before attempt {normalized_attempt['attempt_num']} because "
                 f"the category threshold of {threshold} attempt(s) was reached."
             )
             return audit
 
-        attempt_num = int(scheduled_attempt["attempt_num"])
+        attempt_num = int(normalized_attempt["attempt_num"])
         draw = deterministic_draw(seed, str(record["mandate_id"]), attempt_num)
         successful = draw < probability
 
@@ -99,9 +138,12 @@ def simulate_mandate(
         audit["attempts_made"].append(
             {
                 "attempt_num": attempt_num,
-                "scheduled_date": scheduled_attempt["scheduled_date"],
-                "scheduled_time": scheduled_attempt["scheduled_time"],
-                "window_label": scheduled_attempt["window_label"],
+                "scheduled_date": normalized_attempt["scheduled_date"],
+                "scheduled_time": normalized_attempt["scheduled_time"],
+                "scheduled_at": normalized_attempt["scheduled_at"],
+                "executed_at": normalized_attempt["scheduled_at"],
+                "timezone": EXECUTION_TIMEZONE,
+                "window_label": normalized_attempt["window_label"],
                 "decision": "retry_executed",
                 "why_retried": record.get("rule_explanation"),
                 "success_probability": probability,

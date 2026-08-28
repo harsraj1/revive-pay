@@ -11,19 +11,27 @@ try:
     from .act import deterministic_draw
     from .constants import (
         BASELINE_RETRY_INTERVAL_HOURS,
+        EXECUTION_TIMEZONE,
         MAX_RETRIES,
         PERMITTED_EXECUTION_WINDOWS,
         SIMULATION_SEED,
         SUCCESS_PROBABILITIES,
     )
+    from .time_utils import ist_isoformat, localize_ist, parse_ist_datetime
 except ImportError:  # Supports direct execution: python src/baseline.py
     from act import deterministic_draw  # type: ignore[no-redef]
     from constants import (  # type: ignore[no-redef]
         BASELINE_RETRY_INTERVAL_HOURS,
+        EXECUTION_TIMEZONE,
         MAX_RETRIES,
         PERMITTED_EXECUTION_WINDOWS,
         SIMULATION_SEED,
         SUCCESS_PROBABILITIES,
+    )
+    from time_utils import (  # type: ignore[no-redef]
+        ist_isoformat,
+        localize_ist,
+        parse_ist_datetime,
     )
 
 
@@ -37,8 +45,11 @@ COMPARISON_PATH = PROJECT_ROOT / "docs" / "comparison_summary.json"
 def _permitted_window_label(scheduled_at: datetime) -> str | None:
     """Return the matching legal window without changing the naive timestamp."""
 
+    scheduled_at = localize_ist(scheduled_at)
     clock = scheduled_at.strftime("%H:%M")
     for window in PERMITTED_EXECUTION_WINDOWS:
+        if window["timezone"] != EXECUTION_TIMEZONE:
+            raise ValueError("Baseline encountered a non-IST execution window")
         if window["start"] <= clock <= window["end"]:
             return window["label"]
     return None
@@ -49,7 +60,7 @@ def run_naive_mandate(
 ) -> dict[str, Any]:
     """Retry one raw failure at fixed intervals with no policy intelligence."""
 
-    failed_at = datetime.fromisoformat(str(record["failed_at"]))
+    failed_at = parse_ist_datetime(str(record["failed_at"]))
     attempts_already_made = int(record.get("attempts_already_made", 0))
     probability = SUCCESS_PROBABILITIES.get(str(record.get("failure_reason")), 0.0)
     attempts: list[dict[str, Any]] = []
@@ -67,7 +78,8 @@ def run_naive_mandate(
             attempts.append(
                 {
                     "attempt_num": attempt_num,
-                    "scheduled_at": scheduled_at.isoformat(),
+                    "scheduled_at": ist_isoformat(scheduled_at),
+                    "timezone": EXECUTION_TIMEZONE,
                     "window_label": None,
                     "decision": "rejected_restricted_time",
                     "outcome": "rejected",
@@ -80,7 +92,8 @@ def run_naive_mandate(
         attempts.append(
             {
                 "attempt_num": attempt_num,
-                "scheduled_at": scheduled_at.isoformat(),
+                "scheduled_at": ist_isoformat(scheduled_at),
+                "timezone": EXECUTION_TIMEZONE,
                 "window_label": window_label,
                 "decision": "retry_executed",
                 "success_probability": probability,

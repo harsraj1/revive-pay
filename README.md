@@ -66,6 +66,11 @@ See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for stage contracts and trust b
 5. Preserve strict chronological ordering if two candidates reach the same boundary.
 6. Validate the complete schedule independently before returning it.
 
+All input timestamps are explicitly interpreted or converted to `Asia/Kolkata`.
+Schedules retain readable date/time fields and also include an authoritative
+ISO-8601 `scheduled_at` value with the `+05:30` offset, so behavior never depends
+on the machine's local timezone.
+
 Strategies differ intentionally:
 
 - `insufficient_balance`: retries are spaced across days to allow replenishment.

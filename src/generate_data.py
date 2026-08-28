@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import json
 import random
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta
 from pathlib import Path
 from typing import TypedDict
 
@@ -18,6 +18,7 @@ try:
         MAX_RETRIES,
         SYNTHETIC_RECORD_COUNT,
     )
+    from .time_utils import ist_isoformat, localize_ist
 except ImportError:  # Supports direct execution: python src/generate_data.py
     from constants import (  # type: ignore[no-redef]
         CATEGORIES,
@@ -28,14 +29,14 @@ except ImportError:  # Supports direct execution: python src/generate_data.py
         MAX_RETRIES,
         SYNTHETIC_RECORD_COUNT,
     )
+    from time_utils import ist_isoformat, localize_ist  # type: ignore[no-redef]
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT_PATH = PROJECT_ROOT / "data" / "failed_mandates.json"
-INDIA_TIMEZONE = timezone(timedelta(hours=5, minutes=30))
-# A fixed clock anchor is as important as a fixed random seed. Using
-# datetime.now() here would make otherwise identical runs produce new output.
-SYNTHETIC_PERIOD_START = datetime(2026, 7, 1, tzinfo=INDIA_TIMEZONE)
+# A fixed aware clock anchor is as important as a fixed random seed. Consulting
+# the wall clock here would make otherwise identical runs produce new output.
+SYNTHETIC_PERIOD_START = localize_ist(datetime(2026, 7, 1))
 
 CUSTOMER_NAMES = (
     "Aarav Sharma",
@@ -79,7 +80,7 @@ def _generate_failed_at(rng: random.Random) -> str:
     """Return a reproducible timestamp within a fixed 30-day synthetic period."""
 
     minute_offset = rng.randrange(30 * 24 * 60)
-    return (SYNTHETIC_PERIOD_START + timedelta(minutes=minute_offset)).isoformat()
+    return ist_isoformat(SYNTHETIC_PERIOD_START + timedelta(minutes=minute_offset))
 
 
 def generate_mandates(
