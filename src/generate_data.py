@@ -33,6 +33,8 @@ except ImportError:  # Supports direct execution: python src/generate_data.py
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_OUTPUT_PATH = PROJECT_ROOT / "data" / "failed_mandates.json"
 INDIA_TIMEZONE = timezone(timedelta(hours=5, minutes=30))
+# A fixed clock anchor is as important as a fixed random seed. Using
+# datetime.now() here would make otherwise identical runs produce new output.
 SYNTHETIC_PERIOD_START = datetime(2026, 7, 1, tzinfo=INDIA_TIMEZONE)
 
 CUSTOMER_NAMES = (
@@ -66,6 +68,8 @@ class FailedMandate(TypedDict):
 def _choose_failure_reason(rng: random.Random) -> str:
     """Choose one known failure reason using centrally configured weights."""
 
+    # random.choices accepts parallel value and weight sequences. A weight of
+    # 35 makes a reason more likely than a weight of 3; it is not a guarantee.
     reasons = tuple(FAILURE_REASON_WEIGHTS)
     weights = tuple(FAILURE_REASON_WEIGHTS[reason] for reason in reasons)
     return rng.choices(reasons, weights=weights, k=1)[0]
@@ -87,17 +91,22 @@ def generate_mandates(
     if count < 0:
         raise ValueError("count must be non-negative")
 
+    # A local Random instance avoids changing Python's process-wide random
+    # state and makes this function deterministic in isolation.
     rng = random.Random(seed)
     records: list[FailedMandate] = []
 
     for sequence in range(1, count + 1):
         category = rng.choice(CATEGORIES)
+        # Amount boundaries are selected only after the category is known, so
+        # subscriptions and credit-card payments use realistic different ranges.
         category_policy = CATEGORY_POLICIES[category]
         amount = rng.randint(
             category_policy["amount_min"], category_policy["amount_max"]
         )
         failure_reason = _choose_failure_reason(rng)
 
+        # Zero padding keeps identifiers easy to scan and sort as plain text.
         records.append(
             {
                 "mandate_id": f"MANDATE-{sequence:04d}",
@@ -116,6 +125,8 @@ def generate_mandates(
 def write_json(records: list[FailedMandate], output_path: Path) -> None:
     """Write records as readable UTF-8 JSON, creating the parent directory."""
 
+    # Stage functions can be run independently, so they create their own output
+    # directory instead of assuming the full pipeline has already run.
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(
         json.dumps(records, indent=2, ensure_ascii=False) + "\n",

@@ -73,6 +73,10 @@ FAILURE_POLICIES: Final[dict[str, FailurePolicy]] = {
     },
 }
 
+# Explicit domain name used by the detection layer. The older name remains as
+# an alias for compatibility; both references point to the same policy object.
+FAILURE_REASONS: Final[dict[str, FailurePolicy]] = FAILURE_POLICIES
+
 # Used by synthetic data generation; weights correspond to FAILURE_POLICIES order.
 FAILURE_REASON_WEIGHTS: Final[dict[str, int]] = {
     "insufficient_balance": 35,
@@ -143,4 +147,3 @@ DATA_GENERATION_SEED: Final[int] = 20_260_828
 SIMULATION_SEED: Final[int] = 20_260_829
 SYNTHETIC_RECORD_COUNT: Final[int] = 100
 BASELINE_RETRY_INTERVAL_HOURS: Final[int] = 8
-
