@@ -1,0 +1,12 @@
+{
+  "total_mandates": 100,
+  "total_at_risk_amount": 4223068,
+  "recovered_count": 42,
+  "recovered_amount": 1414448,
+  "recovery_rate_by_count": 42.0,
+  "recovery_rate_by_amount": 33.49,
+  "escalated_count": 27,
+  "non_retriable_count": 25,
+  "exhausted_count": 6,
+  "simulation_seed": 20260829
+}

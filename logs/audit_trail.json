@@ -1,0 +1,3700 @@
+[
+  {
+    "mandate_id": "MANDATE-0001",
+    "customer_name": "Meera Nair",
+    "category": "sip",
+    "amount": 22107,
+    "failure_reason": "insufficient_balance",
+    "failed_at": "2026-07-27T04:08:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+    "schedule_justification": "Retries are spaced across several days to allow balance replenishment.",
+    "customer_message": "Namaste Meera, aapka SIP payment fail ho gaya hai. Scheduled retry ke liye linked account mein sufficient balance rakhein.",
+    "urgency_priority": "medium",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 2,
+    "scheduled_retries": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-08-01",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-08-01",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+        "success_probability": 0.45,
+        "random_draw": 0.532968,
+        "outcome": "failure"
+      }
+    ],
+    "final_status": "exhausted",
+    "stop_reason": "All scheduled retries were used without recovery; no further automatic attempt exists."
+  },
+  {
+    "mandate_id": "MANDATE-0002",
+    "customer_name": "Meera Nair",
+    "category": "emi",
+    "amount": 5763,
+    "failure_reason": "daily_limit_exceeded",
+    "failed_at": "2026-07-13T08:48:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries begin on a later calendar day so the daily limit can reset.",
+    "customer_message": "Namaste Meera, aapka EMI payment fail ho gaya hai. Next-day retry ke liye daily transaction limit available rakhein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 1,
+    "scheduled_retries": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-15",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-16",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-15",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
+        "success_probability": 0.7,
+        "random_draw": 0.217221,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 2; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0003",
+    "customer_name": "Rohan Das",
+    "category": "sip",
+    "amount": 37648,
+    "failure_reason": "insufficient_balance",
+    "failed_at": "2026-07-25T05:56:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+    "schedule_justification": "Retries are spaced across several days to allow balance replenishment.",
+    "customer_message": "Namaste Rohan, aapka SIP payment fail ho gaya hai. Scheduled retry ke liye linked account mein sufficient balance rakhein.",
+    "urgency_priority": "medium",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 0,
+    "scheduled_retries": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-26",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning"
+      },
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-28",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-30",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-26",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+        "success_probability": 0.45,
+        "random_draw": 0.45595,
+        "outcome": "failure"
+      },
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-28",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+        "success_probability": 0.45,
+        "random_draw": 0.839689,
+        "outcome": "failure"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-30",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+        "success_probability": 0.45,
+        "random_draw": 0.171796,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 3; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0004",
+    "customer_name": "Saanvi Joshi",
+    "category": "credit_card",
+    "amount": 57960,
+    "failure_reason": "daily_limit_exceeded",
+    "failed_at": "2026-07-05T21:59:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries begin on a later calendar day so the daily limit can reset.",
+    "customer_message": "Namaste Saanvi, aapka credit card bill payment fail ho gaya hai. Next-day retry ke liye daily transaction limit available rakhein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 2,
+    "scheduled_retries": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-08",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      }
+    ],
+    "attempts_made": [],
+    "final_status": "escalated",
+    "stop_reason": "Escalated before attempt 3 because the category threshold of 2 attempt(s) was reached."
+  },
+  {
+    "mandate_id": "MANDATE-0005",
+    "customer_name": "Diya Patel",
+    "category": "insurance",
+    "amount": 49990,
+    "failure_reason": "insufficient_balance",
+    "failed_at": "2026-07-14T09:22:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+    "schedule_justification": "Retries are spaced across several days to allow balance replenishment.",
+    "customer_message": "Namaste Diya, aapka insurance premium payment fail ho gaya hai. Scheduled retry ke liye linked account mein sufficient balance rakhein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 2,
+    "scheduled_retries": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-19",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      }
+    ],
+    "attempts_made": [],
+    "final_status": "escalated",
+    "stop_reason": "Escalated before attempt 3 because the category threshold of 2 attempt(s) was reached."
+  },
+  {
+    "mandate_id": "MANDATE-0006",
+    "customer_name": "Aditi Rao",
+    "category": "emi",
+    "amount": 92006,
+    "failure_reason": "daily_limit_exceeded",
+    "failed_at": "2026-07-01T23:01:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries begin on a later calendar day so the daily limit can reset.",
+    "customer_message": "Namaste Aditi, aapka EMI payment fail ho gaya hai. Next-day retry ke liye daily transaction limit available rakhein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 2,
+    "scheduled_retries": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-04",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      }
+    ],
+    "attempts_made": [],
+    "final_status": "escalated",
+    "stop_reason": "Escalated before attempt 3 because the category threshold of 2 attempt(s) was reached."
+  },
+  {
+    "mandate_id": "MANDATE-0007",
+    "customer_name": "Vikram Kulkarni",
+    "category": "insurance",
+    "amount": 41994,
+    "failure_reason": "insufficient_balance",
+    "failed_at": "2026-07-02T08:38:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+    "schedule_justification": "Retries are spaced across several days to allow balance replenishment.",
+    "customer_message": "Namaste Vikram, aapka insurance premium payment fail ho gaya hai. Scheduled retry ke liye linked account mein sufficient balance rakhein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 0,
+    "scheduled_retries": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-03",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      },
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-05",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-07",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-03",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+        "success_probability": 0.45,
+        "random_draw": 0.211186,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 1; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0008",
+    "customer_name": "Aarav Sharma",
+    "category": "credit_card",
+    "amount": 47039,
+    "failure_reason": "daily_limit_exceeded",
+    "failed_at": "2026-07-03T04:25:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries begin on a later calendar day so the daily limit can reset.",
+    "customer_message": "Namaste Aarav, aapka credit card bill payment fail ho gaya hai. Next-day retry ke liye daily transaction limit available rakhein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 2,
+    "scheduled_retries": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-06",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      }
+    ],
+    "attempts_made": [],
+    "final_status": "escalated",
+    "stop_reason": "Escalated before attempt 3 because the category threshold of 2 attempt(s) was reached."
+  },
+  {
+    "mandate_id": "MANDATE-0009",
+    "customer_name": "Neha Gupta",
+    "category": "subscription",
+    "amount": 2678,
+    "failure_reason": "technical_decline",
+    "failed_at": "2026-07-12T00:01:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks technical_decline as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries use short initial waits with more time for later technical recovery.",
+    "customer_message": "Hi Neha, aapka subscription payment fail ho gaya. Abhi koi action zaroori nahi; scheduled time par retry hoga.",
+    "urgency_priority": "low",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 2,
+    "scheduled_retries": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-13",
+        "scheduled_time": "06:01",
+        "window_label": "early_morning"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-13",
+        "scheduled_time": "06:01",
+        "window_label": "early_morning",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks technical_decline as retriable with a typical recovery window of 1 day(s).",
+        "success_probability": 0.65,
+        "random_draw": 0.76474,
+        "outcome": "failure"
+      }
+    ],
+    "final_status": "exhausted",
+    "stop_reason": "All scheduled retries were used without recovery; no further automatic attempt exists."
+  },
+  {
+    "mandate_id": "MANDATE-0010",
+    "customer_name": "Ananya Iyer",
+    "category": "insurance",
+    "amount": 48821,
+    "failure_reason": "insufficient_balance",
+    "failed_at": "2026-07-15T02:57:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+    "schedule_justification": "Retries are spaced across several days to allow balance replenishment.",
+    "customer_message": "Namaste Ananya, aapka insurance premium payment fail ho gaya hai. Scheduled retry ke liye linked account mein sufficient balance rakhein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 2,
+    "scheduled_retries": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-20",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning"
+      }
+    ],
+    "attempts_made": [],
+    "final_status": "escalated",
+    "stop_reason": "Escalated before attempt 3 because the category threshold of 2 attempt(s) was reached."
+  },
+  {
+    "mandate_id": "MANDATE-0011",
+    "customer_name": "Vikram Kulkarni",
+    "category": "insurance",
+    "amount": 61844,
+    "failure_reason": "user_declined",
+    "failed_at": "2026-07-25T07:47:00+05:30",
+    "retriable": false,
+    "retry_rule_explanation": "Configured policy marks user_declined as non-retriable; automatic retry is blocked.",
+    "schedule_justification": "No automatic retry schedule is permitted by policy.",
+    "customer_message": "Namaste Vikram, aapka insurance premium payment fail ho gaya hai. Continue karna ho toh naya payment approve karein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 2,
+    "scheduled_retries": [],
+    "attempts_made": [],
+    "final_status": "non_retriable",
+    "stop_reason": "Deterministic failure policy prohibited automatic retry."
+  },
+  {
+    "mandate_id": "MANDATE-0012",
+    "customer_name": "Arjun Mehta",
+    "category": "subscription",
+    "amount": 2121,
+    "failure_reason": "technical_decline",
+    "failed_at": "2026-07-29T18:47:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks technical_decline as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries use short initial waits with more time for later technical recovery.",
+    "customer_message": "Hi Arjun, aapka subscription payment fail ho gaya. Abhi koi action zaroori nahi; scheduled time par retry hoga.",
+    "urgency_priority": "low",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 1,
+    "scheduled_retries": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-30",
+        "scheduled_time": "06:47",
+        "window_label": "early_morning"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-31",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-30",
+        "scheduled_time": "06:47",
+        "window_label": "early_morning",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks technical_decline as retriable with a typical recovery window of 1 day(s).",
+        "success_probability": 0.65,
+        "random_draw": 0.273571,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 2; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0013",
+    "customer_name": "Ananya Iyer",
+    "category": "sip",
+    "amount": 4145,
+    "failure_reason": "user_declined",
+    "failed_at": "2026-07-14T06:42:00+05:30",
+    "retriable": false,
+    "retry_rule_explanation": "Configured policy marks user_declined as non-retriable; automatic retry is blocked.",
+    "schedule_justification": "No automatic retry schedule is permitted by policy.",
+    "customer_message": "Namaste Ananya, aapka SIP payment fail ho gaya hai. Continue karna ho toh naya payment approve karein.",
+    "urgency_priority": "medium",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 1,
+    "scheduled_retries": [],
+    "attempts_made": [],
+    "final_status": "non_retriable",
+    "stop_reason": "Deterministic failure policy prohibited automatic retry."
+  },
+  {
+    "mandate_id": "MANDATE-0014",
+    "customer_name": "Arjun Mehta",
+    "category": "subscription",
+    "amount": 2790,
+    "failure_reason": "insufficient_balance",
+    "failed_at": "2026-07-20T03:13:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+    "schedule_justification": "Retries are spaced across several days to allow balance replenishment.",
+    "customer_message": "Hi Arjun, aapka subscription payment fail ho gaya. Scheduled retry ke liye linked account mein sufficient balance rakhein.",
+    "urgency_priority": "low",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 0,
+    "scheduled_retries": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-21",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning"
+      },
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-23",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-25",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-21",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+        "success_probability": 0.45,
+        "random_draw": 0.177692,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 1; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0015",
+    "customer_name": "Saanvi Joshi",
+    "category": "subscription",
+    "amount": 2034,
+    "failure_reason": "bank_server_down",
+    "failed_at": "2026-07-14T09:43:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries begin quickly because a bank server outage is usually transient.",
+    "customer_message": "Hi Saanvi, aapka subscription payment fail ho gaya. Abhi koi action zaroori nahi; scheduled time par retry hoga.",
+    "urgency_priority": "low",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 0,
+    "scheduled_retries": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-14",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      },
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-14",
+        "scheduled_time": "15:43",
+        "window_label": "afternoon"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-15",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-14",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
+        "success_probability": 0.8,
+        "random_draw": 0.788179,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 1; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0016",
+    "customer_name": "Aarav Sharma",
+    "category": "insurance",
+    "amount": 73738,
+    "failure_reason": "mandate_expired",
+    "failed_at": "2026-07-07T04:12:00+05:30",
+    "retriable": false,
+    "retry_rule_explanation": "Configured policy marks mandate_expired as non-retriable; automatic retry is blocked.",
+    "schedule_justification": "No automatic retry schedule is permitted by policy.",
+    "customer_message": "Namaste Aarav, aapka insurance premium payment fail ho gaya hai. Payment dobara try karne se pehle UPI mandate renew karein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 1,
+    "scheduled_retries": [],
+    "attempts_made": [],
+    "final_status": "non_retriable",
+    "stop_reason": "Deterministic failure policy prohibited automatic retry."
+  },
+  {
+    "mandate_id": "MANDATE-0017",
+    "customer_name": "Arjun Mehta",
+    "category": "emi",
+    "amount": 23501,
+    "failure_reason": "insufficient_balance",
+    "failed_at": "2026-07-08T21:57:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+    "schedule_justification": "Retries are spaced across several days to allow balance replenishment.",
+    "customer_message": "Namaste Arjun, aapka EMI payment fail ho gaya hai. Scheduled retry ke liye linked account mein sufficient balance rakhein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 2,
+    "scheduled_retries": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-13",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      }
+    ],
+    "attempts_made": [],
+    "final_status": "escalated",
+    "stop_reason": "Escalated before attempt 3 because the category threshold of 2 attempt(s) was reached."
+  },
+  {
+    "mandate_id": "MANDATE-0018",
+    "customer_name": "Ananya Iyer",
+    "category": "credit_card",
+    "amount": 139129,
+    "failure_reason": "bank_server_down",
+    "failed_at": "2026-07-02T06:56:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries begin quickly because a bank server outage is usually transient.",
+    "customer_message": "Namaste Ananya, aapka credit card bill payment fail ho gaya hai. Abhi koi action zaroori nahi; scheduled time par retry hoga.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 1,
+    "scheduled_retries": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-02",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-03",
+        "scheduled_time": "06:56",
+        "window_label": "early_morning"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-02",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
+        "success_probability": 0.8,
+        "random_draw": 0.461706,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 2; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0019",
+    "customer_name": "Aarav Sharma",
+    "category": "insurance",
+    "amount": 28485,
+    "failure_reason": "mandate_expired",
+    "failed_at": "2026-07-13T02:00:00+05:30",
+    "retriable": false,
+    "retry_rule_explanation": "Configured policy marks mandate_expired as non-retriable; automatic retry is blocked.",
+    "schedule_justification": "No automatic retry schedule is permitted by policy.",
+    "customer_message": "Namaste Aarav, aapka insurance premium payment fail ho gaya hai. Payment dobara try karne se pehle UPI mandate renew karein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 2,
+    "scheduled_retries": [],
+    "attempts_made": [],
+    "final_status": "non_retriable",
+    "stop_reason": "Deterministic failure policy prohibited automatic retry."
+  },
+  {
+    "mandate_id": "MANDATE-0020",
+    "customer_name": "Aarav Sharma",
+    "category": "insurance",
+    "amount": 48547,
+    "failure_reason": "user_declined",
+    "failed_at": "2026-07-25T14:08:00+05:30",
+    "retriable": false,
+    "retry_rule_explanation": "Configured policy marks user_declined as non-retriable; automatic retry is blocked.",
+    "schedule_justification": "No automatic retry schedule is permitted by policy.",
+    "customer_message": "Namaste Aarav, aapka insurance premium payment fail ho gaya hai. Continue karna ho toh naya payment approve karein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 0,
+    "scheduled_retries": [],
+    "attempts_made": [],
+    "final_status": "non_retriable",
+    "stop_reason": "Deterministic failure policy prohibited automatic retry."
+  },
+  {
+    "mandate_id": "MANDATE-0021",
+    "customer_name": "Rohan Das",
+    "category": "insurance",
+    "amount": 17421,
+    "failure_reason": "daily_limit_exceeded",
+    "failed_at": "2026-07-11T12:27:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries begin on a later calendar day so the daily limit can reset.",
+    "customer_message": "Namaste Rohan, aapka insurance premium payment fail ho gaya hai. Next-day retry ke liye daily transaction limit available rakhein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 0,
+    "scheduled_retries": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-12",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning"
+      },
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-13",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-14",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-12",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
+        "success_probability": 0.7,
+        "random_draw": 0.089941,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 1; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0022",
+    "customer_name": "Ishaan Verma",
+    "category": "insurance",
+    "amount": 9657,
+    "failure_reason": "insufficient_balance",
+    "failed_at": "2026-07-29T03:33:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+    "schedule_justification": "Retries are spaced across several days to allow balance replenishment.",
+    "customer_message": "Namaste Ishaan, aapka insurance premium payment fail ho gaya hai. Scheduled retry ke liye linked account mein sufficient balance rakhein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 1,
+    "scheduled_retries": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-08-01",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-08-03",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-08-01",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+        "success_probability": 0.45,
+        "random_draw": 0.855241,
+        "outcome": "failure"
+      }
+    ],
+    "final_status": "escalated",
+    "stop_reason": "Escalated before attempt 3 because the category threshold of 2 attempt(s) was reached."
+  },
+  {
+    "mandate_id": "MANDATE-0023",
+    "customer_name": "Ishaan Verma",
+    "category": "credit_card",
+    "amount": 36498,
+    "failure_reason": "bank_server_down",
+    "failed_at": "2026-07-28T16:01:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries begin quickly because a bank server outage is usually transient.",
+    "customer_message": "Namaste Ishaan, aapka credit card bill payment fail ho gaya hai. Abhi koi action zaroori nahi; scheduled time par retry hoga.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 2,
+    "scheduled_retries": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-29",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      }
+    ],
+    "attempts_made": [],
+    "final_status": "escalated",
+    "stop_reason": "Escalated before attempt 3 because the category threshold of 2 attempt(s) was reached."
+  },
+  {
+    "mandate_id": "MANDATE-0024",
+    "customer_name": "Aditi Rao",
+    "category": "credit_card",
+    "amount": 145001,
+    "failure_reason": "insufficient_balance",
+    "failed_at": "2026-07-11T23:51:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+    "schedule_justification": "Retries are spaced across several days to allow balance replenishment.",
+    "customer_message": "Namaste Aditi, aapka credit card bill payment fail ho gaya hai. Scheduled retry ke liye linked account mein sufficient balance rakhein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 1,
+    "scheduled_retries": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-15",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-17",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-15",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+        "success_probability": 0.45,
+        "random_draw": 0.971765,
+        "outcome": "failure"
+      }
+    ],
+    "final_status": "escalated",
+    "stop_reason": "Escalated before attempt 3 because the category threshold of 2 attempt(s) was reached."
+  },
+  {
+    "mandate_id": "MANDATE-0025",
+    "customer_name": "Arjun Mehta",
+    "category": "subscription",
+    "amount": 2630,
+    "failure_reason": "bank_server_down",
+    "failed_at": "2026-07-24T15:12:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries begin quickly because a bank server outage is usually transient.",
+    "customer_message": "Hi Arjun, aapka subscription payment fail ho gaya. Abhi koi action zaroori nahi; scheduled time par retry hoga.",
+    "urgency_priority": "low",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 0,
+    "scheduled_retries": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-24",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      },
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-24",
+        "scheduled_time": "22:01",
+        "window_label": "late_night"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-25",
+        "scheduled_time": "15:12",
+        "window_label": "afternoon"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-24",
+        "scheduled_time": "22:00",
+        "window_label": "late_night",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
+        "success_probability": 0.8,
+        "random_draw": 0.412502,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 1; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0026",
+    "customer_name": "Rohan Das",
+    "category": "credit_card",
+    "amount": 109781,
+    "failure_reason": "mandate_expired",
+    "failed_at": "2026-07-15T17:32:00+05:30",
+    "retriable": false,
+    "retry_rule_explanation": "Configured policy marks mandate_expired as non-retriable; automatic retry is blocked.",
+    "schedule_justification": "No automatic retry schedule is permitted by policy.",
+    "customer_message": "Namaste Rohan, aapka credit card bill payment fail ho gaya hai. Payment dobara try karne se pehle UPI mandate renew karein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 1,
+    "scheduled_retries": [],
+    "attempts_made": [],
+    "final_status": "non_retriable",
+    "stop_reason": "Deterministic failure policy prohibited automatic retry."
+  },
+  {
+    "mandate_id": "MANDATE-0027",
+    "customer_name": "Aarav Sharma",
+    "category": "subscription",
+    "amount": 2290,
+    "failure_reason": "bank_server_down",
+    "failed_at": "2026-07-26T19:58:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries begin quickly because a bank server outage is usually transient.",
+    "customer_message": "Hi Aarav, aapka subscription payment fail ho gaya. Abhi koi action zaroori nahi; scheduled time par retry hoga.",
+    "urgency_priority": "low",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 1,
+    "scheduled_retries": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-27",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-27",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-27",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
+        "success_probability": 0.8,
+        "random_draw": 0.357296,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 2; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0028",
+    "customer_name": "Vikram Kulkarni",
+    "category": "credit_card",
+    "amount": 131770,
+    "failure_reason": "insufficient_balance",
+    "failed_at": "2026-07-07T13:08:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+    "schedule_justification": "Retries are spaced across several days to allow balance replenishment.",
+    "customer_message": "Namaste Vikram, aapka credit card bill payment fail ho gaya hai. Scheduled retry ke liye linked account mein sufficient balance rakhein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 1,
+    "scheduled_retries": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-10",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-12",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-10",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+        "success_probability": 0.45,
+        "random_draw": 0.115807,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 2; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0029",
+    "customer_name": "Kabir Singh",
+    "category": "insurance",
+    "amount": 20942,
+    "failure_reason": "insufficient_balance",
+    "failed_at": "2026-07-09T17:57:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+    "schedule_justification": "Retries are spaced across several days to allow balance replenishment.",
+    "customer_message": "Namaste Kabir, aapka insurance premium payment fail ho gaya hai. Scheduled retry ke liye linked account mein sufficient balance rakhein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 1,
+    "scheduled_retries": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-12",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-14",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-12",
+        "scheduled_time": "22:00",
+        "window_label": "late_night",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+        "success_probability": 0.45,
+        "random_draw": 0.237547,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 2; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0030",
+    "customer_name": "Aditi Rao",
+    "category": "sip",
+    "amount": 44219,
+    "failure_reason": "technical_decline",
+    "failed_at": "2026-07-16T04:25:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks technical_decline as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries use short initial waits with more time for later technical recovery.",
+    "customer_message": "Namaste Aditi, aapka SIP payment fail ho gaya hai. Abhi koi action zaroori nahi; scheduled time par retry hoga.",
+    "urgency_priority": "medium",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 2,
+    "scheduled_retries": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-17",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-17",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks technical_decline as retriable with a typical recovery window of 1 day(s).",
+        "success_probability": 0.65,
+        "random_draw": 0.724536,
+        "outcome": "failure"
+      }
+    ],
+    "final_status": "exhausted",
+    "stop_reason": "All scheduled retries were used without recovery; no further automatic attempt exists."
+  },
+  {
+    "mandate_id": "MANDATE-0031",
+    "customer_name": "Diya Patel",
+    "category": "subscription",
+    "amount": 1609,
+    "failure_reason": "account_frozen",
+    "failed_at": "2026-07-15T23:35:00+05:30",
+    "retriable": false,
+    "retry_rule_explanation": "Configured policy marks account_frozen as non-retriable; automatic retry is blocked.",
+    "schedule_justification": "No automatic retry schedule is permitted by policy.",
+    "customer_message": "Hi Diya, aapka subscription payment fail ho gaya. Account status check karne ke liye apne bank se contact karein.",
+    "urgency_priority": "low",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 0,
+    "scheduled_retries": [],
+    "attempts_made": [],
+    "final_status": "non_retriable",
+    "stop_reason": "Deterministic failure policy prohibited automatic retry."
+  },
+  {
+    "mandate_id": "MANDATE-0032",
+    "customer_name": "Aarav Sharma",
+    "category": "insurance",
+    "amount": 43127,
+    "failure_reason": "user_declined",
+    "failed_at": "2026-07-18T14:32:00+05:30",
+    "retriable": false,
+    "retry_rule_explanation": "Configured policy marks user_declined as non-retriable; automatic retry is blocked.",
+    "schedule_justification": "No automatic retry schedule is permitted by policy.",
+    "customer_message": "Namaste Aarav, aapka insurance premium payment fail ho gaya hai. Continue karna ho toh naya payment approve karein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 1,
+    "scheduled_retries": [],
+    "attempts_made": [],
+    "final_status": "non_retriable",
+    "stop_reason": "Deterministic failure policy prohibited automatic retry."
+  },
+  {
+    "mandate_id": "MANDATE-0033",
+    "customer_name": "Ishaan Verma",
+    "category": "credit_card",
+    "amount": 63195,
+    "failure_reason": "daily_limit_exceeded",
+    "failed_at": "2026-07-23T18:28:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries begin on a later calendar day so the daily limit can reset.",
+    "customer_message": "Namaste Ishaan, aapka credit card bill payment fail ho gaya hai. Next-day retry ke liye daily transaction limit available rakhein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 0,
+    "scheduled_retries": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-24",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning"
+      },
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-25",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-26",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-24",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
+        "success_probability": 0.7,
+        "random_draw": 0.446498,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 1; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0034",
+    "customer_name": "Rohan Das",
+    "category": "insurance",
+    "amount": 31925,
+    "failure_reason": "insufficient_balance",
+    "failed_at": "2026-07-15T08:46:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+    "schedule_justification": "Retries are spaced across several days to allow balance replenishment.",
+    "customer_message": "Namaste Rohan, aapka insurance premium payment fail ho gaya hai. Scheduled retry ke liye linked account mein sufficient balance rakhein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 2,
+    "scheduled_retries": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-20",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      }
+    ],
+    "attempts_made": [],
+    "final_status": "escalated",
+    "stop_reason": "Escalated before attempt 3 because the category threshold of 2 attempt(s) was reached."
+  },
+  {
+    "mandate_id": "MANDATE-0035",
+    "customer_name": "Rohan Das",
+    "category": "insurance",
+    "amount": 49546,
+    "failure_reason": "bank_server_down",
+    "failed_at": "2026-07-23T22:20:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries begin quickly because a bank server outage is usually transient.",
+    "customer_message": "Namaste Rohan, aapka insurance premium payment fail ho gaya hai. Abhi koi action zaroori nahi; scheduled time par retry hoga.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 1,
+    "scheduled_retries": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-24",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-24",
+        "scheduled_time": "22:20",
+        "window_label": "late_night"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-24",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
+        "success_probability": 0.8,
+        "random_draw": 0.493527,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 2; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0036",
+    "customer_name": "Aditi Rao",
+    "category": "subscription",
+    "amount": 218,
+    "failure_reason": "technical_decline",
+    "failed_at": "2026-07-05T20:06:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks technical_decline as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries use short initial waits with more time for later technical recovery.",
+    "customer_message": "Hi Aditi, aapka subscription payment fail ho gaya. Abhi koi action zaroori nahi; scheduled time par retry hoga.",
+    "urgency_priority": "low",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 2,
+    "scheduled_retries": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-07",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-07",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks technical_decline as retriable with a typical recovery window of 1 day(s).",
+        "success_probability": 0.65,
+        "random_draw": 0.299406,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 3; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0037",
+    "customer_name": "Diya Patel",
+    "category": "sip",
+    "amount": 22625,
+    "failure_reason": "user_declined",
+    "failed_at": "2026-07-15T19:50:00+05:30",
+    "retriable": false,
+    "retry_rule_explanation": "Configured policy marks user_declined as non-retriable; automatic retry is blocked.",
+    "schedule_justification": "No automatic retry schedule is permitted by policy.",
+    "customer_message": "Namaste Diya, aapka SIP payment fail ho gaya hai. Continue karna ho toh naya payment approve karein.",
+    "urgency_priority": "medium",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 1,
+    "scheduled_retries": [],
+    "attempts_made": [],
+    "final_status": "non_retriable",
+    "stop_reason": "Deterministic failure policy prohibited automatic retry."
+  },
+  {
+    "mandate_id": "MANDATE-0038",
+    "customer_name": "Ananya Iyer",
+    "category": "sip",
+    "amount": 30970,
+    "failure_reason": "insufficient_balance",
+    "failed_at": "2026-07-19T16:28:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+    "schedule_justification": "Retries are spaced across several days to allow balance replenishment.",
+    "customer_message": "Namaste Ananya, aapka SIP payment fail ho gaya hai. Scheduled retry ke liye linked account mein sufficient balance rakhein.",
+    "urgency_priority": "medium",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 0,
+    "scheduled_retries": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-20",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      },
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-22",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-24",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-20",
+        "scheduled_time": "22:00",
+        "window_label": "late_night",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+        "success_probability": 0.45,
+        "random_draw": 0.810862,
+        "outcome": "failure"
+      },
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-22",
+        "scheduled_time": "22:00",
+        "window_label": "late_night",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+        "success_probability": 0.45,
+        "random_draw": 0.701209,
+        "outcome": "failure"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-24",
+        "scheduled_time": "22:00",
+        "window_label": "late_night",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+        "success_probability": 0.45,
+        "random_draw": 0.041463,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 3; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0039",
+    "customer_name": "Aarav Sharma",
+    "category": "credit_card",
+    "amount": 149493,
+    "failure_reason": "insufficient_balance",
+    "failed_at": "2026-07-27T18:34:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+    "schedule_justification": "Retries are spaced across several days to allow balance replenishment.",
+    "customer_message": "Namaste Aarav, aapka credit card bill payment fail ho gaya hai. Scheduled retry ke liye linked account mein sufficient balance rakhein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 1,
+    "scheduled_retries": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-30",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-08-01",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-30",
+        "scheduled_time": "22:00",
+        "window_label": "late_night",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+        "success_probability": 0.45,
+        "random_draw": 0.694389,
+        "outcome": "failure"
+      }
+    ],
+    "final_status": "escalated",
+    "stop_reason": "Escalated before attempt 3 because the category threshold of 2 attempt(s) was reached."
+  },
+  {
+    "mandate_id": "MANDATE-0040",
+    "customer_name": "Aarav Sharma",
+    "category": "insurance",
+    "amount": 44905,
+    "failure_reason": "daily_limit_exceeded",
+    "failed_at": "2026-07-30T04:57:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries begin on a later calendar day so the daily limit can reset.",
+    "customer_message": "Namaste Aarav, aapka insurance premium payment fail ho gaya hai. Next-day retry ke liye daily transaction limit available rakhein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 1,
+    "scheduled_retries": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-08-01",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-08-02",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-08-01",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
+        "success_probability": 0.7,
+        "random_draw": 0.022218,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 2; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0041",
+    "customer_name": "Meera Nair",
+    "category": "sip",
+    "amount": 1022,
+    "failure_reason": "insufficient_balance",
+    "failed_at": "2026-07-09T10:43:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+    "schedule_justification": "Retries are spaced across several days to allow balance replenishment.",
+    "customer_message": "Namaste Meera, aapka SIP payment fail ho gaya hai. Scheduled retry ke liye linked account mein sufficient balance rakhein.",
+    "urgency_priority": "medium",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 0,
+    "scheduled_retries": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-10",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      },
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-12",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-14",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-10",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+        "success_probability": 0.45,
+        "random_draw": 0.019058,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 1; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0042",
+    "customer_name": "Rohan Das",
+    "category": "insurance",
+    "amount": 66600,
+    "failure_reason": "bank_server_down",
+    "failed_at": "2026-07-07T09:19:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries begin quickly because a bank server outage is usually transient.",
+    "customer_message": "Namaste Rohan, aapka insurance premium payment fail ho gaya hai. Abhi koi action zaroori nahi; scheduled time par retry hoga.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 0,
+    "scheduled_retries": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-07",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      },
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-07",
+        "scheduled_time": "15:19",
+        "window_label": "afternoon"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-08",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-07",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
+        "success_probability": 0.8,
+        "random_draw": 0.446739,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 1; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0043",
+    "customer_name": "Ananya Iyer",
+    "category": "emi",
+    "amount": 51286,
+    "failure_reason": "bank_server_down",
+    "failed_at": "2026-07-13T03:02:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries begin quickly because a bank server outage is usually transient.",
+    "customer_message": "Namaste Ananya, aapka EMI payment fail ho gaya hai. Abhi koi action zaroori nahi; scheduled time par retry hoga.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 1,
+    "scheduled_retries": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-13",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-14",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-13",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
+        "success_probability": 0.8,
+        "random_draw": 0.896618,
+        "outcome": "failure"
+      }
+    ],
+    "final_status": "escalated",
+    "stop_reason": "Escalated before attempt 3 because the category threshold of 2 attempt(s) was reached."
+  },
+  {
+    "mandate_id": "MANDATE-0044",
+    "customer_name": "Saanvi Joshi",
+    "category": "sip",
+    "amount": 8085,
+    "failure_reason": "mandate_expired",
+    "failed_at": "2026-07-30T20:49:00+05:30",
+    "retriable": false,
+    "retry_rule_explanation": "Configured policy marks mandate_expired as non-retriable; automatic retry is blocked.",
+    "schedule_justification": "No automatic retry schedule is permitted by policy.",
+    "customer_message": "Namaste Saanvi, aapka SIP payment fail ho gaya hai. Payment dobara try karne se pehle UPI mandate renew karein.",
+    "urgency_priority": "medium",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 1,
+    "scheduled_retries": [],
+    "attempts_made": [],
+    "final_status": "non_retriable",
+    "stop_reason": "Deterministic failure policy prohibited automatic retry."
+  },
+  {
+    "mandate_id": "MANDATE-0045",
+    "customer_name": "Aarav Sharma",
+    "category": "credit_card",
+    "amount": 120365,
+    "failure_reason": "insufficient_balance",
+    "failed_at": "2026-07-05T15:48:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+    "schedule_justification": "Retries are spaced across several days to allow balance replenishment.",
+    "customer_message": "Namaste Aarav, aapka credit card bill payment fail ho gaya hai. Scheduled retry ke liye linked account mein sufficient balance rakhein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 0,
+    "scheduled_retries": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-06",
+        "scheduled_time": "15:48",
+        "window_label": "afternoon"
+      },
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-08",
+        "scheduled_time": "15:48",
+        "window_label": "afternoon"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-10",
+        "scheduled_time": "15:48",
+        "window_label": "afternoon"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-06",
+        "scheduled_time": "15:48",
+        "window_label": "afternoon",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+        "success_probability": 0.45,
+        "random_draw": 0.513453,
+        "outcome": "failure"
+      },
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-08",
+        "scheduled_time": "15:48",
+        "window_label": "afternoon",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+        "success_probability": 0.45,
+        "random_draw": 0.558546,
+        "outcome": "failure"
+      }
+    ],
+    "final_status": "escalated",
+    "stop_reason": "Escalated before attempt 3 because the category threshold of 2 attempt(s) was reached."
+  },
+  {
+    "mandate_id": "MANDATE-0046",
+    "customer_name": "Aditi Rao",
+    "category": "emi",
+    "amount": 50597,
+    "failure_reason": "insufficient_balance",
+    "failed_at": "2026-07-26T20:01:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+    "schedule_justification": "Retries are spaced across several days to allow balance replenishment.",
+    "customer_message": "Namaste Aditi, aapka EMI payment fail ho gaya hai. Scheduled retry ke liye linked account mein sufficient balance rakhein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 1,
+    "scheduled_retries": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-29",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-31",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-29",
+        "scheduled_time": "22:00",
+        "window_label": "late_night",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+        "success_probability": 0.45,
+        "random_draw": 0.601995,
+        "outcome": "failure"
+      }
+    ],
+    "final_status": "escalated",
+    "stop_reason": "Escalated before attempt 3 because the category threshold of 2 attempt(s) was reached."
+  },
+  {
+    "mandate_id": "MANDATE-0047",
+    "customer_name": "Aditi Rao",
+    "category": "credit_card",
+    "amount": 117940,
+    "failure_reason": "insufficient_balance",
+    "failed_at": "2026-07-18T16:18:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+    "schedule_justification": "Retries are spaced across several days to allow balance replenishment.",
+    "customer_message": "Namaste Aditi, aapka credit card bill payment fail ho gaya hai. Scheduled retry ke liye linked account mein sufficient balance rakhein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 0,
+    "scheduled_retries": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-19",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      },
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-21",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-23",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-19",
+        "scheduled_time": "22:00",
+        "window_label": "late_night",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+        "success_probability": 0.45,
+        "random_draw": 0.216751,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 1; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0048",
+    "customer_name": "Meera Nair",
+    "category": "emi",
+    "amount": 5721,
+    "failure_reason": "user_declined",
+    "failed_at": "2026-07-02T09:34:00+05:30",
+    "retriable": false,
+    "retry_rule_explanation": "Configured policy marks user_declined as non-retriable; automatic retry is blocked.",
+    "schedule_justification": "No automatic retry schedule is permitted by policy.",
+    "customer_message": "Namaste Meera, aapka EMI payment fail ho gaya hai. Continue karna ho toh naya payment approve karein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 2,
+    "scheduled_retries": [],
+    "attempts_made": [],
+    "final_status": "non_retriable",
+    "stop_reason": "Deterministic failure policy prohibited automatic retry."
+  },
+  {
+    "mandate_id": "MANDATE-0049",
+    "customer_name": "Kabir Singh",
+    "category": "subscription",
+    "amount": 905,
+    "failure_reason": "daily_limit_exceeded",
+    "failed_at": "2026-07-01T02:45:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries begin on a later calendar day so the daily limit can reset.",
+    "customer_message": "Hi Kabir, aapka subscription payment fail ho gaya. Next-day retry ke liye daily transaction limit available rakhein.",
+    "urgency_priority": "low",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 2,
+    "scheduled_retries": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-04",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-04",
+        "scheduled_time": "22:00",
+        "window_label": "late_night",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
+        "success_probability": 0.7,
+        "random_draw": 0.038969,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 3; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0050",
+    "customer_name": "Vikram Kulkarni",
+    "category": "sip",
+    "amount": 34100,
+    "failure_reason": "bank_server_down",
+    "failed_at": "2026-07-02T15:17:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries begin quickly because a bank server outage is usually transient.",
+    "customer_message": "Namaste Vikram, aapka SIP payment fail ho gaya hai. Abhi koi action zaroori nahi; scheduled time par retry hoga.",
+    "urgency_priority": "medium",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 0,
+    "scheduled_retries": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-02",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      },
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-02",
+        "scheduled_time": "22:01",
+        "window_label": "late_night"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-03",
+        "scheduled_time": "15:17",
+        "window_label": "afternoon"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-02",
+        "scheduled_time": "22:00",
+        "window_label": "late_night",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
+        "success_probability": 0.8,
+        "random_draw": 0.42121,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 1; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0051",
+    "customer_name": "Vikram Kulkarni",
+    "category": "sip",
+    "amount": 8411,
+    "failure_reason": "bank_server_down",
+    "failed_at": "2026-07-01T08:26:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries begin quickly because a bank server outage is usually transient.",
+    "customer_message": "Namaste Vikram, aapka SIP payment fail ho gaya hai. Abhi koi action zaroori nahi; scheduled time par retry hoga.",
+    "urgency_priority": "medium",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 0,
+    "scheduled_retries": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-01",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      },
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-01",
+        "scheduled_time": "14:26",
+        "window_label": "afternoon"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-02",
+        "scheduled_time": "08:26",
+        "window_label": "early_morning"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-01",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
+        "success_probability": 0.8,
+        "random_draw": 0.592053,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 1; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0052",
+    "customer_name": "Ananya Iyer",
+    "category": "sip",
+    "amount": 34063,
+    "failure_reason": "mandate_expired",
+    "failed_at": "2026-07-28T02:03:00+05:30",
+    "retriable": false,
+    "retry_rule_explanation": "Configured policy marks mandate_expired as non-retriable; automatic retry is blocked.",
+    "schedule_justification": "No automatic retry schedule is permitted by policy.",
+    "customer_message": "Namaste Ananya, aapka SIP payment fail ho gaya hai. Payment dobara try karne se pehle UPI mandate renew karein.",
+    "urgency_priority": "medium",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 0,
+    "scheduled_retries": [],
+    "attempts_made": [],
+    "final_status": "non_retriable",
+    "stop_reason": "Deterministic failure policy prohibited automatic retry."
+  },
+  {
+    "mandate_id": "MANDATE-0053",
+    "customer_name": "Kabir Singh",
+    "category": "insurance",
+    "amount": 72435,
+    "failure_reason": "mandate_expired",
+    "failed_at": "2026-07-22T21:50:00+05:30",
+    "retriable": false,
+    "retry_rule_explanation": "Configured policy marks mandate_expired as non-retriable; automatic retry is blocked.",
+    "schedule_justification": "No automatic retry schedule is permitted by policy.",
+    "customer_message": "Namaste Kabir, aapka insurance premium payment fail ho gaya hai. Payment dobara try karne se pehle UPI mandate renew karein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 2,
+    "scheduled_retries": [],
+    "attempts_made": [],
+    "final_status": "non_retriable",
+    "stop_reason": "Deterministic failure policy prohibited automatic retry."
+  },
+  {
+    "mandate_id": "MANDATE-0054",
+    "customer_name": "Saanvi Joshi",
+    "category": "sip",
+    "amount": 29529,
+    "failure_reason": "technical_decline",
+    "failed_at": "2026-07-11T05:06:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks technical_decline as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries use short initial waits with more time for later technical recovery.",
+    "customer_message": "Namaste Saanvi, aapka SIP payment fail ho gaya hai. Abhi koi action zaroori nahi; scheduled time par retry hoga.",
+    "urgency_priority": "medium",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 1,
+    "scheduled_retries": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-11",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-12",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-11",
+        "scheduled_time": "22:00",
+        "window_label": "late_night",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks technical_decline as retriable with a typical recovery window of 1 day(s).",
+        "success_probability": 0.65,
+        "random_draw": 0.244502,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 2; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0055",
+    "customer_name": "Aarav Sharma",
+    "category": "subscription",
+    "amount": 677,
+    "failure_reason": "insufficient_balance",
+    "failed_at": "2026-07-30T02:01:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+    "schedule_justification": "Retries are spaced across several days to allow balance replenishment.",
+    "customer_message": "Hi Aarav, aapka subscription payment fail ho gaya. Scheduled retry ke liye linked account mein sufficient balance rakhein.",
+    "urgency_priority": "low",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 2,
+    "scheduled_retries": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-08-04",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-08-04",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+        "success_probability": 0.45,
+        "random_draw": 0.734167,
+        "outcome": "failure"
+      }
+    ],
+    "final_status": "exhausted",
+    "stop_reason": "All scheduled retries were used without recovery; no further automatic attempt exists."
+  },
+  {
+    "mandate_id": "MANDATE-0056",
+    "customer_name": "Rohan Das",
+    "category": "credit_card",
+    "amount": 52235,
+    "failure_reason": "bank_server_down",
+    "failed_at": "2026-07-05T04:27:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries begin quickly because a bank server outage is usually transient.",
+    "customer_message": "Namaste Rohan, aapka credit card bill payment fail ho gaya hai. Abhi koi action zaroori nahi; scheduled time par retry hoga.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 2,
+    "scheduled_retries": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-06",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning"
+      }
+    ],
+    "attempts_made": [],
+    "final_status": "escalated",
+    "stop_reason": "Escalated before attempt 3 because the category threshold of 2 attempt(s) was reached."
+  },
+  {
+    "mandate_id": "MANDATE-0057",
+    "customer_name": "Ananya Iyer",
+    "category": "emi",
+    "amount": 13850,
+    "failure_reason": "technical_decline",
+    "failed_at": "2026-07-09T05:06:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks technical_decline as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries use short initial waits with more time for later technical recovery.",
+    "customer_message": "Namaste Ananya, aapka EMI payment fail ho gaya hai. Abhi koi action zaroori nahi; scheduled time par retry hoga.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 1,
+    "scheduled_retries": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-09",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-10",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-09",
+        "scheduled_time": "22:00",
+        "window_label": "late_night",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks technical_decline as retriable with a typical recovery window of 1 day(s).",
+        "success_probability": 0.65,
+        "random_draw": 0.754997,
+        "outcome": "failure"
+      }
+    ],
+    "final_status": "escalated",
+    "stop_reason": "Escalated before attempt 3 because the category threshold of 2 attempt(s) was reached."
+  },
+  {
+    "mandate_id": "MANDATE-0058",
+    "customer_name": "Aarav Sharma",
+    "category": "insurance",
+    "amount": 60235,
+    "failure_reason": "insufficient_balance",
+    "failed_at": "2026-07-12T05:06:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+    "schedule_justification": "Retries are spaced across several days to allow balance replenishment.",
+    "customer_message": "Namaste Aarav, aapka insurance premium payment fail ho gaya hai. Scheduled retry ke liye linked account mein sufficient balance rakhein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 2,
+    "scheduled_retries": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-17",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning"
+      }
+    ],
+    "attempts_made": [],
+    "final_status": "escalated",
+    "stop_reason": "Escalated before attempt 3 because the category threshold of 2 attempt(s) was reached."
+  },
+  {
+    "mandate_id": "MANDATE-0059",
+    "customer_name": "Diya Patel",
+    "category": "emi",
+    "amount": 79220,
+    "failure_reason": "account_frozen",
+    "failed_at": "2026-07-17T08:27:00+05:30",
+    "retriable": false,
+    "retry_rule_explanation": "Configured policy marks account_frozen as non-retriable; automatic retry is blocked.",
+    "schedule_justification": "No automatic retry schedule is permitted by policy.",
+    "customer_message": "Namaste Diya, aapka EMI payment fail ho gaya hai. Account status check karne ke liye apne bank se contact karein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 0,
+    "scheduled_retries": [],
+    "attempts_made": [],
+    "final_status": "non_retriable",
+    "stop_reason": "Deterministic failure policy prohibited automatic retry."
+  },
+  {
+    "mandate_id": "MANDATE-0060",
+    "customer_name": "Arjun Mehta",
+    "category": "subscription",
+    "amount": 1692,
+    "failure_reason": "insufficient_balance",
+    "failed_at": "2026-07-22T13:04:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+    "schedule_justification": "Retries are spaced across several days to allow balance replenishment.",
+    "customer_message": "Hi Arjun, aapka subscription payment fail ho gaya. Scheduled retry ke liye linked account mein sufficient balance rakhein.",
+    "urgency_priority": "low",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 2,
+    "scheduled_retries": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-27",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-27",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+        "success_probability": 0.45,
+        "random_draw": 0.339433,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 3; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0061",
+    "customer_name": "Aarav Sharma",
+    "category": "subscription",
+    "amount": 2368,
+    "failure_reason": "account_frozen",
+    "failed_at": "2026-07-29T18:12:00+05:30",
+    "retriable": false,
+    "retry_rule_explanation": "Configured policy marks account_frozen as non-retriable; automatic retry is blocked.",
+    "schedule_justification": "No automatic retry schedule is permitted by policy.",
+    "customer_message": "Hi Aarav, aapka subscription payment fail ho gaya. Account status check karne ke liye apne bank se contact karein.",
+    "urgency_priority": "low",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 0,
+    "scheduled_retries": [],
+    "attempts_made": [],
+    "final_status": "non_retriable",
+    "stop_reason": "Deterministic failure policy prohibited automatic retry."
+  },
+  {
+    "mandate_id": "MANDATE-0062",
+    "customer_name": "Ananya Iyer",
+    "category": "credit_card",
+    "amount": 56711,
+    "failure_reason": "daily_limit_exceeded",
+    "failed_at": "2026-07-18T21:28:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries begin on a later calendar day so the daily limit can reset.",
+    "customer_message": "Namaste Ananya, aapka credit card bill payment fail ho gaya hai. Next-day retry ke liye daily transaction limit available rakhein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 0,
+    "scheduled_retries": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-19",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning"
+      },
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-20",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-21",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-19",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
+        "success_probability": 0.7,
+        "random_draw": 0.827943,
+        "outcome": "failure"
+      },
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-20",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
+        "success_probability": 0.7,
+        "random_draw": 0.748881,
+        "outcome": "failure"
+      }
+    ],
+    "final_status": "escalated",
+    "stop_reason": "Escalated before attempt 3 because the category threshold of 2 attempt(s) was reached."
+  },
+  {
+    "mandate_id": "MANDATE-0063",
+    "customer_name": "Meera Nair",
+    "category": "insurance",
+    "amount": 24456,
+    "failure_reason": "user_declined",
+    "failed_at": "2026-07-17T05:29:00+05:30",
+    "retriable": false,
+    "retry_rule_explanation": "Configured policy marks user_declined as non-retriable; automatic retry is blocked.",
+    "schedule_justification": "No automatic retry schedule is permitted by policy.",
+    "customer_message": "Namaste Meera, aapka insurance premium payment fail ho gaya hai. Continue karna ho toh naya payment approve karein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 0,
+    "scheduled_retries": [],
+    "attempts_made": [],
+    "final_status": "non_retriable",
+    "stop_reason": "Deterministic failure policy prohibited automatic retry."
+  },
+  {
+    "mandate_id": "MANDATE-0064",
+    "customer_name": "Rohan Das",
+    "category": "subscription",
+    "amount": 1094,
+    "failure_reason": "bank_server_down",
+    "failed_at": "2026-07-03T06:51:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries begin quickly because a bank server outage is usually transient.",
+    "customer_message": "Hi Rohan, aapka subscription payment fail ho gaya. Abhi koi action zaroori nahi; scheduled time par retry hoga.",
+    "urgency_priority": "low",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 0,
+    "scheduled_retries": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-03",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      },
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-03",
+        "scheduled_time": "14:01",
+        "window_label": "afternoon"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-04",
+        "scheduled_time": "06:51",
+        "window_label": "early_morning"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-03",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
+        "success_probability": 0.8,
+        "random_draw": 0.064172,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 1; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0065",
+    "customer_name": "Ananya Iyer",
+    "category": "subscription",
+    "amount": 2333,
+    "failure_reason": "insufficient_balance",
+    "failed_at": "2026-07-13T08:40:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+    "schedule_justification": "Retries are spaced across several days to allow balance replenishment.",
+    "customer_message": "Hi Ananya, aapka subscription payment fail ho gaya. Scheduled retry ke liye linked account mein sufficient balance rakhein.",
+    "urgency_priority": "low",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 2,
+    "scheduled_retries": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-18",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-18",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+        "success_probability": 0.45,
+        "random_draw": 0.39862,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 3; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0066",
+    "customer_name": "Ishaan Verma",
+    "category": "insurance",
+    "amount": 4130,
+    "failure_reason": "daily_limit_exceeded",
+    "failed_at": "2026-07-30T14:23:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries begin on a later calendar day so the daily limit can reset.",
+    "customer_message": "Namaste Ishaan, aapka insurance premium payment fail ho gaya hai. Next-day retry ke liye daily transaction limit available rakhein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 0,
+    "scheduled_retries": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-31",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning"
+      },
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-08-01",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-08-02",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-31",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
+        "success_probability": 0.7,
+        "random_draw": 0.941804,
+        "outcome": "failure"
+      },
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-08-01",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
+        "success_probability": 0.7,
+        "random_draw": 0.455711,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 2; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0067",
+    "customer_name": "Meera Nair",
+    "category": "credit_card",
+    "amount": 94841,
+    "failure_reason": "bank_server_down",
+    "failed_at": "2026-07-05T07:10:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries begin quickly because a bank server outage is usually transient.",
+    "customer_message": "Namaste Meera, aapka credit card bill payment fail ho gaya hai. Abhi koi action zaroori nahi; scheduled time par retry hoga.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 1,
+    "scheduled_retries": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-05",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-06",
+        "scheduled_time": "07:10",
+        "window_label": "early_morning"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-05",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
+        "success_probability": 0.8,
+        "random_draw": 0.123726,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 2; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0068",
+    "customer_name": "Aarav Sharma",
+    "category": "emi",
+    "amount": 75328,
+    "failure_reason": "insufficient_balance",
+    "failed_at": "2026-07-06T21:56:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+    "schedule_justification": "Retries are spaced across several days to allow balance replenishment.",
+    "customer_message": "Namaste Aarav, aapka EMI payment fail ho gaya hai. Scheduled retry ke liye linked account mein sufficient balance rakhein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 1,
+    "scheduled_retries": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-09",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-11",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-09",
+        "scheduled_time": "22:00",
+        "window_label": "late_night",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+        "success_probability": 0.45,
+        "random_draw": 0.18562,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 2; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0069",
+    "customer_name": "Neha Gupta",
+    "category": "emi",
+    "amount": 83793,
+    "failure_reason": "insufficient_balance",
+    "failed_at": "2026-07-17T08:27:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+    "schedule_justification": "Retries are spaced across several days to allow balance replenishment.",
+    "customer_message": "Namaste Neha, aapka EMI payment fail ho gaya hai. Scheduled retry ke liye linked account mein sufficient balance rakhein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 0,
+    "scheduled_retries": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-18",
+        "scheduled_time": "08:27",
+        "window_label": "early_morning"
+      },
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-20",
+        "scheduled_time": "08:27",
+        "window_label": "early_morning"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-22",
+        "scheduled_time": "08:27",
+        "window_label": "early_morning"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-18",
+        "scheduled_time": "08:27",
+        "window_label": "early_morning",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+        "success_probability": 0.45,
+        "random_draw": 0.25219,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 1; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0070",
+    "customer_name": "Arjun Mehta",
+    "category": "insurance",
+    "amount": 26025,
+    "failure_reason": "user_declined",
+    "failed_at": "2026-07-03T00:16:00+05:30",
+    "retriable": false,
+    "retry_rule_explanation": "Configured policy marks user_declined as non-retriable; automatic retry is blocked.",
+    "schedule_justification": "No automatic retry schedule is permitted by policy.",
+    "customer_message": "Namaste Arjun, aapka insurance premium payment fail ho gaya hai. Continue karna ho toh naya payment approve karein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 2,
+    "scheduled_retries": [],
+    "attempts_made": [],
+    "final_status": "non_retriable",
+    "stop_reason": "Deterministic failure policy prohibited automatic retry."
+  },
+  {
+    "mandate_id": "MANDATE-0071",
+    "customer_name": "Rohan Das",
+    "category": "insurance",
+    "amount": 26931,
+    "failure_reason": "mandate_expired",
+    "failed_at": "2026-07-03T13:43:00+05:30",
+    "retriable": false,
+    "retry_rule_explanation": "Configured policy marks mandate_expired as non-retriable; automatic retry is blocked.",
+    "schedule_justification": "No automatic retry schedule is permitted by policy.",
+    "customer_message": "Namaste Rohan, aapka insurance premium payment fail ho gaya hai. Payment dobara try karne se pehle UPI mandate renew karein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 1,
+    "scheduled_retries": [],
+    "attempts_made": [],
+    "final_status": "non_retriable",
+    "stop_reason": "Deterministic failure policy prohibited automatic retry."
+  },
+  {
+    "mandate_id": "MANDATE-0072",
+    "customer_name": "Aditi Rao",
+    "category": "subscription",
+    "amount": 2612,
+    "failure_reason": "account_frozen",
+    "failed_at": "2026-07-24T07:52:00+05:30",
+    "retriable": false,
+    "retry_rule_explanation": "Configured policy marks account_frozen as non-retriable; automatic retry is blocked.",
+    "schedule_justification": "No automatic retry schedule is permitted by policy.",
+    "customer_message": "Hi Aditi, aapka subscription payment fail ho gaya. Account status check karne ke liye apne bank se contact karein.",
+    "urgency_priority": "low",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 2,
+    "scheduled_retries": [],
+    "attempts_made": [],
+    "final_status": "non_retriable",
+    "stop_reason": "Deterministic failure policy prohibited automatic retry."
+  },
+  {
+    "mandate_id": "MANDATE-0073",
+    "customer_name": "Arjun Mehta",
+    "category": "credit_card",
+    "amount": 7415,
+    "failure_reason": "insufficient_balance",
+    "failed_at": "2026-07-16T16:36:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+    "schedule_justification": "Retries are spaced across several days to allow balance replenishment.",
+    "customer_message": "Namaste Arjun, aapka credit card bill payment fail ho gaya hai. Scheduled retry ke liye linked account mein sufficient balance rakhein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 2,
+    "scheduled_retries": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-21",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      }
+    ],
+    "attempts_made": [],
+    "final_status": "escalated",
+    "stop_reason": "Escalated before attempt 3 because the category threshold of 2 attempt(s) was reached."
+  },
+  {
+    "mandate_id": "MANDATE-0074",
+    "customer_name": "Ananya Iyer",
+    "category": "subscription",
+    "amount": 1193,
+    "failure_reason": "insufficient_balance",
+    "failed_at": "2026-07-25T00:05:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+    "schedule_justification": "Retries are spaced across several days to allow balance replenishment.",
+    "customer_message": "Hi Ananya, aapka subscription payment fail ho gaya. Scheduled retry ke liye linked account mein sufficient balance rakhein.",
+    "urgency_priority": "low",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 0,
+    "scheduled_retries": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-26",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning"
+      },
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-28",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-30",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-26",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+        "success_probability": 0.45,
+        "random_draw": 0.087969,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 1; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0075",
+    "customer_name": "Aditi Rao",
+    "category": "subscription",
+    "amount": 2794,
+    "failure_reason": "mandate_expired",
+    "failed_at": "2026-07-11T00:25:00+05:30",
+    "retriable": false,
+    "retry_rule_explanation": "Configured policy marks mandate_expired as non-retriable; automatic retry is blocked.",
+    "schedule_justification": "No automatic retry schedule is permitted by policy.",
+    "customer_message": "Hi Aditi, aapka subscription payment fail ho gaya. Payment dobara try karne se pehle UPI mandate renew karein.",
+    "urgency_priority": "low",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 0,
+    "scheduled_retries": [],
+    "attempts_made": [],
+    "final_status": "non_retriable",
+    "stop_reason": "Deterministic failure policy prohibited automatic retry."
+  },
+  {
+    "mandate_id": "MANDATE-0076",
+    "customer_name": "Aarav Sharma",
+    "category": "sip",
+    "amount": 29367,
+    "failure_reason": "insufficient_balance",
+    "failed_at": "2026-07-17T09:27:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+    "schedule_justification": "Retries are spaced across several days to allow balance replenishment.",
+    "customer_message": "Namaste Aarav, aapka SIP payment fail ho gaya hai. Scheduled retry ke liye linked account mein sufficient balance rakhein.",
+    "urgency_priority": "medium",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 1,
+    "scheduled_retries": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-20",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-22",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-20",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+        "success_probability": 0.45,
+        "random_draw": 0.825816,
+        "outcome": "failure"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-22",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+        "success_probability": 0.45,
+        "random_draw": 0.778412,
+        "outcome": "failure"
+      }
+    ],
+    "final_status": "exhausted",
+    "stop_reason": "All scheduled retries were used without recovery; no further automatic attempt exists."
+  },
+  {
+    "mandate_id": "MANDATE-0077",
+    "customer_name": "Arjun Mehta",
+    "category": "credit_card",
+    "amount": 133015,
+    "failure_reason": "technical_decline",
+    "failed_at": "2026-07-23T18:51:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks technical_decline as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries use short initial waits with more time for later technical recovery.",
+    "customer_message": "Namaste Arjun, aapka credit card bill payment fail ho gaya hai. Abhi koi action zaroori nahi; scheduled time par retry hoga.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 1,
+    "scheduled_retries": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-24",
+        "scheduled_time": "06:51",
+        "window_label": "early_morning"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-25",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-24",
+        "scheduled_time": "06:51",
+        "window_label": "early_morning",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks technical_decline as retriable with a typical recovery window of 1 day(s).",
+        "success_probability": 0.65,
+        "random_draw": 0.788332,
+        "outcome": "failure"
+      }
+    ],
+    "final_status": "escalated",
+    "stop_reason": "Escalated before attempt 3 because the category threshold of 2 attempt(s) was reached."
+  },
+  {
+    "mandate_id": "MANDATE-0078",
+    "customer_name": "Kabir Singh",
+    "category": "insurance",
+    "amount": 54681,
+    "failure_reason": "insufficient_balance",
+    "failed_at": "2026-07-27T11:29:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+    "schedule_justification": "Retries are spaced across several days to allow balance replenishment.",
+    "customer_message": "Namaste Kabir, aapka insurance premium payment fail ho gaya hai. Scheduled retry ke liye linked account mein sufficient balance rakhein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 0,
+    "scheduled_retries": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-28",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      },
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-30",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-08-01",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-28",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+        "success_probability": 0.45,
+        "random_draw": 0.305807,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 1; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0079",
+    "customer_name": "Ananya Iyer",
+    "category": "credit_card",
+    "amount": 133938,
+    "failure_reason": "insufficient_balance",
+    "failed_at": "2026-07-18T09:35:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+    "schedule_justification": "Retries are spaced across several days to allow balance replenishment.",
+    "customer_message": "Namaste Ananya, aapka credit card bill payment fail ho gaya hai. Scheduled retry ke liye linked account mein sufficient balance rakhein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 1,
+    "scheduled_retries": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-21",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-23",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-21",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+        "success_probability": 0.45,
+        "random_draw": 0.954985,
+        "outcome": "failure"
+      }
+    ],
+    "final_status": "escalated",
+    "stop_reason": "Escalated before attempt 3 because the category threshold of 2 attempt(s) was reached."
+  },
+  {
+    "mandate_id": "MANDATE-0080",
+    "customer_name": "Meera Nair",
+    "category": "sip",
+    "amount": 14077,
+    "failure_reason": "account_frozen",
+    "failed_at": "2026-07-23T09:31:00+05:30",
+    "retriable": false,
+    "retry_rule_explanation": "Configured policy marks account_frozen as non-retriable; automatic retry is blocked.",
+    "schedule_justification": "No automatic retry schedule is permitted by policy.",
+    "customer_message": "Namaste Meera, aapka SIP payment fail ho gaya hai. Account status check karne ke liye apne bank se contact karein.",
+    "urgency_priority": "medium",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 2,
+    "scheduled_retries": [],
+    "attempts_made": [],
+    "final_status": "non_retriable",
+    "stop_reason": "Deterministic failure policy prohibited automatic retry."
+  },
+  {
+    "mandate_id": "MANDATE-0081",
+    "customer_name": "Arjun Mehta",
+    "category": "emi",
+    "amount": 26018,
+    "failure_reason": "bank_server_down",
+    "failed_at": "2026-07-14T01:57:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries begin quickly because a bank server outage is usually transient.",
+    "customer_message": "Namaste Arjun, aapka EMI payment fail ho gaya hai. Abhi koi action zaroori nahi; scheduled time par retry hoga.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 1,
+    "scheduled_retries": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-14",
+        "scheduled_time": "07:57",
+        "window_label": "early_morning"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-15",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-14",
+        "scheduled_time": "07:57",
+        "window_label": "early_morning",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
+        "success_probability": 0.8,
+        "random_draw": 0.916295,
+        "outcome": "failure"
+      }
+    ],
+    "final_status": "escalated",
+    "stop_reason": "Escalated before attempt 3 because the category threshold of 2 attempt(s) was reached."
+  },
+  {
+    "mandate_id": "MANDATE-0082",
+    "customer_name": "Kabir Singh",
+    "category": "insurance",
+    "amount": 4445,
+    "failure_reason": "daily_limit_exceeded",
+    "failed_at": "2026-07-15T10:26:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries begin on a later calendar day so the daily limit can reset.",
+    "customer_message": "Namaste Kabir, aapka insurance premium payment fail ho gaya hai. Next-day retry ke liye daily transaction limit available rakhein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 0,
+    "scheduled_retries": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-16",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning"
+      },
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-17",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-18",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-16",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
+        "success_probability": 0.7,
+        "random_draw": 0.153613,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 1; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0083",
+    "customer_name": "Arjun Mehta",
+    "category": "sip",
+    "amount": 5904,
+    "failure_reason": "daily_limit_exceeded",
+    "failed_at": "2026-07-19T07:21:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries begin on a later calendar day so the daily limit can reset.",
+    "customer_message": "Namaste Arjun, aapka SIP payment fail ho gaya hai. Next-day retry ke liye daily transaction limit available rakhein.",
+    "urgency_priority": "medium",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 2,
+    "scheduled_retries": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-22",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-22",
+        "scheduled_time": "22:00",
+        "window_label": "late_night",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
+        "success_probability": 0.7,
+        "random_draw": 0.560812,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 3; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0084",
+    "customer_name": "Ananya Iyer",
+    "category": "credit_card",
+    "amount": 120589,
+    "failure_reason": "insufficient_balance",
+    "failed_at": "2026-07-24T05:05:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+    "schedule_justification": "Retries are spaced across several days to allow balance replenishment.",
+    "customer_message": "Namaste Ananya, aapka credit card bill payment fail ho gaya hai. Scheduled retry ke liye linked account mein sufficient balance rakhein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 2,
+    "scheduled_retries": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-29",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning"
+      }
+    ],
+    "attempts_made": [],
+    "final_status": "escalated",
+    "stop_reason": "Escalated before attempt 3 because the category threshold of 2 attempt(s) was reached."
+  },
+  {
+    "mandate_id": "MANDATE-0085",
+    "customer_name": "Ananya Iyer",
+    "category": "subscription",
+    "amount": 1522,
+    "failure_reason": "technical_decline",
+    "failed_at": "2026-07-01T14:26:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks technical_decline as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries use short initial waits with more time for later technical recovery.",
+    "customer_message": "Hi Ananya, aapka subscription payment fail ho gaya. Abhi koi action zaroori nahi; scheduled time par retry hoga.",
+    "urgency_priority": "low",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 2,
+    "scheduled_retries": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-02",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-02",
+        "scheduled_time": "22:00",
+        "window_label": "late_night",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks technical_decline as retriable with a typical recovery window of 1 day(s).",
+        "success_probability": 0.65,
+        "random_draw": 0.43874,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 3; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0086",
+    "customer_name": "Diya Patel",
+    "category": "credit_card",
+    "amount": 82637,
+    "failure_reason": "insufficient_balance",
+    "failed_at": "2026-07-23T15:49:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+    "schedule_justification": "Retries are spaced across several days to allow balance replenishment.",
+    "customer_message": "Namaste Diya, aapka credit card bill payment fail ho gaya hai. Scheduled retry ke liye linked account mein sufficient balance rakhein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 2,
+    "scheduled_retries": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-28",
+        "scheduled_time": "15:49",
+        "window_label": "afternoon"
+      }
+    ],
+    "attempts_made": [],
+    "final_status": "escalated",
+    "stop_reason": "Escalated before attempt 3 because the category threshold of 2 attempt(s) was reached."
+  },
+  {
+    "mandate_id": "MANDATE-0087",
+    "customer_name": "Neha Gupta",
+    "category": "sip",
+    "amount": 26917,
+    "failure_reason": "bank_server_down",
+    "failed_at": "2026-07-10T17:05:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries begin quickly because a bank server outage is usually transient.",
+    "customer_message": "Namaste Neha, aapka SIP payment fail ho gaya hai. Abhi koi action zaroori nahi; scheduled time par retry hoga.",
+    "urgency_priority": "medium",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 1,
+    "scheduled_retries": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-10",
+        "scheduled_time": "23:05",
+        "window_label": "late_night"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-11",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-10",
+        "scheduled_time": "23:05",
+        "window_label": "late_night",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
+        "success_probability": 0.8,
+        "random_draw": 0.616674,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 2; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0088",
+    "customer_name": "Ananya Iyer",
+    "category": "credit_card",
+    "amount": 34050,
+    "failure_reason": "bank_server_down",
+    "failed_at": "2026-07-22T08:47:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries begin quickly because a bank server outage is usually transient.",
+    "customer_message": "Namaste Ananya, aapka credit card bill payment fail ho gaya hai. Abhi koi action zaroori nahi; scheduled time par retry hoga.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 2,
+    "scheduled_retries": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-23",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      }
+    ],
+    "attempts_made": [],
+    "final_status": "escalated",
+    "stop_reason": "Escalated before attempt 3 because the category threshold of 2 attempt(s) was reached."
+  },
+  {
+    "mandate_id": "MANDATE-0089",
+    "customer_name": "Saanvi Joshi",
+    "category": "insurance",
+    "amount": 72036,
+    "failure_reason": "user_declined",
+    "failed_at": "2026-07-09T03:58:00+05:30",
+    "retriable": false,
+    "retry_rule_explanation": "Configured policy marks user_declined as non-retriable; automatic retry is blocked.",
+    "schedule_justification": "No automatic retry schedule is permitted by policy.",
+    "customer_message": "Namaste Saanvi, aapka insurance premium payment fail ho gaya hai. Continue karna ho toh naya payment approve karein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 0,
+    "scheduled_retries": [],
+    "attempts_made": [],
+    "final_status": "non_retriable",
+    "stop_reason": "Deterministic failure policy prohibited automatic retry."
+  },
+  {
+    "mandate_id": "MANDATE-0090",
+    "customer_name": "Aarav Sharma",
+    "category": "credit_card",
+    "amount": 72522,
+    "failure_reason": "user_declined",
+    "failed_at": "2026-07-27T08:33:00+05:30",
+    "retriable": false,
+    "retry_rule_explanation": "Configured policy marks user_declined as non-retriable; automatic retry is blocked.",
+    "schedule_justification": "No automatic retry schedule is permitted by policy.",
+    "customer_message": "Namaste Aarav, aapka credit card bill payment fail ho gaya hai. Continue karna ho toh naya payment approve karein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 0,
+    "scheduled_retries": [],
+    "attempts_made": [],
+    "final_status": "non_retriable",
+    "stop_reason": "Deterministic failure policy prohibited automatic retry."
+  },
+  {
+    "mandate_id": "MANDATE-0091",
+    "customer_name": "Neha Gupta",
+    "category": "subscription",
+    "amount": 1286,
+    "failure_reason": "insufficient_balance",
+    "failed_at": "2026-07-23T11:45:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+    "schedule_justification": "Retries are spaced across several days to allow balance replenishment.",
+    "customer_message": "Hi Neha, aapka subscription payment fail ho gaya. Scheduled retry ke liye linked account mein sufficient balance rakhein.",
+    "urgency_priority": "low",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 2,
+    "scheduled_retries": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-28",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-28",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+        "success_probability": 0.45,
+        "random_draw": 0.347191,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 3; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0092",
+    "customer_name": "Rohan Das",
+    "category": "credit_card",
+    "amount": 88099,
+    "failure_reason": "daily_limit_exceeded",
+    "failed_at": "2026-07-18T10:52:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries begin on a later calendar day so the daily limit can reset.",
+    "customer_message": "Namaste Rohan, aapka credit card bill payment fail ho gaya hai. Next-day retry ke liye daily transaction limit available rakhein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 0,
+    "scheduled_retries": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-19",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning"
+      },
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-20",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-21",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-19",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
+        "success_probability": 0.7,
+        "random_draw": 0.691217,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 1; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0093",
+    "customer_name": "Saanvi Joshi",
+    "category": "credit_card",
+    "amount": 118220,
+    "failure_reason": "insufficient_balance",
+    "failed_at": "2026-07-18T19:01:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+    "schedule_justification": "Retries are spaced across several days to allow balance replenishment.",
+    "customer_message": "Namaste Saanvi, aapka credit card bill payment fail ho gaya hai. Scheduled retry ke liye linked account mein sufficient balance rakhein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 2,
+    "scheduled_retries": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-23",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      }
+    ],
+    "attempts_made": [],
+    "final_status": "escalated",
+    "stop_reason": "Escalated before attempt 3 because the category threshold of 2 attempt(s) was reached."
+  },
+  {
+    "mandate_id": "MANDATE-0094",
+    "customer_name": "Vikram Kulkarni",
+    "category": "sip",
+    "amount": 39058,
+    "failure_reason": "user_declined",
+    "failed_at": "2026-07-01T21:36:00+05:30",
+    "retriable": false,
+    "retry_rule_explanation": "Configured policy marks user_declined as non-retriable; automatic retry is blocked.",
+    "schedule_justification": "No automatic retry schedule is permitted by policy.",
+    "customer_message": "Namaste Vikram, aapka SIP payment fail ho gaya hai. Continue karna ho toh naya payment approve karein.",
+    "urgency_priority": "medium",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 1,
+    "scheduled_retries": [],
+    "attempts_made": [],
+    "final_status": "non_retriable",
+    "stop_reason": "Deterministic failure policy prohibited automatic retry."
+  },
+  {
+    "mandate_id": "MANDATE-0095",
+    "customer_name": "Arjun Mehta",
+    "category": "subscription",
+    "amount": 1007,
+    "failure_reason": "insufficient_balance",
+    "failed_at": "2026-07-19T07:58:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+    "schedule_justification": "Retries are spaced across several days to allow balance replenishment.",
+    "customer_message": "Hi Arjun, aapka subscription payment fail ho gaya. Scheduled retry ke liye linked account mein sufficient balance rakhein.",
+    "urgency_priority": "low",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 0,
+    "scheduled_retries": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-20",
+        "scheduled_time": "07:58",
+        "window_label": "early_morning"
+      },
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-22",
+        "scheduled_time": "07:58",
+        "window_label": "early_morning"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-24",
+        "scheduled_time": "07:58",
+        "window_label": "early_morning"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-20",
+        "scheduled_time": "07:58",
+        "window_label": "early_morning",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+        "success_probability": 0.45,
+        "random_draw": 0.530841,
+        "outcome": "failure"
+      },
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-22",
+        "scheduled_time": "07:58",
+        "window_label": "early_morning",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+        "success_probability": 0.45,
+        "random_draw": 0.685656,
+        "outcome": "failure"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-24",
+        "scheduled_time": "07:58",
+        "window_label": "early_morning",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+        "success_probability": 0.45,
+        "random_draw": 0.752418,
+        "outcome": "failure"
+      }
+    ],
+    "final_status": "exhausted",
+    "stop_reason": "All scheduled retries were used without recovery; no further automatic attempt exists."
+  },
+  {
+    "mandate_id": "MANDATE-0096",
+    "customer_name": "Saanvi Joshi",
+    "category": "sip",
+    "amount": 49736,
+    "failure_reason": "insufficient_balance",
+    "failed_at": "2026-07-02T22:15:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+    "schedule_justification": "Retries are spaced across several days to allow balance replenishment.",
+    "customer_message": "Namaste Saanvi, aapka SIP payment fail ho gaya hai. Scheduled retry ke liye linked account mein sufficient balance rakhein.",
+    "urgency_priority": "medium",
+    "escalate_after_attempts": 3,
+    "attempts_already_made": 2,
+    "scheduled_retries": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-07",
+        "scheduled_time": "22:15",
+        "window_label": "late_night"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-07",
+        "scheduled_time": "22:15",
+        "window_label": "late_night",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+        "success_probability": 0.45,
+        "random_draw": 0.279577,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 3; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0097",
+    "customer_name": "Arjun Mehta",
+    "category": "insurance",
+    "amount": 39133,
+    "failure_reason": "user_declined",
+    "failed_at": "2026-07-14T22:14:00+05:30",
+    "retriable": false,
+    "retry_rule_explanation": "Configured policy marks user_declined as non-retriable; automatic retry is blocked.",
+    "schedule_justification": "No automatic retry schedule is permitted by policy.",
+    "customer_message": "Namaste Arjun, aapka insurance premium payment fail ho gaya hai. Continue karna ho toh naya payment approve karein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 0,
+    "scheduled_retries": [],
+    "attempts_made": [],
+    "final_status": "non_retriable",
+    "stop_reason": "Deterministic failure policy prohibited automatic retry."
+  },
+  {
+    "mandate_id": "MANDATE-0098",
+    "customer_name": "Ananya Iyer",
+    "category": "credit_card",
+    "amount": 18014,
+    "failure_reason": "technical_decline",
+    "failed_at": "2026-07-06T04:55:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks technical_decline as retriable with a typical recovery window of 1 day(s).",
+    "schedule_justification": "Retries use short initial waits with more time for later technical recovery.",
+    "customer_message": "Namaste Ananya, aapka credit card bill payment fail ho gaya hai. Abhi koi action zaroori nahi; scheduled time par retry hoga.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 1,
+    "scheduled_retries": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-06",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-07",
+        "scheduled_time": "14:00",
+        "window_label": "afternoon"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-06",
+        "scheduled_time": "22:00",
+        "window_label": "late_night",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks technical_decline as retriable with a typical recovery window of 1 day(s).",
+        "success_probability": 0.65,
+        "random_draw": 0.036067,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 2; no further retries were needed."
+  },
+  {
+    "mandate_id": "MANDATE-0099",
+    "customer_name": "Saanvi Joshi",
+    "category": "emi",
+    "amount": 40076,
+    "failure_reason": "insufficient_balance",
+    "failed_at": "2026-07-18T03:43:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+    "schedule_justification": "Retries are spaced across several days to allow balance replenishment.",
+    "customer_message": "Namaste Saanvi, aapka EMI payment fail ho gaya hai. Scheduled retry ke liye linked account mein sufficient balance rakhein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 1,
+    "scheduled_retries": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-21",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-23",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-21",
+        "scheduled_time": "06:00",
+        "window_label": "early_morning",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+        "success_probability": 0.45,
+        "random_draw": 0.718311,
+        "outcome": "failure"
+      }
+    ],
+    "final_status": "escalated",
+    "stop_reason": "Escalated before attempt 3 because the category threshold of 2 attempt(s) was reached."
+  },
+  {
+    "mandate_id": "MANDATE-0100",
+    "customer_name": "Rohan Das",
+    "category": "insurance",
+    "amount": 45567,
+    "failure_reason": "insufficient_balance",
+    "failed_at": "2026-07-01T19:50:00+05:30",
+    "retriable": true,
+    "retry_rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+    "schedule_justification": "Retries are spaced across several days to allow balance replenishment.",
+    "customer_message": "Namaste Rohan, aapka insurance premium payment fail ho gaya hai. Scheduled retry ke liye linked account mein sufficient balance rakhein.",
+    "urgency_priority": "high",
+    "escalate_after_attempts": 2,
+    "attempts_already_made": 0,
+    "scheduled_retries": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-02",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      },
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-04",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      },
+      {
+        "attempt_num": 3,
+        "scheduled_date": "2026-07-06",
+        "scheduled_time": "22:00",
+        "window_label": "late_night"
+      }
+    ],
+    "attempts_made": [
+      {
+        "attempt_num": 1,
+        "scheduled_date": "2026-07-02",
+        "scheduled_time": "22:00",
+        "window_label": "late_night",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+        "success_probability": 0.45,
+        "random_draw": 0.816844,
+        "outcome": "failure"
+      },
+      {
+        "attempt_num": 2,
+        "scheduled_date": "2026-07-04",
+        "scheduled_time": "22:00",
+        "window_label": "late_night",
+        "decision": "retry_executed",
+        "why_retried": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
+        "success_probability": 0.45,
+        "random_draw": 0.11502,
+        "outcome": "success"
+      }
+    ],
+    "final_status": "recovered",
+    "stop_reason": "Payment recovered on attempt 2; no further retries were needed."
+  }
+]
