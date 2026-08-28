@@ -1,4 +1,4 @@
-"""Run a deliberately naive retry baseline against the raw failed mandates."""
+"""Run a deliberately naive retry strategy for fair comparison."""
 
 from __future__ import annotations
 
@@ -29,67 +29,67 @@ except ImportError:  # Supports direct execution: python src/baseline.py
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_INPUT_PATH = PROJECT_ROOT / "data" / "failed_mandates.json"
-DEFAULT_SMART_REPORT_PATH = PROJECT_ROOT / "data" / "final_report.json"
-DEFAULT_BASELINE_REPORT_PATH = PROJECT_ROOT / "data" / "baseline_report.json"
-DEFAULT_COMPARISON_PATH = PROJECT_ROOT / "docs" / "comparison_summary.json"
+SMART_REPORT_PATH = PROJECT_ROOT / "data" / "final_report.json"
+BASELINE_REPORT_PATH = PROJECT_ROOT / "data" / "baseline_report.json"
+COMPARISON_PATH = PROJECT_ROOT / "docs" / "comparison_summary.json"
 
 
-def is_permitted_execution_time(moment: datetime) -> bool:
-    """Return whether a time falls inside any shared execution window."""
+def _permitted_window_label(scheduled_at: datetime) -> str | None:
+    """Return the matching legal window without changing the naive timestamp."""
 
-    clock = moment.strftime("%H:%M")
-    return any(
-        window["start"] <= clock <= window["end"]
-        for window in PERMITTED_EXECUTION_WINDOWS
-    )
+    clock = scheduled_at.strftime("%H:%M")
+    for window in PERMITTED_EXECUTION_WINDOWS:
+        if window["start"] <= clock <= window["end"]:
+            return window["label"]
+    return None
 
 
-def simulate_naive_mandate(
+def run_naive_mandate(
     record: Mapping[str, Any], seed: int = SIMULATION_SEED
 ) -> dict[str, Any]:
-    """Retry one raw failure at fixed intervals without policy intelligence."""
+    """Retry one raw failure at fixed intervals with no policy intelligence."""
 
     failed_at = datetime.fromisoformat(str(record["failed_at"]))
     attempts_already_made = int(record.get("attempts_already_made", 0))
+    probability = SUCCESS_PROBABILITIES.get(str(record.get("failure_reason")), 0.0)
     attempts: list[dict[str, Any]] = []
-    recovered = False
+    final_status = "exhausted"
 
-    # Every failure reason is treated identically for scheduling. Existing
-    # attempts still count toward the common cap so experiment budgets match.
+    # The baseline still respects the common global cap, but it ignores failure
+    # eligibility, category urgency, recovery timing, and window optimization.
     for attempt_num in range(attempts_already_made + 1, MAX_RETRIES + 1):
-        offset = attempt_num - attempts_already_made
         scheduled_at = failed_at + timedelta(
-            hours=BASELINE_RETRY_INTERVAL_HOURS * offset
+            hours=BASELINE_RETRY_INTERVAL_HOURS * attempt_num
         )
-        attempt: dict[str, Any] = {
-            "attempt_num": attempt_num,
-            "scheduled_at": scheduled_at.isoformat(),
-            "strategy": f"fixed_{BASELINE_RETRY_INTERVAL_HOURS}_hour_interval",
-        }
+        window_label = _permitted_window_label(scheduled_at)
 
-        if not is_permitted_execution_time(scheduled_at):
-            attempt.update(
+        if window_label is None:
+            attempts.append(
                 {
-                    "decision": "rejected",
-                    "outcome": "rejected_restricted_execution_period",
+                    "attempt_num": attempt_num,
+                    "scheduled_at": scheduled_at.isoformat(),
+                    "window_label": None,
+                    "decision": "rejected_restricted_time",
+                    "outcome": "rejected",
                 }
             )
-            attempts.append(attempt)
             continue
 
-        probability = SUCCESS_PROBABILITIES.get(str(record["failure_reason"]), 0.0)
         draw = deterministic_draw(seed, str(record["mandate_id"]), attempt_num)
-        recovered = draw < probability
-        attempt.update(
+        successful = draw < probability
+        attempts.append(
             {
+                "attempt_num": attempt_num,
+                "scheduled_at": scheduled_at.isoformat(),
+                "window_label": window_label,
                 "decision": "retry_executed",
                 "success_probability": probability,
                 "random_draw": round(draw, 6),
-                "outcome": "success" if recovered else "failure",
+                "outcome": "success" if successful else "failure",
             }
         )
-        attempts.append(attempt)
-        if recovered:
+        if successful:
+            final_status = "recovered"
             break
 
     return {
@@ -97,50 +97,41 @@ def simulate_naive_mandate(
         "category": record["category"],
         "amount": record["amount"],
         "failure_reason": record["failure_reason"],
-        "attempts_already_made": attempts_already_made,
         "attempts": attempts,
-        "final_status": "recovered" if recovered else "not_recovered",
+        "final_status": final_status,
     }
 
 
 def run_baseline(
     records: list[Mapping[str, Any]], seed: int = SIMULATION_SEED
 ) -> dict[str, Any]:
-    """Run the naive strategy and aggregate its recovery results."""
+    """Run and summarize the naive strategy over the raw mandate population."""
 
-    results = [simulate_naive_mandate(record, seed) for record in records]
+    results = [run_naive_mandate(record, seed) for record in records]
     recovered = [result for result in results if result["final_status"] == "recovered"]
     total_amount = sum(int(result["amount"]) for result in results)
     recovered_amount = sum(int(result["amount"]) for result in recovered)
-    rejected_attempts = sum(
-        attempt["decision"] == "rejected"
-        for result in results
-        for attempt in result["attempts"]
-    )
-    executed_attempts = sum(
-        attempt["decision"] == "retry_executed"
-        for result in results
-        for attempt in result["attempts"]
-    )
+    total_count = len(results)
 
     return {
-        "strategy": "naive_fixed_interval_retry_every_failure",
-        "source_dataset": "data/failed_mandates.json",
-        "total_mandates": len(results),
+        "strategy": "naive_fixed_interval",
+        "simulation_seed": seed,
+        "retry_interval_hours": BASELINE_RETRY_INTERVAL_HOURS,
+        "total_mandates": total_count,
         "total_at_risk_amount": total_amount,
         "recovered_count": len(recovered),
         "recovered_amount": recovered_amount,
         "recovery_rate_by_count": round(
-            len(recovered) / len(results) * 100 if results else 0.0, 2
+            len(recovered) / total_count * 100 if total_count else 0.0, 2
         ),
         "recovery_rate_by_amount": round(
             recovered_amount / total_amount * 100 if total_amount else 0.0, 2
         ),
-        "executed_attempt_count": executed_attempts,
-        "rejected_attempt_count": rejected_attempts,
-        "retry_interval_hours": BASELINE_RETRY_INTERVAL_HOURS,
-        "maximum_total_attempts": MAX_RETRIES,
-        "simulation_seed": seed,
+        "rejected_attempt_count": sum(
+            attempt["outcome"] == "rejected"
+            for result in results
+            for attempt in result["attempts"]
+        ),
         "mandate_results": results,
     }
 
@@ -148,59 +139,51 @@ def run_baseline(
 def build_comparison(
     smart_report: Mapping[str, Any], baseline_report: Mapping[str, Any]
 ) -> dict[str, Any]:
-    """Compare smart and baseline outcomes from the same mandate population."""
-
-    if smart_report["total_mandates"] != baseline_report["total_mandates"]:
-        raise ValueError("Smart and baseline reports cover different mandate counts")
-    if smart_report["total_at_risk_amount"] != baseline_report["total_at_risk_amount"]:
-        raise ValueError("Smart and baseline reports cover different at-risk amounts")
+    """Compare count and amount recovery using percentage-point differences."""
 
     smart_rate = float(smart_report["recovery_rate_by_count"])
     baseline_rate = float(baseline_report["recovery_rate_by_count"])
     smart_amount = int(smart_report["recovered_amount"])
     baseline_amount = int(baseline_report["recovered_amount"])
+    incremental_amount = smart_amount - baseline_amount
+
     return {
-        "dataset": "data/failed_mandates.json",
-        "total_mandates": baseline_report["total_mandates"],
-        "total_at_risk_amount": baseline_report["total_at_risk_amount"],
         "smart_recovery_rate": smart_rate,
         "baseline_recovery_rate": baseline_rate,
         "percentage_point_uplift": round(smart_rate - baseline_rate, 2),
         "smart_recovered_amount": smart_amount,
         "baseline_recovered_amount": baseline_amount,
-        "incremental_recovered_amount": smart_amount - baseline_amount,
-        "fair_experiment_explanation": (
-            "Both strategies must use the same failed mandates so they face identical "
-            "customers, amounts, failure reasons, timestamps, and prior-attempt counts. "
-            "Otherwise differences in dataset difficulty could be mistaken for strategy "
-            "uplift. Sharing the outcome probabilities and deterministic seed further "
-            "isolates retry policy as the variable being compared."
+        "incremental_recovered_amount": incremental_amount,
+        # Keep the architecture specification's original metric name as an alias.
+        "additional_recovered_amount": incremental_amount,
+        "comparison_basis": (
+            "Both strategies use the same failed_mandates.json records, retry cap, "
+            "success probabilities, simulation seed, and per-attempt draw function."
         ),
     }
 
 
 def main() -> None:
-    """Read raw failures, run the baseline, and write M7 comparison outputs."""
+    """Run the naive strategy and compare it with the smart final report."""
 
     records = json.loads(DEFAULT_INPUT_PATH.read_text(encoding="utf-8"))
+    smart_report = json.loads(SMART_REPORT_PATH.read_text(encoding="utf-8"))
     if not isinstance(records, list):
         raise ValueError(f"Expected a JSON array in {DEFAULT_INPUT_PATH}")
 
-    smart_report = json.loads(DEFAULT_SMART_REPORT_PATH.read_text(encoding="utf-8"))
     baseline_report = run_baseline(records)
     comparison = build_comparison(smart_report, baseline_report)
-
-    DEFAULT_BASELINE_REPORT_PATH.write_text(
+    BASELINE_REPORT_PATH.write_text(
         json.dumps(baseline_report, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
     )
-    DEFAULT_COMPARISON_PATH.parent.mkdir(parents=True, exist_ok=True)
-    DEFAULT_COMPARISON_PATH.write_text(
+    COMPARISON_PATH.parent.mkdir(parents=True, exist_ok=True)
+    COMPARISON_PATH.write_text(
         json.dumps(comparison, indent=2, ensure_ascii=False) + "\n",
         encoding="utf-8",
     )
-    print(f"Baseline report: {DEFAULT_BASELINE_REPORT_PATH}")
-    print(f"Comparison summary: {DEFAULT_COMPARISON_PATH}")
+    print(f"Baseline report: {BASELINE_REPORT_PATH}")
+    print(f"Comparison summary: {COMPARISON_PATH}")
 
 
 if __name__ == "__main__":
