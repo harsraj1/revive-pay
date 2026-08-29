@@ -1,0 +1,490 @@
+{
+  "seed_count": 20,
+  "seeds": [
+    20260829,
+    20260830,
+    20260831,
+    20260832,
+    20260833,
+    20260834,
+    20260835,
+    20260836,
+    20260837,
+    20260838,
+    20260839,
+    20260840,
+    20260841,
+    20260842,
+    20260843,
+    20260844,
+    20260845,
+    20260846,
+    20260847,
+    20260848
+  ],
+  "mandates_per_seed": 100,
+  "per_seed": [
+    {
+      "seed": 20260829,
+      "smart": {
+        "recovery_rate_by_count": 42.0,
+        "recovery_rate_by_amount": 33.49,
+        "recovered_count": 42,
+        "recovered_amount": 1414448
+      },
+      "naive": {
+        "recovery_rate_by_count": 15.0,
+        "recovery_rate_by_amount": 15.41,
+        "recovered_count": 15,
+        "recovered_amount": 650672
+      },
+      "uplift": {
+        "recovery_rate_by_count_percentage_points": 27.0,
+        "recovery_rate_by_amount_percentage_points": 18.08,
+        "recovered_amount": 763776
+      }
+    },
+    {
+      "seed": 20260830,
+      "smart": {
+        "recovery_rate_by_count": 49.0,
+        "recovery_rate_by_amount": 41.39,
+        "recovered_count": 49,
+        "recovered_amount": 1748110
+      },
+      "naive": {
+        "recovery_rate_by_count": 16.0,
+        "recovery_rate_by_amount": 18.48,
+        "recovered_count": 16,
+        "recovered_amount": 780578
+      },
+      "uplift": {
+        "recovery_rate_by_count_percentage_points": 33.0,
+        "recovery_rate_by_amount_percentage_points": 22.91,
+        "recovered_amount": 967532
+      }
+    },
+    {
+      "seed": 20260831,
+      "smart": {
+        "recovery_rate_by_count": 43.0,
+        "recovery_rate_by_amount": 35.2,
+        "recovered_count": 43,
+        "recovered_amount": 1486522
+      },
+      "naive": {
+        "recovery_rate_by_count": 16.0,
+        "recovery_rate_by_amount": 21.1,
+        "recovered_count": 16,
+        "recovered_amount": 891182
+      },
+      "uplift": {
+        "recovery_rate_by_count_percentage_points": 27.0,
+        "recovery_rate_by_amount_percentage_points": 14.1,
+        "recovered_amount": 595340
+      }
+    },
+    {
+      "seed": 20260832,
+      "smart": {
+        "recovery_rate_by_count": 44.0,
+        "recovery_rate_by_amount": 35.34,
+        "recovered_count": 44,
+        "recovered_amount": 1492524
+      },
+      "naive": {
+        "recovery_rate_by_count": 13.0,
+        "recovery_rate_by_amount": 14.76,
+        "recovered_count": 13,
+        "recovered_amount": 623153
+      },
+      "uplift": {
+        "recovery_rate_by_count_percentage_points": 31.0,
+        "recovery_rate_by_amount_percentage_points": 20.58,
+        "recovered_amount": 869371
+      }
+    },
+    {
+      "seed": 20260833,
+      "smart": {
+        "recovery_rate_by_count": 42.0,
+        "recovery_rate_by_amount": 42.85,
+        "recovered_count": 42,
+        "recovered_amount": 1809676
+      },
+      "naive": {
+        "recovery_rate_by_count": 14.0,
+        "recovery_rate_by_amount": 18.12,
+        "recovered_count": 14,
+        "recovered_amount": 765268
+      },
+      "uplift": {
+        "recovery_rate_by_count_percentage_points": 28.0,
+        "recovery_rate_by_amount_percentage_points": 24.73,
+        "recovered_amount": 1044408
+      }
+    },
+    {
+      "seed": 20260834,
+      "smart": {
+        "recovery_rate_by_count": 41.0,
+        "recovery_rate_by_amount": 35.49,
+        "recovered_count": 41,
+        "recovered_amount": 1498630
+      },
+      "naive": {
+        "recovery_rate_by_count": 17.0,
+        "recovery_rate_by_amount": 20.12,
+        "recovered_count": 17,
+        "recovered_amount": 849789
+      },
+      "uplift": {
+        "recovery_rate_by_count_percentage_points": 24.0,
+        "recovery_rate_by_amount_percentage_points": 15.37,
+        "recovered_amount": 648841
+      }
+    },
+    {
+      "seed": 20260835,
+      "smart": {
+        "recovery_rate_by_count": 47.0,
+        "recovery_rate_by_amount": 41.03,
+        "recovered_count": 47,
+        "recovered_amount": 1732883
+      },
+      "naive": {
+        "recovery_rate_by_count": 15.0,
+        "recovery_rate_by_amount": 17.01,
+        "recovered_count": 15,
+        "recovered_amount": 718177
+      },
+      "uplift": {
+        "recovery_rate_by_count_percentage_points": 32.0,
+        "recovery_rate_by_amount_percentage_points": 24.02,
+        "recovered_amount": 1014706
+      }
+    },
+    {
+      "seed": 20260836,
+      "smart": {
+        "recovery_rate_by_count": 44.0,
+        "recovery_rate_by_amount": 43.44,
+        "recovered_count": 44,
+        "recovered_amount": 1834655
+      },
+      "naive": {
+        "recovery_rate_by_count": 13.0,
+        "recovery_rate_by_amount": 15.65,
+        "recovered_count": 13,
+        "recovered_amount": 660951
+      },
+      "uplift": {
+        "recovery_rate_by_count_percentage_points": 31.0,
+        "recovery_rate_by_amount_percentage_points": 27.79,
+        "recovered_amount": 1173704
+      }
+    },
+    {
+      "seed": 20260837,
+      "smart": {
+        "recovery_rate_by_count": 45.0,
+        "recovery_rate_by_amount": 42.14,
+        "recovered_count": 45,
+        "recovered_amount": 1779795
+      },
+      "naive": {
+        "recovery_rate_by_count": 14.0,
+        "recovery_rate_by_amount": 19.33,
+        "recovered_count": 14,
+        "recovered_amount": 816290
+      },
+      "uplift": {
+        "recovery_rate_by_count_percentage_points": 31.0,
+        "recovery_rate_by_amount_percentage_points": 22.81,
+        "recovered_amount": 963505
+      }
+    },
+    {
+      "seed": 20260838,
+      "smart": {
+        "recovery_rate_by_count": 38.0,
+        "recovery_rate_by_amount": 34.79,
+        "recovered_count": 38,
+        "recovered_amount": 1469270
+      },
+      "naive": {
+        "recovery_rate_by_count": 13.0,
+        "recovery_rate_by_amount": 14.09,
+        "recovered_count": 13,
+        "recovered_amount": 595032
+      },
+      "uplift": {
+        "recovery_rate_by_count_percentage_points": 25.0,
+        "recovery_rate_by_amount_percentage_points": 20.7,
+        "recovered_amount": 874238
+      }
+    },
+    {
+      "seed": 20260839,
+      "smart": {
+        "recovery_rate_by_count": 42.0,
+        "recovery_rate_by_amount": 37.53,
+        "recovered_count": 42,
+        "recovered_amount": 1584910
+      },
+      "naive": {
+        "recovery_rate_by_count": 17.0,
+        "recovery_rate_by_amount": 21.28,
+        "recovered_count": 17,
+        "recovered_amount": 898518
+      },
+      "uplift": {
+        "recovery_rate_by_count_percentage_points": 25.0,
+        "recovery_rate_by_amount_percentage_points": 16.25,
+        "recovered_amount": 686392
+      }
+    },
+    {
+      "seed": 20260840,
+      "smart": {
+        "recovery_rate_by_count": 40.0,
+        "recovery_rate_by_amount": 39.72,
+        "recovered_count": 40,
+        "recovered_amount": 1677479
+      },
+      "naive": {
+        "recovery_rate_by_count": 16.0,
+        "recovery_rate_by_amount": 21.71,
+        "recovered_count": 16,
+        "recovered_amount": 916787
+      },
+      "uplift": {
+        "recovery_rate_by_count_percentage_points": 24.0,
+        "recovery_rate_by_amount_percentage_points": 18.01,
+        "recovered_amount": 760692
+      }
+    },
+    {
+      "seed": 20260841,
+      "smart": {
+        "recovery_rate_by_count": 44.0,
+        "recovery_rate_by_amount": 41.45,
+        "recovered_count": 44,
+        "recovered_amount": 1750625
+      },
+      "naive": {
+        "recovery_rate_by_count": 14.0,
+        "recovery_rate_by_amount": 15.37,
+        "recovered_count": 14,
+        "recovered_amount": 648964
+      },
+      "uplift": {
+        "recovery_rate_by_count_percentage_points": 30.0,
+        "recovery_rate_by_amount_percentage_points": 26.08,
+        "recovered_amount": 1101661
+      }
+    },
+    {
+      "seed": 20260842,
+      "smart": {
+        "recovery_rate_by_count": 39.0,
+        "recovery_rate_by_amount": 38.43,
+        "recovered_count": 39,
+        "recovered_amount": 1622990
+      },
+      "naive": {
+        "recovery_rate_by_count": 14.0,
+        "recovery_rate_by_amount": 15.67,
+        "recovered_count": 14,
+        "recovered_amount": 661629
+      },
+      "uplift": {
+        "recovery_rate_by_count_percentage_points": 25.0,
+        "recovery_rate_by_amount_percentage_points": 22.76,
+        "recovered_amount": 961361
+      }
+    },
+    {
+      "seed": 20260843,
+      "smart": {
+        "recovery_rate_by_count": 45.0,
+        "recovery_rate_by_amount": 46.68,
+        "recovered_count": 45,
+        "recovered_amount": 1971495
+      },
+      "naive": {
+        "recovery_rate_by_count": 16.0,
+        "recovery_rate_by_amount": 19.51,
+        "recovered_count": 16,
+        "recovered_amount": 824032
+      },
+      "uplift": {
+        "recovery_rate_by_count_percentage_points": 29.0,
+        "recovery_rate_by_amount_percentage_points": 27.17,
+        "recovered_amount": 1147463
+      }
+    },
+    {
+      "seed": 20260844,
+      "smart": {
+        "recovery_rate_by_count": 46.0,
+        "recovery_rate_by_amount": 37.62,
+        "recovered_count": 46,
+        "recovered_amount": 1588752
+      },
+      "naive": {
+        "recovery_rate_by_count": 16.0,
+        "recovery_rate_by_amount": 13.54,
+        "recovered_count": 16,
+        "recovered_amount": 571879
+      },
+      "uplift": {
+        "recovery_rate_by_count_percentage_points": 30.0,
+        "recovery_rate_by_amount_percentage_points": 24.08,
+        "recovered_amount": 1016873
+      }
+    },
+    {
+      "seed": 20260845,
+      "smart": {
+        "recovery_rate_by_count": 46.0,
+        "recovery_rate_by_amount": 39.4,
+        "recovered_count": 46,
+        "recovered_amount": 1663968
+      },
+      "naive": {
+        "recovery_rate_by_count": 15.0,
+        "recovery_rate_by_amount": 17.02,
+        "recovered_count": 15,
+        "recovered_amount": 718876
+      },
+      "uplift": {
+        "recovery_rate_by_count_percentage_points": 31.0,
+        "recovery_rate_by_amount_percentage_points": 22.38,
+        "recovered_amount": 945092
+      }
+    },
+    {
+      "seed": 20260846,
+      "smart": {
+        "recovery_rate_by_count": 42.0,
+        "recovery_rate_by_amount": 35.45,
+        "recovered_count": 42,
+        "recovered_amount": 1497090
+      },
+      "naive": {
+        "recovery_rate_by_count": 14.0,
+        "recovery_rate_by_amount": 16.64,
+        "recovered_count": 14,
+        "recovered_amount": 702588
+      },
+      "uplift": {
+        "recovery_rate_by_count_percentage_points": 28.0,
+        "recovery_rate_by_amount_percentage_points": 18.81,
+        "recovered_amount": 794502
+      }
+    },
+    {
+      "seed": 20260847,
+      "smart": {
+        "recovery_rate_by_count": 46.0,
+        "recovery_rate_by_amount": 43.76,
+        "recovered_count": 46,
+        "recovered_amount": 1848083
+      },
+      "naive": {
+        "recovery_rate_by_count": 15.0,
+        "recovery_rate_by_amount": 16.32,
+        "recovered_count": 15,
+        "recovered_amount": 689373
+      },
+      "uplift": {
+        "recovery_rate_by_count_percentage_points": 31.0,
+        "recovery_rate_by_amount_percentage_points": 27.44,
+        "recovered_amount": 1158710
+      }
+    },
+    {
+      "seed": 20260848,
+      "smart": {
+        "recovery_rate_by_count": 45.0,
+        "recovery_rate_by_amount": 43.72,
+        "recovered_count": 45,
+        "recovered_amount": 1846176
+      },
+      "naive": {
+        "recovery_rate_by_count": 14.0,
+        "recovery_rate_by_amount": 16.83,
+        "recovered_count": 14,
+        "recovered_amount": 710602
+      },
+      "uplift": {
+        "recovery_rate_by_count_percentage_points": 31.0,
+        "recovery_rate_by_amount_percentage_points": 26.89,
+        "recovered_amount": 1135574
+      }
+    }
+  ],
+  "summary": {
+    "smart": {
+      "recovery_rate_by_count": {
+        "mean": 43.5,
+        "standard_deviation": 2.78,
+        "min": 38.0,
+        "max": 49.0
+      },
+      "recovery_rate_by_amount": {
+        "mean": 39.45,
+        "standard_deviation": 3.74,
+        "min": 33.49,
+        "max": 46.68
+      },
+      "recovered_amount": {
+        "mean": 1665904.05,
+        "standard_deviation": 158066.82,
+        "min": 1414448.0,
+        "max": 1971495.0
+      }
+    },
+    "naive": {
+      "recovery_rate_by_count": {
+        "mean": 14.85,
+        "standard_deviation": 1.27,
+        "min": 13.0,
+        "max": 17.0
+      },
+      "recovery_rate_by_amount": {
+        "mean": 17.4,
+        "standard_deviation": 2.45,
+        "min": 13.54,
+        "max": 21.71
+      },
+      "recovered_amount": {
+        "mean": 734717.0,
+        "standard_deviation": 103425.66,
+        "min": 571879.0,
+        "max": 916787.0
+      }
+    },
+    "uplift": {
+      "recovery_rate_by_count_percentage_points": {
+        "mean": 28.65,
+        "standard_deviation": 2.87,
+        "min": 24.0,
+        "max": 33.0
+      },
+      "recovery_rate_by_amount_percentage_points": {
+        "mean": 22.05,
+        "standard_deviation": 4.19,
+        "min": 14.1,
+        "max": 27.79
+      },
+      "recovered_amount": {
+        "mean": 931187.05,
+        "standard_deviation": 176825.36,
+        "min": 595340.0,
+        "max": 1173704.0
+      }
+    }
+  }
+}

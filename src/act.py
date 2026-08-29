@@ -174,7 +174,9 @@ def simulate_execution(
     return [simulate_mandate(record, seed) for record in records]
 
 
-def build_final_report(audit_entries: list[Mapping[str, Any]]) -> dict[str, Any]:
+def build_final_report(
+    audit_entries: list[Mapping[str, Any]], seed: int = SIMULATION_SEED
+) -> dict[str, Any]:
     """Aggregate portfolio recovery metrics from the audit trail."""
 
     total_count = len(audit_entries)
@@ -202,7 +204,7 @@ def build_final_report(audit_entries: list[Mapping[str, Any]]) -> dict[str, Any]
         "exhausted_count": sum(
             entry["final_status"] == "exhausted" for entry in audit_entries
         ),
-        "simulation_seed": SIMULATION_SEED,
+        "simulation_seed": seed,
     }
 
 

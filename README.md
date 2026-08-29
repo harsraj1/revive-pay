@@ -161,6 +161,16 @@ Run the complete suite:
 python -m pytest -q
 ```
 
+Run the statistically aggregated 20-seed comparison:
+
+```powershell
+python src/multi_seed_eval.py
+```
+
+This writes `data/multi_seed_report.json` and prints per-seed results plus mean,
+sample standard deviation, minimum, maximum, and uplift range. It reuses the
+same smart and baseline simulators rather than implementing a second outcome model.
+
 The tests cover reproducible data generation, schema validity, fail-closed detection, fallback behavior, retry caps, permitted windows, reason-specific spacing, category escalation, messaging safety, deterministic simulation, baseline rejection, real-case extraction, and fail-fast orchestration.
 
 Current verified result:
@@ -224,9 +234,10 @@ upi-recovery-agent/
 │   ├── message.py
 │   ├── act.py
 │   ├── baseline.py
+│   ├── multi_seed_eval.py
 │   ├── find_failure_case.py
 │   └── run_all.py
-├── data/                     # stage outputs and reports
+├── data/                     # stage outputs, single-seed and multi-seed reports
 ├── logs/
 │   └── audit_trail.json
 ├── docs/
