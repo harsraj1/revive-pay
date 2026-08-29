@@ -3,7 +3,7 @@
 from datetime import datetime, timedelta
 
 from src.act import deterministic_draw, simulate_execution, simulate_mandate
-from src.constants import SUCCESS_PROBABILITIES
+from src.constants import RETRY_AUTOPAY, SUCCESS_PROBABILITIES
 
 
 def _record(reason: str = "bank_server_down") -> dict[str, object]:
@@ -16,6 +16,12 @@ def _record(reason: str = "bank_server_down") -> dict[str, object]:
         "failed_at": "2026-08-03T10:00:00+05:30",
         "retriable": True,
         "rule_explanation": "Configured policy permits retry.",
+        "amount_band": "low",
+        "chosen_actions": [RETRY_AUTOPAY],
+        "primary_action": RETRY_AUTOPAY,
+        "intervention_reason": "A quiet deterministic retry is authorized.",
+        "intervention_rule": "test_retry_rule",
+        "customer_message_required": False,
         "attempts_already_made": 0,
         "escalate_after_attempts": 3,
         "retry_schedule": [
@@ -86,3 +92,15 @@ def test_audit_timestamps_are_explicitly_ist_aware() -> None:
         assert datetime.fromisoformat(attempt["executed_at"]).utcoffset() == timedelta(
             hours=5, minutes=30
         )
+
+
+def test_audit_preserves_intervention_action_and_reason() -> None:
+    result = simulate_mandate(_record("bank_server_down"), seed=0)
+
+    assert result["chosen_actions"] == [RETRY_AUTOPAY]
+    assert result["primary_action"] == RETRY_AUTOPAY
+    assert result["intervention_reason"] == "A quiet deterministic retry is authorized."
+    assert all(
+        attempt["intervention_action"] == RETRY_AUTOPAY
+        for attempt in result["attempts_made"]
+    )

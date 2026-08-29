@@ -6,7 +6,47 @@ in one place makes policy changes auditable and prevents business rules from
 being scattered across pipeline stages.
 """
 
+from enum import Enum
 from typing import Final, TypedDict
+
+
+class InterventionAction(str, Enum):
+    """Closed set of actions the intervention policy may authorize.
+
+    Inheriting from ``str`` keeps values JSON-serializable while the enum
+    prevents policy code from emitting ad-hoc action names.
+    """
+
+    RETRY_AUTOPAY = "RETRY_AUTOPAY"
+    SEND_BALANCE_REMINDER = "SEND_BALANCE_REMINDER"
+    SEND_PAYMENT_LINK = "SEND_PAYMENT_LINK"
+    REQUEST_MANDATE_RENEWAL = "REQUEST_MANDATE_RENEWAL"
+    WAIT_FOR_DAILY_RESET = "WAIT_FOR_DAILY_RESET"
+    CREATE_SUPPORT_CASE = "CREATE_SUPPORT_CASE"
+    STOP_AUTOMATION = "STOP_AUTOMATION"
+
+
+# Module-level aliases make policy tables concise and provide stable imports
+# for adapters that should not need to know about the enum implementation.
+RETRY_AUTOPAY: Final[str] = InterventionAction.RETRY_AUTOPAY.value
+SEND_BALANCE_REMINDER: Final[str] = InterventionAction.SEND_BALANCE_REMINDER.value
+SEND_PAYMENT_LINK: Final[str] = InterventionAction.SEND_PAYMENT_LINK.value
+REQUEST_MANDATE_RENEWAL: Final[str] = InterventionAction.REQUEST_MANDATE_RENEWAL.value
+WAIT_FOR_DAILY_RESET: Final[str] = InterventionAction.WAIT_FOR_DAILY_RESET.value
+CREATE_SUPPORT_CASE: Final[str] = InterventionAction.CREATE_SUPPORT_CASE.value
+STOP_AUTOMATION: Final[str] = InterventionAction.STOP_AUTOMATION.value
+
+PERMITTED_INTERVENTION_ACTIONS: Final[frozenset[str]] = frozenset(
+    action.value for action in InterventionAction
+)
+
+# Amount is stored as whole INR throughout the existing pipeline. These bands
+# influence post-cap handling only; they never override failure safety rules.
+AMOUNT_BAND_MAXIMUMS: Final[dict[str, int | None]] = {
+    "low": 2_999,
+    "medium": 24_999,
+    "high": None,
+}
 
 
 class FailurePolicy(TypedDict):

@@ -7,6 +7,27 @@ import os
 from pathlib import Path
 from typing import Any, Mapping
 
+try:
+    from .constants import (
+        CREATE_SUPPORT_CASE,
+        REQUEST_MANDATE_RENEWAL,
+        RETRY_AUTOPAY,
+        SEND_BALANCE_REMINDER,
+        SEND_PAYMENT_LINK,
+        STOP_AUTOMATION,
+        WAIT_FOR_DAILY_RESET,
+    )
+except ImportError:  # Supports direct execution: python src/message.py
+    from constants import (  # type: ignore[no-redef]
+        CREATE_SUPPORT_CASE,
+        REQUEST_MANDATE_RENEWAL,
+        RETRY_AUTOPAY,
+        SEND_BALANCE_REMINDER,
+        SEND_PAYMENT_LINK,
+        STOP_AUTOMATION,
+        WAIT_FOR_DAILY_RESET,
+    )
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_INPUT_PATH = PROJECT_ROOT / "data" / "escalate_output.json"
@@ -31,8 +52,51 @@ FAILURE_WORDS = ("fail", "failed", "nahi ho paya", "unsuccessful")
 
 
 def _next_action(record: Mapping[str, Any]) -> str:
-    """Derive a safe next action from deterministic failure and schedule data."""
+    """Translate router actions into one truthful customer instruction."""
 
+    raw_actions = record.get("chosen_actions")
+    actions = (
+        {str(action) for action in raw_actions}
+        if isinstance(raw_actions, list)
+        else set()
+    )
+
+    # Combined terminal actions need combined copy: omitting STOP_AUTOMATION or
+    # CREATE_SUPPORT_CASE would make a payment-link message technically true but
+    # incomplete and confusing to the customer.
+    if {
+        CREATE_SUPPORT_CASE,
+        SEND_PAYMENT_LINK,
+        STOP_AUTOMATION,
+    }.issubset(actions):
+        return (
+            "No further automatic debit will be attempted; please use the payment-link "
+            "option or contact customer support."
+        )
+    if SEND_PAYMENT_LINK in actions and STOP_AUTOMATION in actions:
+        return (
+            "No further automatic debit will be attempted; please complete the payment "
+            "using the manual payment-link option."
+        )
+
+    # Customer-directed actions take priority for non-terminal combinations.
+    # The complete action set is still passed to Gemini for context below.
+    if REQUEST_MANDATE_RENEWAL in actions:
+        return "Please renew the UPI mandate before trying the payment again."
+    if SEND_BALANCE_REMINDER in actions:
+        return "Please keep sufficient balance in your linked account for the scheduled retry."
+    if WAIT_FOR_DAILY_RESET in actions:
+        return "Please keep enough daily transaction limit available for the next-day retry."
+    if SEND_PAYMENT_LINK in actions:
+        return "Please complete the payment using the manual payment-link option."
+    if CREATE_SUPPORT_CASE in actions:
+        return "Please contact customer support; no further automatic debit will be attempted."
+    if STOP_AUTOMATION in actions:
+        return "No further automatic debit will be attempted; please contact customer support."
+    if RETRY_AUTOPAY in actions:
+        return "No action is needed now; we will retry at the scheduled time."
+
+    # Compatibility fallback for old stage files that predate the router.
     reason = record.get("failure_reason")
     schedule = record.get("retry_schedule")
     has_retry = isinstance(schedule, list) and bool(schedule)
@@ -64,8 +128,11 @@ def _category_label(category: str) -> str:
     }.get(category, "UPI AutoPay")
 
 
-def fallback_message(record: Mapping[str, Any]) -> str:
+def fallback_message(record: Mapping[str, Any]) -> str | None:
     """Create deterministic Hinglish copy for all categories and failures."""
+
+    if record.get("customer_message_required") is False:
+        return None
 
     category = str(record.get("category", ""))
     label = _category_label(category)
@@ -76,16 +143,39 @@ def fallback_message(record: Mapping[str, Any]) -> str:
     # Hinglish phrases. No amount, penalty, or recovery outcome is invented.
     action_hinglish = {
         "Please keep sufficient balance in your linked account for the scheduled retry.": (
-            "Scheduled retry ke liye linked account mein sufficient balance rakhein."
+            "Agle retry se pehle linked account mein sufficient balance rakh lein."
         ),
         "No action is needed now; we will retry at the scheduled time.": (
-            "Abhi koi action zaroori nahi; scheduled time par retry hoga."
+            "Abhi aapko kuch karne ki zarurat nahi; hum sahi time par dobara try karenge."
         ),
         "Please keep enough daily transaction limit available for the next-day retry.": (
-            "Next-day retry ke liye daily transaction limit available rakhein."
+            "Kal dobara try karne se pehle daily transaction limit available rakhiyega."
         ),
         "Please renew the UPI mandate before trying the payment again.": (
-            "Payment dobara try karne se pehle UPI mandate renew karein."
+            "Payment continue karne ke liye apna UPI mandate renew karein."
+        ),
+        "Please complete the payment using the manual payment-link option.": (
+            "Payment complete karne ke liye payment link option use karein."
+        ),
+        (
+            "No further automatic debit will be attempted; please use the payment-link "
+            "option or contact customer support."
+        ): (
+            "Automatic retries rok diye gaye hain; payment link use karein ya help ke "
+            "liye customer support se baat karein."
+        ),
+        (
+            "No further automatic debit will be attempted; please complete the payment "
+            "using the manual payment-link option."
+        ): (
+            "Automatic retries rok diye gaye hain; payment complete karne ke liye "
+            "payment link option use karein."
+        ),
+        "Please contact customer support; no further automatic debit will be attempted.": (
+            "Automatic retries rok diye gaye hain; help ke liye customer support se baat karein."
+        ),
+        "No further automatic debit will be attempted; please contact customer support.": (
+            "Automatic retries rok diye gaye hain; help ke liye customer support se baat karein."
         ),
         "Please approve a new payment only if you wish to continue.": (
             "Continue karna ho toh naya payment approve karein."
@@ -159,6 +249,7 @@ def _gemini_message_batch(
             "customer_first_name": str(record.get("customer_name", "Customer")).split()[0],
             "category": record["category"],
             "failure_reason": record["failure_reason"],
+            "chosen_actions": record.get("chosen_actions", []),
             "tone": MESSAGE_TONES.get(str(record["category"]), "respectful and formal"),
             "required_next_action": _next_action(record),
         }
@@ -167,8 +258,12 @@ def _gemini_message_batch(
     prompt = (
         "Write concise, natural Roman-script Hinglish messages for Indian fintech users. "
         "Return only a JSON array with mandate_id and customer_message. Each message must "
-        "clearly say the payment failed and communicate the supplied next action. Do not "
-        "invent penalties, fees, deadlines, promises, or payment outcomes. Keep each under "
+        "clearly say the payment failed and communicate the supplied next action. Sound like "
+        "a helpful Indian payments app, not a literal translation or a bank notice. Prefer "
+        "simple phrases such as 'dobara try karenge', 'rakh lein', and 'baat karein'; avoid "
+        "stiff phrases such as 'action zaroori' or 'scheduled time par retry hoga'. Never add, "
+        "remove, or reinterpret chosen_actions. Do not invent links, penalties, fees, deadlines, "
+        "promises, or payment outcomes. Keep each message to at most two short sentences and under "
         f"{MAX_MESSAGE_LENGTH} characters. Records:\n"
         + json.dumps(prompt_records, ensure_ascii=False)
     )
@@ -187,11 +282,16 @@ def add_customer_messages(
     """Attach AI or fallback messages without changing upstream decisions."""
 
     output = [{**record, "customer_message": fallback_message(record)} for record in records]
-    retriable = [record for record in output if record.get("retriable") is True]
+    messageable = [
+        record
+        for record in output
+        if record.get("customer_message_required") is not False
+        and isinstance(record.get("customer_message"), str)
+    ]
 
     if api_key:
-        for start in range(0, len(retriable), GEMINI_BATCH_SIZE):
-            batch = retriable[start : start + GEMINI_BATCH_SIZE]
+        for start in range(0, len(messageable), GEMINI_BATCH_SIZE):
+            batch = messageable[start : start + GEMINI_BATCH_SIZE]
             try:
                 generated = _gemini_message_batch(batch, api_key)
             except Exception:

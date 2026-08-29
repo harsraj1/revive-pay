@@ -11,12 +11,22 @@ from pathlib import Path
 from typing import Any, Mapping
 
 try:
-    from .constants import EXECUTION_TIMEZONE, SIMULATION_SEED, SUCCESS_PROBABILITIES
+    from .constants import (
+        CREATE_SUPPORT_CASE,
+        EXECUTION_TIMEZONE,
+        RETRY_AUTOPAY,
+        SIMULATION_SEED,
+        STOP_AUTOMATION,
+        SUCCESS_PROBABILITIES,
+    )
     from .time_utils import combine_ist, ist_isoformat, parse_ist_datetime
 except ImportError:  # Supports direct execution: python src/act.py
     from constants import (  # type: ignore[no-redef]
         EXECUTION_TIMEZONE,
+        CREATE_SUPPORT_CASE,
+        RETRY_AUTOPAY,
         SIMULATION_SEED,
+        STOP_AUTOMATION,
         SUCCESS_PROBABILITIES,
     )
     from time_utils import (  # type: ignore[no-redef]
@@ -81,6 +91,12 @@ def _base_audit_entry(record: Mapping[str, Any]) -> dict[str, Any]:
         "retriable": record.get("retriable", False),
         "retry_rule_explanation": record.get("rule_explanation"),
         "schedule_justification": record.get("schedule_justification"),
+        "amount_band": record.get("amount_band"),
+        "chosen_actions": list(record.get("chosen_actions", [])),
+        "primary_action": record.get("primary_action"),
+        "intervention_reason": record.get("intervention_reason"),
+        "intervention_rule": record.get("intervention_rule"),
+        "customer_message_required": record.get("customer_message_required"),
         "customer_message": record.get("customer_message"),
         "urgency_priority": record.get("urgency_priority"),
         "escalate_after_attempts": record.get("escalate_after_attempts"),
@@ -91,6 +107,10 @@ def _base_audit_entry(record: Mapping[str, Any]) -> dict[str, Any]:
         "attempts_made": [],
         "final_status": None,
         "stop_reason": None,
+        "source_event": record.get("source_event"),
+        "source_account_id": record.get("source_account_id"),
+        "source_payment_id": record.get("source_payment_id"),
+        "source_subscription_id": record.get("source_subscription_id"),
     }
 
 
@@ -100,10 +120,33 @@ def simulate_mandate(
     """Simulate one mandate sequentially and return its complete audit entry."""
 
     audit = _base_audit_entry(record)
+    actions = {
+        str(action)
+        for action in audit["chosen_actions"]
+        if isinstance(action, str)
+    }
     if record.get("retriable") is not True:
         audit["final_status"] = "non_retriable"
         audit["stop_reason"] = (
-            "Deterministic failure policy prohibited automatic retry."
+            str(record.get("intervention_reason"))
+            if record.get("intervention_reason")
+            else "Deterministic failure policy prohibited automatic retry."
+        )
+        return audit
+
+    # A retriable failure may still have exhausted its global/category action
+    # allowance. The router, not the existence of an old schedule, controls
+    # whether execution is permitted at this point.
+    if RETRY_AUTOPAY not in actions and actions:
+        if CREATE_SUPPORT_CASE in actions:
+            audit["final_status"] = "escalated"
+        elif STOP_AUTOMATION in actions:
+            audit["final_status"] = "exhausted"
+        else:
+            audit["final_status"] = "non_retriable"
+        audit["stop_reason"] = str(
+            record.get("intervention_reason")
+            or "The intervention router did not authorize another AutoPay retry."
         )
         return audit
 
@@ -145,7 +188,9 @@ def simulate_mandate(
                 "timezone": EXECUTION_TIMEZONE,
                 "window_label": normalized_attempt["window_label"],
                 "decision": "retry_executed",
-                "why_retried": record.get("rule_explanation"),
+                "intervention_action": RETRY_AUTOPAY,
+                "why_retried": record.get("intervention_reason")
+                or record.get("rule_explanation"),
                 "success_probability": probability,
                 "random_draw": round(draw, 6),
                 "outcome": "success" if successful else "failure",

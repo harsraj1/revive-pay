@@ -14,7 +14,9 @@ try:
         FAILURE_REASONS,
         MAX_RETRIES,
         PERMITTED_EXECUTION_WINDOWS,
+        RETRY_AUTOPAY,
     )
+    from .intervention_router import route_intervention
     from .time_utils import combine_ist, ist_isoformat, localize_ist, parse_ist_datetime
 except ImportError:  # Supports direct execution: python src/decide.py
     from constants import (  # type: ignore[no-redef]
@@ -22,7 +24,9 @@ except ImportError:  # Supports direct execution: python src/decide.py
         FAILURE_REASONS,
         MAX_RETRIES,
         PERMITTED_EXECUTION_WINDOWS,
+        RETRY_AUTOPAY,
     )
+    from intervention_router import route_intervention  # type: ignore[no-redef]
     from time_utils import (  # type: ignore[no-redef]
         combine_ist,
         ist_isoformat,
@@ -219,6 +223,11 @@ def _fallback_justification(record: Mapping[str, Any]) -> str:
     """Explain the deterministic strategy without relying on Gemini."""
 
     reason = str(record.get("failure_reason", "unknown_failure"))
+    schedule = record.get("retry_schedule")
+    if not isinstance(schedule, list) or not schedule:
+        intervention_reason = record.get("intervention_reason")
+        if isinstance(intervention_reason, str) and intervention_reason.strip():
+            return intervention_reason
     explanations = {
         "insufficient_balance": (
             "Retries are spaced across several days to allow balance replenishment."
@@ -325,11 +334,20 @@ def add_schedule_justifications(
 def decide_records(
     records: list[Mapping[str, Any]], api_key: str | None = None
 ) -> list[dict[str, Any]]:
-    """Build all schedules first, then add optional language explanations."""
+    """Route interventions, build permitted schedules, then explain them."""
 
-    output = [
-        {**record, "retry_schedule": build_retry_schedule(record)} for record in records
-    ]
+    output: list[dict[str, Any]] = []
+    for record in records:
+        intervention = route_intervention(record)
+        actions = intervention["chosen_actions"]
+
+        # Timing is subordinate to the intervention policy. Even if scheduling
+        # code could construct dates, no dates may flow downstream unless the
+        # router explicitly authorized RETRY_AUTOPAY.
+        schedule = (
+            build_retry_schedule(record) if RETRY_AUTOPAY in actions else []
+        )
+        output.append({**record, **intervention, "retry_schedule": schedule})
     return add_schedule_justifications(output, api_key)
 
 

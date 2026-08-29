@@ -4,8 +4,13 @@ import os
 import time
 from datetime import date, datetime, timedelta
 
-from src.constants import MAX_RETRIES, PERMITTED_EXECUTION_WINDOWS
-from src.decide import build_retry_schedule, validate_schedule
+from src.constants import (
+    MAX_RETRIES,
+    PERMITTED_EXECUTION_WINDOWS,
+    REQUEST_MANDATE_RENEWAL,
+    RETRY_AUTOPAY,
+)
+from src.decide import build_retry_schedule, decide_records, validate_schedule
 
 
 def _record(reason: str, attempts: int = 0) -> dict[str, object]:
@@ -72,6 +77,17 @@ def test_daily_limit_never_retries_on_failure_day() -> None:
     schedule = build_retry_schedule(_record("daily_limit_exceeded"))
     assert schedule
     assert all(date.fromisoformat(item["scheduled_date"]) > failure_day for item in schedule)
+
+
+def test_decide_output_contains_router_decision_and_gates_schedule() -> None:
+    retriable = decide_records([_record("insufficient_balance")], api_key=None)[0]
+    expired = decide_records([_record("mandate_expired")], api_key=None)[0]
+
+    assert RETRY_AUTOPAY in retriable["chosen_actions"]
+    assert retriable["retry_schedule"]
+    assert expired["chosen_actions"] == [REQUEST_MANDATE_RENEWAL]
+    assert expired["retry_schedule"] == []
+    assert expired["intervention_reason"]
 
 
 def test_non_ist_host_setting_still_produces_ist_schedule(monkeypatch) -> None:

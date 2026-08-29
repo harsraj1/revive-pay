@@ -12,6 +12,15 @@
     "rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
     "diagnosis": "Insufficient balance is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "medium",
+    "chosen_actions": [
+      "SEND_BALANCE_REMINDER",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "SEND_BALANCE_REMINDER",
+    "intervention_reason": "A balance reminder is required before the delayed, policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_insufficient_balance",
     "retry_schedule": [
       {
         "attempt_num": 3,
@@ -37,6 +46,15 @@
     "rule_explanation": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Daily limit exceeded is eligible for a policy-controlled retry.",
     "recovery_confidence": "high",
+    "amount_band": "medium",
+    "chosen_actions": [
+      "WAIT_FOR_DAILY_RESET",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "WAIT_FOR_DAILY_RESET",
+    "intervention_reason": "Automation must wait for the next daily-limit reset before the policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_daily_limit_exceeded",
     "retry_schedule": [
       {
         "attempt_num": 2,
@@ -70,6 +88,15 @@
     "rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
     "diagnosis": "Insufficient balance is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "high",
+    "chosen_actions": [
+      "SEND_BALANCE_REMINDER",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "SEND_BALANCE_REMINDER",
+    "intervention_reason": "A balance reminder is required before the delayed, policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_insufficient_balance",
     "retry_schedule": [
       {
         "attempt_num": 1,
@@ -111,6 +138,15 @@
     "rule_explanation": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Daily limit exceeded is eligible for a policy-controlled retry.",
     "recovery_confidence": "high",
+    "amount_band": "high",
+    "chosen_actions": [
+      "WAIT_FOR_DAILY_RESET",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "WAIT_FOR_DAILY_RESET",
+    "intervention_reason": "Automation must wait for the next daily-limit reset before the policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_daily_limit_exceeded",
     "retry_schedule": [
       {
         "attempt_num": 3,
@@ -136,17 +172,18 @@
     "rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
     "diagnosis": "Insufficient balance is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
-    "retry_schedule": [
-      {
-        "attempt_num": 3,
-        "scheduled_date": "2026-07-19",
-        "scheduled_time": "14:00",
-        "scheduled_at": "2026-07-19T14:00:00+05:30",
-        "timezone": "Asia/Kolkata",
-        "window_label": "afternoon"
-      }
+    "amount_band": "high",
+    "chosen_actions": [
+      "CREATE_SUPPORT_CASE",
+      "SEND_PAYMENT_LINK",
+      "STOP_AUTOMATION"
     ],
-    "schedule_justification": "Retries are spaced across several days to allow balance replenishment."
+    "primary_action": "CREATE_SUPPORT_CASE",
+    "intervention_reason": "The insurance intervention limit of 2 attempt(s) was reached; support takes ownership, a manual payment path is offered, and automatic retry stops.",
+    "customer_message_required": true,
+    "intervention_rule": "high_value_category_escalation",
+    "retry_schedule": [],
+    "schedule_justification": "The insurance intervention limit of 2 attempt(s) was reached; support takes ownership, a manual payment path is offered, and automatic retry stops."
   },
   {
     "mandate_id": "MANDATE-0006",
@@ -161,17 +198,18 @@
     "rule_explanation": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Daily limit exceeded is eligible for a policy-controlled retry.",
     "recovery_confidence": "high",
-    "retry_schedule": [
-      {
-        "attempt_num": 3,
-        "scheduled_date": "2026-07-04",
-        "scheduled_time": "22:00",
-        "scheduled_at": "2026-07-04T22:00:00+05:30",
-        "timezone": "Asia/Kolkata",
-        "window_label": "late_night"
-      }
+    "amount_band": "high",
+    "chosen_actions": [
+      "CREATE_SUPPORT_CASE",
+      "SEND_PAYMENT_LINK",
+      "STOP_AUTOMATION"
     ],
-    "schedule_justification": "Retries begin on a later calendar day so the daily limit can reset."
+    "primary_action": "CREATE_SUPPORT_CASE",
+    "intervention_reason": "The emi intervention limit of 2 attempt(s) was reached; support takes ownership, a manual payment path is offered, and automatic retry stops.",
+    "customer_message_required": true,
+    "intervention_rule": "high_value_category_escalation",
+    "retry_schedule": [],
+    "schedule_justification": "The emi intervention limit of 2 attempt(s) was reached; support takes ownership, a manual payment path is offered, and automatic retry stops."
   },
   {
     "mandate_id": "MANDATE-0007",
@@ -186,6 +224,15 @@
     "rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
     "diagnosis": "Insufficient balance is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "high",
+    "chosen_actions": [
+      "SEND_BALANCE_REMINDER",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "SEND_BALANCE_REMINDER",
+    "intervention_reason": "A balance reminder is required before the delayed, policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_insufficient_balance",
     "retry_schedule": [
       {
         "attempt_num": 1,
@@ -227,6 +274,15 @@
     "rule_explanation": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Daily limit exceeded is eligible for a policy-controlled retry.",
     "recovery_confidence": "high",
+    "amount_band": "high",
+    "chosen_actions": [
+      "WAIT_FOR_DAILY_RESET",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "WAIT_FOR_DAILY_RESET",
+    "intervention_reason": "Automation must wait for the next daily-limit reset before the policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_daily_limit_exceeded",
     "retry_schedule": [
       {
         "attempt_num": 3,
@@ -252,6 +308,14 @@
     "rule_explanation": "Configured policy marks technical_decline as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Technical decline is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "low",
+    "chosen_actions": [
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "RETRY_AUTOPAY",
+    "intervention_reason": "A bounded AutoPay retry is allowed for the transient technical decline.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_technical_decline",
     "retry_schedule": [
       {
         "attempt_num": 3,
@@ -277,17 +341,18 @@
     "rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
     "diagnosis": "Insufficient balance is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
-    "retry_schedule": [
-      {
-        "attempt_num": 3,
-        "scheduled_date": "2026-07-20",
-        "scheduled_time": "06:00",
-        "scheduled_at": "2026-07-20T06:00:00+05:30",
-        "timezone": "Asia/Kolkata",
-        "window_label": "early_morning"
-      }
+    "amount_band": "high",
+    "chosen_actions": [
+      "CREATE_SUPPORT_CASE",
+      "SEND_PAYMENT_LINK",
+      "STOP_AUTOMATION"
     ],
-    "schedule_justification": "Retries are spaced across several days to allow balance replenishment."
+    "primary_action": "CREATE_SUPPORT_CASE",
+    "intervention_reason": "The insurance intervention limit of 2 attempt(s) was reached; support takes ownership, a manual payment path is offered, and automatic retry stops.",
+    "customer_message_required": true,
+    "intervention_rule": "high_value_category_escalation",
+    "retry_schedule": [],
+    "schedule_justification": "The insurance intervention limit of 2 attempt(s) was reached; support takes ownership, a manual payment path is offered, and automatic retry stops."
   },
   {
     "mandate_id": "MANDATE-0011",
@@ -302,8 +367,17 @@
     "rule_explanation": "Configured policy marks user_declined as non-retriable; automatic retry is blocked.",
     "diagnosis": "User declined blocks automatic retry.",
     "recovery_confidence": "low",
+    "amount_band": "high",
+    "chosen_actions": [
+      "SEND_PAYMENT_LINK",
+      "STOP_AUTOMATION"
+    ],
+    "primary_action": "SEND_PAYMENT_LINK",
+    "intervention_reason": "The customer declined the mandate debit, so automatic retries stop and only a customer-initiated payment path is permitted.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_user_declined",
     "retry_schedule": [],
-    "schedule_justification": "No automatic retry schedule is permitted by policy."
+    "schedule_justification": "The customer declined the mandate debit, so automatic retries stop and only a customer-initiated payment path is permitted."
   },
   {
     "mandate_id": "MANDATE-0012",
@@ -318,6 +392,14 @@
     "rule_explanation": "Configured policy marks technical_decline as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Technical decline is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "low",
+    "chosen_actions": [
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "RETRY_AUTOPAY",
+    "intervention_reason": "A bounded AutoPay retry is allowed for the transient technical decline.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_technical_decline",
     "retry_schedule": [
       {
         "attempt_num": 2,
@@ -351,8 +433,17 @@
     "rule_explanation": "Configured policy marks user_declined as non-retriable; automatic retry is blocked.",
     "diagnosis": "User declined blocks automatic retry.",
     "recovery_confidence": "low",
+    "amount_band": "medium",
+    "chosen_actions": [
+      "SEND_PAYMENT_LINK",
+      "STOP_AUTOMATION"
+    ],
+    "primary_action": "SEND_PAYMENT_LINK",
+    "intervention_reason": "The customer declined the mandate debit, so automatic retries stop and only a customer-initiated payment path is permitted.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_user_declined",
     "retry_schedule": [],
-    "schedule_justification": "No automatic retry schedule is permitted by policy."
+    "schedule_justification": "The customer declined the mandate debit, so automatic retries stop and only a customer-initiated payment path is permitted."
   },
   {
     "mandate_id": "MANDATE-0014",
@@ -367,6 +458,15 @@
     "rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
     "diagnosis": "Insufficient balance is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "low",
+    "chosen_actions": [
+      "SEND_BALANCE_REMINDER",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "SEND_BALANCE_REMINDER",
+    "intervention_reason": "A balance reminder is required before the delayed, policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_insufficient_balance",
     "retry_schedule": [
       {
         "attempt_num": 1,
@@ -408,6 +508,14 @@
     "rule_explanation": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Bank server down is eligible for a policy-controlled retry.",
     "recovery_confidence": "high",
+    "amount_band": "low",
+    "chosen_actions": [
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "RETRY_AUTOPAY",
+    "intervention_reason": "The bank outage is transient, so a quiet AutoPay retry is allowed without unnecessary customer communication.",
+    "customer_message_required": false,
+    "intervention_rule": "failure_reason_bank_server_down",
     "retry_schedule": [
       {
         "attempt_num": 1,
@@ -449,8 +557,16 @@
     "rule_explanation": "Configured policy marks mandate_expired as non-retriable; automatic retry is blocked.",
     "diagnosis": "Mandate expired blocks automatic retry.",
     "recovery_confidence": "low",
+    "amount_band": "high",
+    "chosen_actions": [
+      "REQUEST_MANDATE_RENEWAL"
+    ],
+    "primary_action": "REQUEST_MANDATE_RENEWAL",
+    "intervention_reason": "The mandate is no longer valid; renewal is required and AutoPay retry is forbidden.",
+    "customer_message_required": true,
+    "intervention_rule": "expired_mandate_renewal_only",
     "retry_schedule": [],
-    "schedule_justification": "No automatic retry schedule is permitted by policy."
+    "schedule_justification": "The mandate is no longer valid; renewal is required and AutoPay retry is forbidden."
   },
   {
     "mandate_id": "MANDATE-0017",
@@ -465,17 +581,18 @@
     "rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
     "diagnosis": "Insufficient balance is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
-    "retry_schedule": [
-      {
-        "attempt_num": 3,
-        "scheduled_date": "2026-07-13",
-        "scheduled_time": "22:00",
-        "scheduled_at": "2026-07-13T22:00:00+05:30",
-        "timezone": "Asia/Kolkata",
-        "window_label": "late_night"
-      }
+    "amount_band": "medium",
+    "chosen_actions": [
+      "CREATE_SUPPORT_CASE",
+      "SEND_PAYMENT_LINK",
+      "STOP_AUTOMATION"
     ],
-    "schedule_justification": "Retries are spaced across several days to allow balance replenishment."
+    "primary_action": "CREATE_SUPPORT_CASE",
+    "intervention_reason": "The emi intervention limit of 2 attempt(s) was reached; support takes ownership, a manual payment path is offered, and automatic retry stops.",
+    "customer_message_required": true,
+    "intervention_rule": "high_value_category_escalation",
+    "retry_schedule": [],
+    "schedule_justification": "The emi intervention limit of 2 attempt(s) was reached; support takes ownership, a manual payment path is offered, and automatic retry stops."
   },
   {
     "mandate_id": "MANDATE-0018",
@@ -490,6 +607,14 @@
     "rule_explanation": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Bank server down is eligible for a policy-controlled retry.",
     "recovery_confidence": "high",
+    "amount_band": "high",
+    "chosen_actions": [
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "RETRY_AUTOPAY",
+    "intervention_reason": "The bank outage is transient, so a quiet AutoPay retry is allowed without unnecessary customer communication.",
+    "customer_message_required": false,
+    "intervention_rule": "failure_reason_bank_server_down",
     "retry_schedule": [
       {
         "attempt_num": 2,
@@ -523,8 +648,16 @@
     "rule_explanation": "Configured policy marks mandate_expired as non-retriable; automatic retry is blocked.",
     "diagnosis": "Mandate expired blocks automatic retry.",
     "recovery_confidence": "low",
+    "amount_band": "high",
+    "chosen_actions": [
+      "REQUEST_MANDATE_RENEWAL"
+    ],
+    "primary_action": "REQUEST_MANDATE_RENEWAL",
+    "intervention_reason": "The mandate is no longer valid; renewal is required and AutoPay retry is forbidden.",
+    "customer_message_required": true,
+    "intervention_rule": "expired_mandate_renewal_only",
     "retry_schedule": [],
-    "schedule_justification": "No automatic retry schedule is permitted by policy."
+    "schedule_justification": "The mandate is no longer valid; renewal is required and AutoPay retry is forbidden."
   },
   {
     "mandate_id": "MANDATE-0020",
@@ -539,8 +672,17 @@
     "rule_explanation": "Configured policy marks user_declined as non-retriable; automatic retry is blocked.",
     "diagnosis": "User declined blocks automatic retry.",
     "recovery_confidence": "low",
+    "amount_band": "high",
+    "chosen_actions": [
+      "SEND_PAYMENT_LINK",
+      "STOP_AUTOMATION"
+    ],
+    "primary_action": "SEND_PAYMENT_LINK",
+    "intervention_reason": "The customer declined the mandate debit, so automatic retries stop and only a customer-initiated payment path is permitted.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_user_declined",
     "retry_schedule": [],
-    "schedule_justification": "No automatic retry schedule is permitted by policy."
+    "schedule_justification": "The customer declined the mandate debit, so automatic retries stop and only a customer-initiated payment path is permitted."
   },
   {
     "mandate_id": "MANDATE-0021",
@@ -555,6 +697,15 @@
     "rule_explanation": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Daily limit exceeded is eligible for a policy-controlled retry.",
     "recovery_confidence": "high",
+    "amount_band": "medium",
+    "chosen_actions": [
+      "WAIT_FOR_DAILY_RESET",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "WAIT_FOR_DAILY_RESET",
+    "intervention_reason": "Automation must wait for the next daily-limit reset before the policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_daily_limit_exceeded",
     "retry_schedule": [
       {
         "attempt_num": 1,
@@ -596,6 +747,15 @@
     "rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
     "diagnosis": "Insufficient balance is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "medium",
+    "chosen_actions": [
+      "SEND_BALANCE_REMINDER",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "SEND_BALANCE_REMINDER",
+    "intervention_reason": "A balance reminder is required before the delayed, policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_insufficient_balance",
     "retry_schedule": [
       {
         "attempt_num": 2,
@@ -629,6 +789,14 @@
     "rule_explanation": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Bank server down is eligible for a policy-controlled retry.",
     "recovery_confidence": "high",
+    "amount_band": "high",
+    "chosen_actions": [
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "RETRY_AUTOPAY",
+    "intervention_reason": "The bank outage is transient, so a quiet AutoPay retry is allowed without unnecessary customer communication.",
+    "customer_message_required": false,
+    "intervention_rule": "failure_reason_bank_server_down",
     "retry_schedule": [
       {
         "attempt_num": 3,
@@ -654,6 +822,15 @@
     "rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
     "diagnosis": "Insufficient balance is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "high",
+    "chosen_actions": [
+      "SEND_BALANCE_REMINDER",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "SEND_BALANCE_REMINDER",
+    "intervention_reason": "A balance reminder is required before the delayed, policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_insufficient_balance",
     "retry_schedule": [
       {
         "attempt_num": 2,
@@ -687,6 +864,14 @@
     "rule_explanation": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Bank server down is eligible for a policy-controlled retry.",
     "recovery_confidence": "high",
+    "amount_band": "low",
+    "chosen_actions": [
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "RETRY_AUTOPAY",
+    "intervention_reason": "The bank outage is transient, so a quiet AutoPay retry is allowed without unnecessary customer communication.",
+    "customer_message_required": false,
+    "intervention_rule": "failure_reason_bank_server_down",
     "retry_schedule": [
       {
         "attempt_num": 1,
@@ -728,8 +913,16 @@
     "rule_explanation": "Configured policy marks mandate_expired as non-retriable; automatic retry is blocked.",
     "diagnosis": "Mandate expired blocks automatic retry.",
     "recovery_confidence": "low",
+    "amount_band": "high",
+    "chosen_actions": [
+      "REQUEST_MANDATE_RENEWAL"
+    ],
+    "primary_action": "REQUEST_MANDATE_RENEWAL",
+    "intervention_reason": "The mandate is no longer valid; renewal is required and AutoPay retry is forbidden.",
+    "customer_message_required": true,
+    "intervention_rule": "expired_mandate_renewal_only",
     "retry_schedule": [],
-    "schedule_justification": "No automatic retry schedule is permitted by policy."
+    "schedule_justification": "The mandate is no longer valid; renewal is required and AutoPay retry is forbidden."
   },
   {
     "mandate_id": "MANDATE-0027",
@@ -744,6 +937,14 @@
     "rule_explanation": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Bank server down is eligible for a policy-controlled retry.",
     "recovery_confidence": "high",
+    "amount_band": "low",
+    "chosen_actions": [
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "RETRY_AUTOPAY",
+    "intervention_reason": "The bank outage is transient, so a quiet AutoPay retry is allowed without unnecessary customer communication.",
+    "customer_message_required": false,
+    "intervention_rule": "failure_reason_bank_server_down",
     "retry_schedule": [
       {
         "attempt_num": 2,
@@ -777,6 +978,15 @@
     "rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
     "diagnosis": "Insufficient balance is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "high",
+    "chosen_actions": [
+      "SEND_BALANCE_REMINDER",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "SEND_BALANCE_REMINDER",
+    "intervention_reason": "A balance reminder is required before the delayed, policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_insufficient_balance",
     "retry_schedule": [
       {
         "attempt_num": 2,
@@ -810,6 +1020,15 @@
     "rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
     "diagnosis": "Insufficient balance is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "medium",
+    "chosen_actions": [
+      "SEND_BALANCE_REMINDER",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "SEND_BALANCE_REMINDER",
+    "intervention_reason": "A balance reminder is required before the delayed, policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_insufficient_balance",
     "retry_schedule": [
       {
         "attempt_num": 2,
@@ -843,6 +1062,14 @@
     "rule_explanation": "Configured policy marks technical_decline as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Technical decline is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "high",
+    "chosen_actions": [
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "RETRY_AUTOPAY",
+    "intervention_reason": "A bounded AutoPay retry is allowed for the transient technical decline.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_technical_decline",
     "retry_schedule": [
       {
         "attempt_num": 3,
@@ -868,8 +1095,17 @@
     "rule_explanation": "Configured policy marks account_frozen as non-retriable; automatic retry is blocked.",
     "diagnosis": "Account frozen blocks automatic retry.",
     "recovery_confidence": "low",
+    "amount_band": "low",
+    "chosen_actions": [
+      "CREATE_SUPPORT_CASE",
+      "STOP_AUTOMATION"
+    ],
+    "primary_action": "CREATE_SUPPORT_CASE",
+    "intervention_reason": "A frozen account cannot be retried safely; automation stops and a support case is required.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_account_frozen",
     "retry_schedule": [],
-    "schedule_justification": "No automatic retry schedule is permitted by policy."
+    "schedule_justification": "A frozen account cannot be retried safely; automation stops and a support case is required."
   },
   {
     "mandate_id": "MANDATE-0032",
@@ -884,8 +1120,17 @@
     "rule_explanation": "Configured policy marks user_declined as non-retriable; automatic retry is blocked.",
     "diagnosis": "User declined blocks automatic retry.",
     "recovery_confidence": "low",
+    "amount_band": "high",
+    "chosen_actions": [
+      "SEND_PAYMENT_LINK",
+      "STOP_AUTOMATION"
+    ],
+    "primary_action": "SEND_PAYMENT_LINK",
+    "intervention_reason": "The customer declined the mandate debit, so automatic retries stop and only a customer-initiated payment path is permitted.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_user_declined",
     "retry_schedule": [],
-    "schedule_justification": "No automatic retry schedule is permitted by policy."
+    "schedule_justification": "The customer declined the mandate debit, so automatic retries stop and only a customer-initiated payment path is permitted."
   },
   {
     "mandate_id": "MANDATE-0033",
@@ -900,6 +1145,15 @@
     "rule_explanation": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Daily limit exceeded is eligible for a policy-controlled retry.",
     "recovery_confidence": "high",
+    "amount_band": "high",
+    "chosen_actions": [
+      "WAIT_FOR_DAILY_RESET",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "WAIT_FOR_DAILY_RESET",
+    "intervention_reason": "Automation must wait for the next daily-limit reset before the policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_daily_limit_exceeded",
     "retry_schedule": [
       {
         "attempt_num": 1,
@@ -941,17 +1195,18 @@
     "rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
     "diagnosis": "Insufficient balance is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
-    "retry_schedule": [
-      {
-        "attempt_num": 3,
-        "scheduled_date": "2026-07-20",
-        "scheduled_time": "14:00",
-        "scheduled_at": "2026-07-20T14:00:00+05:30",
-        "timezone": "Asia/Kolkata",
-        "window_label": "afternoon"
-      }
+    "amount_band": "high",
+    "chosen_actions": [
+      "CREATE_SUPPORT_CASE",
+      "SEND_PAYMENT_LINK",
+      "STOP_AUTOMATION"
     ],
-    "schedule_justification": "Retries are spaced across several days to allow balance replenishment."
+    "primary_action": "CREATE_SUPPORT_CASE",
+    "intervention_reason": "The insurance intervention limit of 2 attempt(s) was reached; support takes ownership, a manual payment path is offered, and automatic retry stops.",
+    "customer_message_required": true,
+    "intervention_rule": "high_value_category_escalation",
+    "retry_schedule": [],
+    "schedule_justification": "The insurance intervention limit of 2 attempt(s) was reached; support takes ownership, a manual payment path is offered, and automatic retry stops."
   },
   {
     "mandate_id": "MANDATE-0035",
@@ -966,6 +1221,14 @@
     "rule_explanation": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Bank server down is eligible for a policy-controlled retry.",
     "recovery_confidence": "high",
+    "amount_band": "high",
+    "chosen_actions": [
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "RETRY_AUTOPAY",
+    "intervention_reason": "The bank outage is transient, so a quiet AutoPay retry is allowed without unnecessary customer communication.",
+    "customer_message_required": false,
+    "intervention_rule": "failure_reason_bank_server_down",
     "retry_schedule": [
       {
         "attempt_num": 2,
@@ -999,6 +1262,14 @@
     "rule_explanation": "Configured policy marks technical_decline as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Technical decline is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "low",
+    "chosen_actions": [
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "RETRY_AUTOPAY",
+    "intervention_reason": "A bounded AutoPay retry is allowed for the transient technical decline.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_technical_decline",
     "retry_schedule": [
       {
         "attempt_num": 3,
@@ -1024,8 +1295,17 @@
     "rule_explanation": "Configured policy marks user_declined as non-retriable; automatic retry is blocked.",
     "diagnosis": "User declined blocks automatic retry.",
     "recovery_confidence": "low",
+    "amount_band": "medium",
+    "chosen_actions": [
+      "SEND_PAYMENT_LINK",
+      "STOP_AUTOMATION"
+    ],
+    "primary_action": "SEND_PAYMENT_LINK",
+    "intervention_reason": "The customer declined the mandate debit, so automatic retries stop and only a customer-initiated payment path is permitted.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_user_declined",
     "retry_schedule": [],
-    "schedule_justification": "No automatic retry schedule is permitted by policy."
+    "schedule_justification": "The customer declined the mandate debit, so automatic retries stop and only a customer-initiated payment path is permitted."
   },
   {
     "mandate_id": "MANDATE-0038",
@@ -1040,6 +1320,15 @@
     "rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
     "diagnosis": "Insufficient balance is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "high",
+    "chosen_actions": [
+      "SEND_BALANCE_REMINDER",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "SEND_BALANCE_REMINDER",
+    "intervention_reason": "A balance reminder is required before the delayed, policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_insufficient_balance",
     "retry_schedule": [
       {
         "attempt_num": 1,
@@ -1081,6 +1370,15 @@
     "rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
     "diagnosis": "Insufficient balance is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "high",
+    "chosen_actions": [
+      "SEND_BALANCE_REMINDER",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "SEND_BALANCE_REMINDER",
+    "intervention_reason": "A balance reminder is required before the delayed, policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_insufficient_balance",
     "retry_schedule": [
       {
         "attempt_num": 2,
@@ -1114,6 +1412,15 @@
     "rule_explanation": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Daily limit exceeded is eligible for a policy-controlled retry.",
     "recovery_confidence": "high",
+    "amount_band": "high",
+    "chosen_actions": [
+      "WAIT_FOR_DAILY_RESET",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "WAIT_FOR_DAILY_RESET",
+    "intervention_reason": "Automation must wait for the next daily-limit reset before the policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_daily_limit_exceeded",
     "retry_schedule": [
       {
         "attempt_num": 2,
@@ -1147,6 +1454,15 @@
     "rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
     "diagnosis": "Insufficient balance is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "low",
+    "chosen_actions": [
+      "SEND_BALANCE_REMINDER",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "SEND_BALANCE_REMINDER",
+    "intervention_reason": "A balance reminder is required before the delayed, policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_insufficient_balance",
     "retry_schedule": [
       {
         "attempt_num": 1,
@@ -1188,6 +1504,14 @@
     "rule_explanation": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Bank server down is eligible for a policy-controlled retry.",
     "recovery_confidence": "high",
+    "amount_band": "high",
+    "chosen_actions": [
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "RETRY_AUTOPAY",
+    "intervention_reason": "The bank outage is transient, so a quiet AutoPay retry is allowed without unnecessary customer communication.",
+    "customer_message_required": false,
+    "intervention_rule": "failure_reason_bank_server_down",
     "retry_schedule": [
       {
         "attempt_num": 1,
@@ -1229,6 +1553,14 @@
     "rule_explanation": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Bank server down is eligible for a policy-controlled retry.",
     "recovery_confidence": "high",
+    "amount_band": "high",
+    "chosen_actions": [
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "RETRY_AUTOPAY",
+    "intervention_reason": "The bank outage is transient, so a quiet AutoPay retry is allowed without unnecessary customer communication.",
+    "customer_message_required": false,
+    "intervention_rule": "failure_reason_bank_server_down",
     "retry_schedule": [
       {
         "attempt_num": 2,
@@ -1262,8 +1594,16 @@
     "rule_explanation": "Configured policy marks mandate_expired as non-retriable; automatic retry is blocked.",
     "diagnosis": "Mandate expired blocks automatic retry.",
     "recovery_confidence": "low",
+    "amount_band": "medium",
+    "chosen_actions": [
+      "REQUEST_MANDATE_RENEWAL"
+    ],
+    "primary_action": "REQUEST_MANDATE_RENEWAL",
+    "intervention_reason": "The mandate is no longer valid; renewal is required and AutoPay retry is forbidden.",
+    "customer_message_required": true,
+    "intervention_rule": "expired_mandate_renewal_only",
     "retry_schedule": [],
-    "schedule_justification": "No automatic retry schedule is permitted by policy."
+    "schedule_justification": "The mandate is no longer valid; renewal is required and AutoPay retry is forbidden."
   },
   {
     "mandate_id": "MANDATE-0045",
@@ -1278,6 +1618,15 @@
     "rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
     "diagnosis": "Insufficient balance is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "high",
+    "chosen_actions": [
+      "SEND_BALANCE_REMINDER",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "SEND_BALANCE_REMINDER",
+    "intervention_reason": "A balance reminder is required before the delayed, policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_insufficient_balance",
     "retry_schedule": [
       {
         "attempt_num": 1,
@@ -1319,6 +1668,15 @@
     "rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
     "diagnosis": "Insufficient balance is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "high",
+    "chosen_actions": [
+      "SEND_BALANCE_REMINDER",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "SEND_BALANCE_REMINDER",
+    "intervention_reason": "A balance reminder is required before the delayed, policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_insufficient_balance",
     "retry_schedule": [
       {
         "attempt_num": 2,
@@ -1352,6 +1710,15 @@
     "rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
     "diagnosis": "Insufficient balance is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "high",
+    "chosen_actions": [
+      "SEND_BALANCE_REMINDER",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "SEND_BALANCE_REMINDER",
+    "intervention_reason": "A balance reminder is required before the delayed, policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_insufficient_balance",
     "retry_schedule": [
       {
         "attempt_num": 1,
@@ -1393,8 +1760,17 @@
     "rule_explanation": "Configured policy marks user_declined as non-retriable; automatic retry is blocked.",
     "diagnosis": "User declined blocks automatic retry.",
     "recovery_confidence": "low",
+    "amount_band": "medium",
+    "chosen_actions": [
+      "SEND_PAYMENT_LINK",
+      "STOP_AUTOMATION"
+    ],
+    "primary_action": "SEND_PAYMENT_LINK",
+    "intervention_reason": "The customer declined the mandate debit, so automatic retries stop and only a customer-initiated payment path is permitted.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_user_declined",
     "retry_schedule": [],
-    "schedule_justification": "No automatic retry schedule is permitted by policy."
+    "schedule_justification": "The customer declined the mandate debit, so automatic retries stop and only a customer-initiated payment path is permitted."
   },
   {
     "mandate_id": "MANDATE-0049",
@@ -1409,6 +1785,15 @@
     "rule_explanation": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Daily limit exceeded is eligible for a policy-controlled retry.",
     "recovery_confidence": "high",
+    "amount_band": "low",
+    "chosen_actions": [
+      "WAIT_FOR_DAILY_RESET",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "WAIT_FOR_DAILY_RESET",
+    "intervention_reason": "Automation must wait for the next daily-limit reset before the policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_daily_limit_exceeded",
     "retry_schedule": [
       {
         "attempt_num": 3,
@@ -1434,6 +1819,14 @@
     "rule_explanation": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Bank server down is eligible for a policy-controlled retry.",
     "recovery_confidence": "high",
+    "amount_band": "high",
+    "chosen_actions": [
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "RETRY_AUTOPAY",
+    "intervention_reason": "The bank outage is transient, so a quiet AutoPay retry is allowed without unnecessary customer communication.",
+    "customer_message_required": false,
+    "intervention_rule": "failure_reason_bank_server_down",
     "retry_schedule": [
       {
         "attempt_num": 1,
@@ -1475,6 +1868,14 @@
     "rule_explanation": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Bank server down is eligible for a policy-controlled retry.",
     "recovery_confidence": "high",
+    "amount_band": "medium",
+    "chosen_actions": [
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "RETRY_AUTOPAY",
+    "intervention_reason": "The bank outage is transient, so a quiet AutoPay retry is allowed without unnecessary customer communication.",
+    "customer_message_required": false,
+    "intervention_rule": "failure_reason_bank_server_down",
     "retry_schedule": [
       {
         "attempt_num": 1,
@@ -1516,8 +1917,16 @@
     "rule_explanation": "Configured policy marks mandate_expired as non-retriable; automatic retry is blocked.",
     "diagnosis": "Mandate expired blocks automatic retry.",
     "recovery_confidence": "low",
+    "amount_band": "high",
+    "chosen_actions": [
+      "REQUEST_MANDATE_RENEWAL"
+    ],
+    "primary_action": "REQUEST_MANDATE_RENEWAL",
+    "intervention_reason": "The mandate is no longer valid; renewal is required and AutoPay retry is forbidden.",
+    "customer_message_required": true,
+    "intervention_rule": "expired_mandate_renewal_only",
     "retry_schedule": [],
-    "schedule_justification": "No automatic retry schedule is permitted by policy."
+    "schedule_justification": "The mandate is no longer valid; renewal is required and AutoPay retry is forbidden."
   },
   {
     "mandate_id": "MANDATE-0053",
@@ -1532,8 +1941,16 @@
     "rule_explanation": "Configured policy marks mandate_expired as non-retriable; automatic retry is blocked.",
     "diagnosis": "Mandate expired blocks automatic retry.",
     "recovery_confidence": "low",
+    "amount_band": "high",
+    "chosen_actions": [
+      "REQUEST_MANDATE_RENEWAL"
+    ],
+    "primary_action": "REQUEST_MANDATE_RENEWAL",
+    "intervention_reason": "The mandate is no longer valid; renewal is required and AutoPay retry is forbidden.",
+    "customer_message_required": true,
+    "intervention_rule": "expired_mandate_renewal_only",
     "retry_schedule": [],
-    "schedule_justification": "No automatic retry schedule is permitted by policy."
+    "schedule_justification": "The mandate is no longer valid; renewal is required and AutoPay retry is forbidden."
   },
   {
     "mandate_id": "MANDATE-0054",
@@ -1548,6 +1965,14 @@
     "rule_explanation": "Configured policy marks technical_decline as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Technical decline is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "high",
+    "chosen_actions": [
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "RETRY_AUTOPAY",
+    "intervention_reason": "A bounded AutoPay retry is allowed for the transient technical decline.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_technical_decline",
     "retry_schedule": [
       {
         "attempt_num": 2,
@@ -1581,6 +2006,15 @@
     "rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
     "diagnosis": "Insufficient balance is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "low",
+    "chosen_actions": [
+      "SEND_BALANCE_REMINDER",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "SEND_BALANCE_REMINDER",
+    "intervention_reason": "A balance reminder is required before the delayed, policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_insufficient_balance",
     "retry_schedule": [
       {
         "attempt_num": 3,
@@ -1606,6 +2040,14 @@
     "rule_explanation": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Bank server down is eligible for a policy-controlled retry.",
     "recovery_confidence": "high",
+    "amount_band": "high",
+    "chosen_actions": [
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "RETRY_AUTOPAY",
+    "intervention_reason": "The bank outage is transient, so a quiet AutoPay retry is allowed without unnecessary customer communication.",
+    "customer_message_required": false,
+    "intervention_rule": "failure_reason_bank_server_down",
     "retry_schedule": [
       {
         "attempt_num": 3,
@@ -1631,6 +2073,14 @@
     "rule_explanation": "Configured policy marks technical_decline as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Technical decline is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "medium",
+    "chosen_actions": [
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "RETRY_AUTOPAY",
+    "intervention_reason": "A bounded AutoPay retry is allowed for the transient technical decline.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_technical_decline",
     "retry_schedule": [
       {
         "attempt_num": 2,
@@ -1664,17 +2114,18 @@
     "rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
     "diagnosis": "Insufficient balance is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
-    "retry_schedule": [
-      {
-        "attempt_num": 3,
-        "scheduled_date": "2026-07-17",
-        "scheduled_time": "06:00",
-        "scheduled_at": "2026-07-17T06:00:00+05:30",
-        "timezone": "Asia/Kolkata",
-        "window_label": "early_morning"
-      }
+    "amount_band": "high",
+    "chosen_actions": [
+      "CREATE_SUPPORT_CASE",
+      "SEND_PAYMENT_LINK",
+      "STOP_AUTOMATION"
     ],
-    "schedule_justification": "Retries are spaced across several days to allow balance replenishment."
+    "primary_action": "CREATE_SUPPORT_CASE",
+    "intervention_reason": "The insurance intervention limit of 2 attempt(s) was reached; support takes ownership, a manual payment path is offered, and automatic retry stops.",
+    "customer_message_required": true,
+    "intervention_rule": "high_value_category_escalation",
+    "retry_schedule": [],
+    "schedule_justification": "The insurance intervention limit of 2 attempt(s) was reached; support takes ownership, a manual payment path is offered, and automatic retry stops."
   },
   {
     "mandate_id": "MANDATE-0059",
@@ -1689,8 +2140,17 @@
     "rule_explanation": "Configured policy marks account_frozen as non-retriable; automatic retry is blocked.",
     "diagnosis": "Account frozen blocks automatic retry.",
     "recovery_confidence": "low",
+    "amount_band": "high",
+    "chosen_actions": [
+      "CREATE_SUPPORT_CASE",
+      "STOP_AUTOMATION"
+    ],
+    "primary_action": "CREATE_SUPPORT_CASE",
+    "intervention_reason": "A frozen account cannot be retried safely; automation stops and a support case is required.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_account_frozen",
     "retry_schedule": [],
-    "schedule_justification": "No automatic retry schedule is permitted by policy."
+    "schedule_justification": "A frozen account cannot be retried safely; automation stops and a support case is required."
   },
   {
     "mandate_id": "MANDATE-0060",
@@ -1705,6 +2165,15 @@
     "rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
     "diagnosis": "Insufficient balance is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "low",
+    "chosen_actions": [
+      "SEND_BALANCE_REMINDER",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "SEND_BALANCE_REMINDER",
+    "intervention_reason": "A balance reminder is required before the delayed, policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_insufficient_balance",
     "retry_schedule": [
       {
         "attempt_num": 3,
@@ -1730,8 +2199,17 @@
     "rule_explanation": "Configured policy marks account_frozen as non-retriable; automatic retry is blocked.",
     "diagnosis": "Account frozen blocks automatic retry.",
     "recovery_confidence": "low",
+    "amount_band": "low",
+    "chosen_actions": [
+      "CREATE_SUPPORT_CASE",
+      "STOP_AUTOMATION"
+    ],
+    "primary_action": "CREATE_SUPPORT_CASE",
+    "intervention_reason": "A frozen account cannot be retried safely; automation stops and a support case is required.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_account_frozen",
     "retry_schedule": [],
-    "schedule_justification": "No automatic retry schedule is permitted by policy."
+    "schedule_justification": "A frozen account cannot be retried safely; automation stops and a support case is required."
   },
   {
     "mandate_id": "MANDATE-0062",
@@ -1746,6 +2224,15 @@
     "rule_explanation": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Daily limit exceeded is eligible for a policy-controlled retry.",
     "recovery_confidence": "high",
+    "amount_band": "high",
+    "chosen_actions": [
+      "WAIT_FOR_DAILY_RESET",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "WAIT_FOR_DAILY_RESET",
+    "intervention_reason": "Automation must wait for the next daily-limit reset before the policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_daily_limit_exceeded",
     "retry_schedule": [
       {
         "attempt_num": 1,
@@ -1787,8 +2274,17 @@
     "rule_explanation": "Configured policy marks user_declined as non-retriable; automatic retry is blocked.",
     "diagnosis": "User declined blocks automatic retry.",
     "recovery_confidence": "low",
+    "amount_band": "medium",
+    "chosen_actions": [
+      "SEND_PAYMENT_LINK",
+      "STOP_AUTOMATION"
+    ],
+    "primary_action": "SEND_PAYMENT_LINK",
+    "intervention_reason": "The customer declined the mandate debit, so automatic retries stop and only a customer-initiated payment path is permitted.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_user_declined",
     "retry_schedule": [],
-    "schedule_justification": "No automatic retry schedule is permitted by policy."
+    "schedule_justification": "The customer declined the mandate debit, so automatic retries stop and only a customer-initiated payment path is permitted."
   },
   {
     "mandate_id": "MANDATE-0064",
@@ -1803,6 +2299,14 @@
     "rule_explanation": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Bank server down is eligible for a policy-controlled retry.",
     "recovery_confidence": "high",
+    "amount_band": "low",
+    "chosen_actions": [
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "RETRY_AUTOPAY",
+    "intervention_reason": "The bank outage is transient, so a quiet AutoPay retry is allowed without unnecessary customer communication.",
+    "customer_message_required": false,
+    "intervention_rule": "failure_reason_bank_server_down",
     "retry_schedule": [
       {
         "attempt_num": 1,
@@ -1844,6 +2348,15 @@
     "rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
     "diagnosis": "Insufficient balance is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "low",
+    "chosen_actions": [
+      "SEND_BALANCE_REMINDER",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "SEND_BALANCE_REMINDER",
+    "intervention_reason": "A balance reminder is required before the delayed, policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_insufficient_balance",
     "retry_schedule": [
       {
         "attempt_num": 3,
@@ -1869,6 +2382,15 @@
     "rule_explanation": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Daily limit exceeded is eligible for a policy-controlled retry.",
     "recovery_confidence": "high",
+    "amount_band": "medium",
+    "chosen_actions": [
+      "WAIT_FOR_DAILY_RESET",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "WAIT_FOR_DAILY_RESET",
+    "intervention_reason": "Automation must wait for the next daily-limit reset before the policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_daily_limit_exceeded",
     "retry_schedule": [
       {
         "attempt_num": 1,
@@ -1910,6 +2432,14 @@
     "rule_explanation": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Bank server down is eligible for a policy-controlled retry.",
     "recovery_confidence": "high",
+    "amount_band": "high",
+    "chosen_actions": [
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "RETRY_AUTOPAY",
+    "intervention_reason": "The bank outage is transient, so a quiet AutoPay retry is allowed without unnecessary customer communication.",
+    "customer_message_required": false,
+    "intervention_rule": "failure_reason_bank_server_down",
     "retry_schedule": [
       {
         "attempt_num": 2,
@@ -1943,6 +2473,15 @@
     "rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
     "diagnosis": "Insufficient balance is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "high",
+    "chosen_actions": [
+      "SEND_BALANCE_REMINDER",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "SEND_BALANCE_REMINDER",
+    "intervention_reason": "A balance reminder is required before the delayed, policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_insufficient_balance",
     "retry_schedule": [
       {
         "attempt_num": 2,
@@ -1976,6 +2515,15 @@
     "rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
     "diagnosis": "Insufficient balance is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "high",
+    "chosen_actions": [
+      "SEND_BALANCE_REMINDER",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "SEND_BALANCE_REMINDER",
+    "intervention_reason": "A balance reminder is required before the delayed, policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_insufficient_balance",
     "retry_schedule": [
       {
         "attempt_num": 1,
@@ -2017,8 +2565,17 @@
     "rule_explanation": "Configured policy marks user_declined as non-retriable; automatic retry is blocked.",
     "diagnosis": "User declined blocks automatic retry.",
     "recovery_confidence": "low",
+    "amount_band": "high",
+    "chosen_actions": [
+      "SEND_PAYMENT_LINK",
+      "STOP_AUTOMATION"
+    ],
+    "primary_action": "SEND_PAYMENT_LINK",
+    "intervention_reason": "The customer declined the mandate debit, so automatic retries stop and only a customer-initiated payment path is permitted.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_user_declined",
     "retry_schedule": [],
-    "schedule_justification": "No automatic retry schedule is permitted by policy."
+    "schedule_justification": "The customer declined the mandate debit, so automatic retries stop and only a customer-initiated payment path is permitted."
   },
   {
     "mandate_id": "MANDATE-0071",
@@ -2033,8 +2590,16 @@
     "rule_explanation": "Configured policy marks mandate_expired as non-retriable; automatic retry is blocked.",
     "diagnosis": "Mandate expired blocks automatic retry.",
     "recovery_confidence": "low",
+    "amount_band": "high",
+    "chosen_actions": [
+      "REQUEST_MANDATE_RENEWAL"
+    ],
+    "primary_action": "REQUEST_MANDATE_RENEWAL",
+    "intervention_reason": "The mandate is no longer valid; renewal is required and AutoPay retry is forbidden.",
+    "customer_message_required": true,
+    "intervention_rule": "expired_mandate_renewal_only",
     "retry_schedule": [],
-    "schedule_justification": "No automatic retry schedule is permitted by policy."
+    "schedule_justification": "The mandate is no longer valid; renewal is required and AutoPay retry is forbidden."
   },
   {
     "mandate_id": "MANDATE-0072",
@@ -2049,8 +2614,17 @@
     "rule_explanation": "Configured policy marks account_frozen as non-retriable; automatic retry is blocked.",
     "diagnosis": "Account frozen blocks automatic retry.",
     "recovery_confidence": "low",
+    "amount_band": "low",
+    "chosen_actions": [
+      "CREATE_SUPPORT_CASE",
+      "STOP_AUTOMATION"
+    ],
+    "primary_action": "CREATE_SUPPORT_CASE",
+    "intervention_reason": "A frozen account cannot be retried safely; automation stops and a support case is required.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_account_frozen",
     "retry_schedule": [],
-    "schedule_justification": "No automatic retry schedule is permitted by policy."
+    "schedule_justification": "A frozen account cannot be retried safely; automation stops and a support case is required."
   },
   {
     "mandate_id": "MANDATE-0073",
@@ -2065,6 +2639,15 @@
     "rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
     "diagnosis": "Insufficient balance is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "medium",
+    "chosen_actions": [
+      "SEND_BALANCE_REMINDER",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "SEND_BALANCE_REMINDER",
+    "intervention_reason": "A balance reminder is required before the delayed, policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_insufficient_balance",
     "retry_schedule": [
       {
         "attempt_num": 3,
@@ -2090,6 +2673,15 @@
     "rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
     "diagnosis": "Insufficient balance is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "low",
+    "chosen_actions": [
+      "SEND_BALANCE_REMINDER",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "SEND_BALANCE_REMINDER",
+    "intervention_reason": "A balance reminder is required before the delayed, policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_insufficient_balance",
     "retry_schedule": [
       {
         "attempt_num": 1,
@@ -2131,8 +2723,16 @@
     "rule_explanation": "Configured policy marks mandate_expired as non-retriable; automatic retry is blocked.",
     "diagnosis": "Mandate expired blocks automatic retry.",
     "recovery_confidence": "low",
+    "amount_band": "low",
+    "chosen_actions": [
+      "REQUEST_MANDATE_RENEWAL"
+    ],
+    "primary_action": "REQUEST_MANDATE_RENEWAL",
+    "intervention_reason": "The mandate is no longer valid; renewal is required and AutoPay retry is forbidden.",
+    "customer_message_required": true,
+    "intervention_rule": "expired_mandate_renewal_only",
     "retry_schedule": [],
-    "schedule_justification": "No automatic retry schedule is permitted by policy."
+    "schedule_justification": "The mandate is no longer valid; renewal is required and AutoPay retry is forbidden."
   },
   {
     "mandate_id": "MANDATE-0076",
@@ -2147,6 +2747,15 @@
     "rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
     "diagnosis": "Insufficient balance is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "high",
+    "chosen_actions": [
+      "SEND_BALANCE_REMINDER",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "SEND_BALANCE_REMINDER",
+    "intervention_reason": "A balance reminder is required before the delayed, policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_insufficient_balance",
     "retry_schedule": [
       {
         "attempt_num": 2,
@@ -2180,6 +2789,14 @@
     "rule_explanation": "Configured policy marks technical_decline as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Technical decline is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "high",
+    "chosen_actions": [
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "RETRY_AUTOPAY",
+    "intervention_reason": "A bounded AutoPay retry is allowed for the transient technical decline.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_technical_decline",
     "retry_schedule": [
       {
         "attempt_num": 2,
@@ -2213,6 +2830,15 @@
     "rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
     "diagnosis": "Insufficient balance is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "high",
+    "chosen_actions": [
+      "SEND_BALANCE_REMINDER",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "SEND_BALANCE_REMINDER",
+    "intervention_reason": "A balance reminder is required before the delayed, policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_insufficient_balance",
     "retry_schedule": [
       {
         "attempt_num": 1,
@@ -2254,6 +2880,15 @@
     "rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
     "diagnosis": "Insufficient balance is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "high",
+    "chosen_actions": [
+      "SEND_BALANCE_REMINDER",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "SEND_BALANCE_REMINDER",
+    "intervention_reason": "A balance reminder is required before the delayed, policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_insufficient_balance",
     "retry_schedule": [
       {
         "attempt_num": 2,
@@ -2287,8 +2922,17 @@
     "rule_explanation": "Configured policy marks account_frozen as non-retriable; automatic retry is blocked.",
     "diagnosis": "Account frozen blocks automatic retry.",
     "recovery_confidence": "low",
+    "amount_band": "medium",
+    "chosen_actions": [
+      "CREATE_SUPPORT_CASE",
+      "STOP_AUTOMATION"
+    ],
+    "primary_action": "CREATE_SUPPORT_CASE",
+    "intervention_reason": "A frozen account cannot be retried safely; automation stops and a support case is required.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_account_frozen",
     "retry_schedule": [],
-    "schedule_justification": "No automatic retry schedule is permitted by policy."
+    "schedule_justification": "A frozen account cannot be retried safely; automation stops and a support case is required."
   },
   {
     "mandate_id": "MANDATE-0081",
@@ -2303,6 +2947,14 @@
     "rule_explanation": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Bank server down is eligible for a policy-controlled retry.",
     "recovery_confidence": "high",
+    "amount_band": "high",
+    "chosen_actions": [
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "RETRY_AUTOPAY",
+    "intervention_reason": "The bank outage is transient, so a quiet AutoPay retry is allowed without unnecessary customer communication.",
+    "customer_message_required": false,
+    "intervention_rule": "failure_reason_bank_server_down",
     "retry_schedule": [
       {
         "attempt_num": 2,
@@ -2336,6 +2988,15 @@
     "rule_explanation": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Daily limit exceeded is eligible for a policy-controlled retry.",
     "recovery_confidence": "high",
+    "amount_band": "medium",
+    "chosen_actions": [
+      "WAIT_FOR_DAILY_RESET",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "WAIT_FOR_DAILY_RESET",
+    "intervention_reason": "Automation must wait for the next daily-limit reset before the policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_daily_limit_exceeded",
     "retry_schedule": [
       {
         "attempt_num": 1,
@@ -2377,6 +3038,15 @@
     "rule_explanation": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Daily limit exceeded is eligible for a policy-controlled retry.",
     "recovery_confidence": "high",
+    "amount_band": "medium",
+    "chosen_actions": [
+      "WAIT_FOR_DAILY_RESET",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "WAIT_FOR_DAILY_RESET",
+    "intervention_reason": "Automation must wait for the next daily-limit reset before the policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_daily_limit_exceeded",
     "retry_schedule": [
       {
         "attempt_num": 3,
@@ -2402,6 +3072,15 @@
     "rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
     "diagnosis": "Insufficient balance is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "high",
+    "chosen_actions": [
+      "SEND_BALANCE_REMINDER",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "SEND_BALANCE_REMINDER",
+    "intervention_reason": "A balance reminder is required before the delayed, policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_insufficient_balance",
     "retry_schedule": [
       {
         "attempt_num": 3,
@@ -2427,6 +3106,14 @@
     "rule_explanation": "Configured policy marks technical_decline as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Technical decline is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "low",
+    "chosen_actions": [
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "RETRY_AUTOPAY",
+    "intervention_reason": "A bounded AutoPay retry is allowed for the transient technical decline.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_technical_decline",
     "retry_schedule": [
       {
         "attempt_num": 3,
@@ -2452,6 +3139,15 @@
     "rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
     "diagnosis": "Insufficient balance is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "high",
+    "chosen_actions": [
+      "SEND_BALANCE_REMINDER",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "SEND_BALANCE_REMINDER",
+    "intervention_reason": "A balance reminder is required before the delayed, policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_insufficient_balance",
     "retry_schedule": [
       {
         "attempt_num": 3,
@@ -2477,6 +3173,14 @@
     "rule_explanation": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Bank server down is eligible for a policy-controlled retry.",
     "recovery_confidence": "high",
+    "amount_band": "high",
+    "chosen_actions": [
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "RETRY_AUTOPAY",
+    "intervention_reason": "The bank outage is transient, so a quiet AutoPay retry is allowed without unnecessary customer communication.",
+    "customer_message_required": false,
+    "intervention_rule": "failure_reason_bank_server_down",
     "retry_schedule": [
       {
         "attempt_num": 2,
@@ -2510,6 +3214,14 @@
     "rule_explanation": "Configured policy marks bank_server_down as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Bank server down is eligible for a policy-controlled retry.",
     "recovery_confidence": "high",
+    "amount_band": "high",
+    "chosen_actions": [
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "RETRY_AUTOPAY",
+    "intervention_reason": "The bank outage is transient, so a quiet AutoPay retry is allowed without unnecessary customer communication.",
+    "customer_message_required": false,
+    "intervention_rule": "failure_reason_bank_server_down",
     "retry_schedule": [
       {
         "attempt_num": 3,
@@ -2535,8 +3247,17 @@
     "rule_explanation": "Configured policy marks user_declined as non-retriable; automatic retry is blocked.",
     "diagnosis": "User declined blocks automatic retry.",
     "recovery_confidence": "low",
+    "amount_band": "high",
+    "chosen_actions": [
+      "SEND_PAYMENT_LINK",
+      "STOP_AUTOMATION"
+    ],
+    "primary_action": "SEND_PAYMENT_LINK",
+    "intervention_reason": "The customer declined the mandate debit, so automatic retries stop and only a customer-initiated payment path is permitted.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_user_declined",
     "retry_schedule": [],
-    "schedule_justification": "No automatic retry schedule is permitted by policy."
+    "schedule_justification": "The customer declined the mandate debit, so automatic retries stop and only a customer-initiated payment path is permitted."
   },
   {
     "mandate_id": "MANDATE-0090",
@@ -2551,8 +3272,17 @@
     "rule_explanation": "Configured policy marks user_declined as non-retriable; automatic retry is blocked.",
     "diagnosis": "User declined blocks automatic retry.",
     "recovery_confidence": "low",
+    "amount_band": "high",
+    "chosen_actions": [
+      "SEND_PAYMENT_LINK",
+      "STOP_AUTOMATION"
+    ],
+    "primary_action": "SEND_PAYMENT_LINK",
+    "intervention_reason": "The customer declined the mandate debit, so automatic retries stop and only a customer-initiated payment path is permitted.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_user_declined",
     "retry_schedule": [],
-    "schedule_justification": "No automatic retry schedule is permitted by policy."
+    "schedule_justification": "The customer declined the mandate debit, so automatic retries stop and only a customer-initiated payment path is permitted."
   },
   {
     "mandate_id": "MANDATE-0091",
@@ -2567,6 +3297,15 @@
     "rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
     "diagnosis": "Insufficient balance is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "low",
+    "chosen_actions": [
+      "SEND_BALANCE_REMINDER",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "SEND_BALANCE_REMINDER",
+    "intervention_reason": "A balance reminder is required before the delayed, policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_insufficient_balance",
     "retry_schedule": [
       {
         "attempt_num": 3,
@@ -2592,6 +3331,15 @@
     "rule_explanation": "Configured policy marks daily_limit_exceeded as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Daily limit exceeded is eligible for a policy-controlled retry.",
     "recovery_confidence": "high",
+    "amount_band": "high",
+    "chosen_actions": [
+      "WAIT_FOR_DAILY_RESET",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "WAIT_FOR_DAILY_RESET",
+    "intervention_reason": "Automation must wait for the next daily-limit reset before the policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_daily_limit_exceeded",
     "retry_schedule": [
       {
         "attempt_num": 1,
@@ -2633,6 +3381,15 @@
     "rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
     "diagnosis": "Insufficient balance is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "high",
+    "chosen_actions": [
+      "SEND_BALANCE_REMINDER",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "SEND_BALANCE_REMINDER",
+    "intervention_reason": "A balance reminder is required before the delayed, policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_insufficient_balance",
     "retry_schedule": [
       {
         "attempt_num": 3,
@@ -2658,8 +3415,17 @@
     "rule_explanation": "Configured policy marks user_declined as non-retriable; automatic retry is blocked.",
     "diagnosis": "User declined blocks automatic retry.",
     "recovery_confidence": "low",
+    "amount_band": "high",
+    "chosen_actions": [
+      "SEND_PAYMENT_LINK",
+      "STOP_AUTOMATION"
+    ],
+    "primary_action": "SEND_PAYMENT_LINK",
+    "intervention_reason": "The customer declined the mandate debit, so automatic retries stop and only a customer-initiated payment path is permitted.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_user_declined",
     "retry_schedule": [],
-    "schedule_justification": "No automatic retry schedule is permitted by policy."
+    "schedule_justification": "The customer declined the mandate debit, so automatic retries stop and only a customer-initiated payment path is permitted."
   },
   {
     "mandate_id": "MANDATE-0095",
@@ -2674,6 +3440,15 @@
     "rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
     "diagnosis": "Insufficient balance is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "low",
+    "chosen_actions": [
+      "SEND_BALANCE_REMINDER",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "SEND_BALANCE_REMINDER",
+    "intervention_reason": "A balance reminder is required before the delayed, policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_insufficient_balance",
     "retry_schedule": [
       {
         "attempt_num": 1,
@@ -2715,6 +3490,15 @@
     "rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
     "diagnosis": "Insufficient balance is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "high",
+    "chosen_actions": [
+      "SEND_BALANCE_REMINDER",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "SEND_BALANCE_REMINDER",
+    "intervention_reason": "A balance reminder is required before the delayed, policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_insufficient_balance",
     "retry_schedule": [
       {
         "attempt_num": 3,
@@ -2740,8 +3524,17 @@
     "rule_explanation": "Configured policy marks user_declined as non-retriable; automatic retry is blocked.",
     "diagnosis": "User declined blocks automatic retry.",
     "recovery_confidence": "low",
+    "amount_band": "high",
+    "chosen_actions": [
+      "SEND_PAYMENT_LINK",
+      "STOP_AUTOMATION"
+    ],
+    "primary_action": "SEND_PAYMENT_LINK",
+    "intervention_reason": "The customer declined the mandate debit, so automatic retries stop and only a customer-initiated payment path is permitted.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_user_declined",
     "retry_schedule": [],
-    "schedule_justification": "No automatic retry schedule is permitted by policy."
+    "schedule_justification": "The customer declined the mandate debit, so automatic retries stop and only a customer-initiated payment path is permitted."
   },
   {
     "mandate_id": "MANDATE-0098",
@@ -2756,6 +3549,14 @@
     "rule_explanation": "Configured policy marks technical_decline as retriable with a typical recovery window of 1 day(s).",
     "diagnosis": "Technical decline is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "medium",
+    "chosen_actions": [
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "RETRY_AUTOPAY",
+    "intervention_reason": "A bounded AutoPay retry is allowed for the transient technical decline.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_technical_decline",
     "retry_schedule": [
       {
         "attempt_num": 2,
@@ -2789,6 +3590,15 @@
     "rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
     "diagnosis": "Insufficient balance is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "high",
+    "chosen_actions": [
+      "SEND_BALANCE_REMINDER",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "SEND_BALANCE_REMINDER",
+    "intervention_reason": "A balance reminder is required before the delayed, policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_insufficient_balance",
     "retry_schedule": [
       {
         "attempt_num": 2,
@@ -2822,6 +3632,15 @@
     "rule_explanation": "Configured policy marks insufficient_balance as retriable with a typical recovery window of 3 day(s).",
     "diagnosis": "Insufficient balance is eligible for a policy-controlled retry.",
     "recovery_confidence": "medium",
+    "amount_band": "high",
+    "chosen_actions": [
+      "SEND_BALANCE_REMINDER",
+      "RETRY_AUTOPAY"
+    ],
+    "primary_action": "SEND_BALANCE_REMINDER",
+    "intervention_reason": "A balance reminder is required before the delayed, policy-scheduled AutoPay retry.",
+    "customer_message_required": true,
+    "intervention_rule": "failure_reason_insufficient_balance",
     "retry_schedule": [
       {
         "attempt_num": 1,

@@ -24,13 +24,34 @@ A useful recovery system must answer:
 ## Architecture
 
 ```text
+Razorpay Test Mode
+        │ signed webhook
+        ▼
+ webhook_server.py ──► normalize_event() ──► detect.py
+                                              │
+                                              ▼
+                                decide.py + intervention_router.py
+                                              │
+                                              ▼
+                                escalate.py ─► message.py
+                                              │
+                                              ▼
+                                  simulated act.py adapter
+                                              │
+                                              ▼
+                                      audit_trail.json
+
+Synthetic batch:
+
 failed_mandates.json
         │
         ▼
    detect.py       deterministic retriability + optional AI diagnosis
         │
         ▼
-   decide.py       deterministic schedule + optional AI justification
+   decide.py       deterministic intervention gate + schedule
+        │                    │
+        │                    └──► intervention_router.py
         │
         ▼
   escalate.py      category-aware human escalation threshold
@@ -49,6 +70,9 @@ failed_mandates.json ──► baseline.py ──► baseline_report.json
 final_report.json ────────────────┴──► comparison_summary.json
 
 audit_trail.json ──► find_failure_case.py ──► failure_case_example.md
+
+final_report.json + comparison_summary.json + audit_trail.json
+        + multi_seed_report.json ──► dashboard.py
 ```
 
 External Razorpay `payment.failed` events enter through `src/ingest.py`.
@@ -57,13 +81,42 @@ this trust boundary. Malformed events are logged and rejected; successful
 normalization returns an ordinary dictionary, so Pydantic does not leak into
 the deterministic pipeline stages.
 
+The Flask endpoint is `POST /webhooks/razorpay`. It verifies the HMAC-SHA256
+signature over the untouched request body, deduplicates the
+`x-razorpay-event-id` in `data/webhook_events.sqlite3`, and acknowledges
+duplicates or unsupported event types with HTTP 200. Configure:
+
+```env
+RAZORPAY_WEBHOOK_SECRET=your_test_mode_webhook_secret
+```
+
+Start the local server with:
+
+```powershell
+python src/webhook_server.py
+```
+
+The endpoint handles `payment.failed`, `subscription.pending`,
+`subscription.halted`, and `subscription.charged`. Pending is the primary
+subscription charge-failure signal and enters the same recovery pipeline as a
+payment failure. Failed, pending, and halted records use the existing in-process
+stage functions. A charged subscription is already a successful signal, so it
+is written as an externally confirmed recovery rather than being falsely sent
+through failure detection. Automatic UPI retries remain a **simulated execution
+adapter**; this repository does not claim to invoke a live or Test Mode retry API.
+
 The baseline deliberately starts from the original raw dataset, not smart-pipeline output. This keeps the population, amounts, failure mix, seed, retry cap, and probability assumptions constant so the experiment measures strategy rather than input differences.
 
 See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for stage contracts and trust boundaries.
 
 ## Core scheduling algorithm
 
-`build_retry_schedule(record)` separates recovery strategy from execution-window enforcement:
+`decide.py` first calls the deterministic intervention router. The router uses
+failure reason, category, amount band, and attempts already made to select only
+centrally permitted actions. A retry schedule can exist only when the selected
+actions contain `RETRY_AUTOPAY`.
+
+`build_retry_schedule(record)` then separates recovery strategy from execution-window enforcement:
 
 1. Recheck centralized failure policy and fail closed for unknown or non-retriable reasons.
 2. Calculate remaining attempts from `MAX_RETRIES - attempts_already_made`.
@@ -71,6 +124,11 @@ See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for stage contracts and trust b
 4. Move each candidate forward to the earliest permitted execution window.
 5. Preserve strict chronological ordering if two candidates reach the same boundary.
 6. Validate the complete schedule independently before returning it.
+
+Examples of action policy are explicit: insufficient balance produces a balance
+reminder plus delayed retry; a bank outage produces a quiet retry; an expired
+mandate produces renewal only; and capped/high-value failures stop automation
+or enter support. These actions and their reasons are preserved in the audit.
 
 All input timestamps are explicitly interpreted or converted to `Asia/Kolkata`.
 Schedules retain readable date/time fields and also include an authoritative
@@ -91,6 +149,7 @@ Strategies differ intentionally:
 | Responsibility | Implementation | Why |
 |---|---|---|
 | Failure retriability | Deterministic | Hard policy must be stable, auditable, and fail closed. |
+| Intervention routing | Deterministic decision table | Only an allow-listed action can authorize money movement or customer contact. |
 | Retry cap | Deterministic | A model must never reinterpret an attempt limit. |
 | Execution windows | Deterministic | Legal/operational time validation is binary. |
 | Category escalation | Deterministic | Human-review thresholds must be consistent. |
@@ -144,6 +203,17 @@ Run every stage in fail-fast order:
 python src/run_all.py
 ```
 
+Launch the read-only pitch dashboard after the pipeline and multi-seed report
+have been generated:
+
+```powershell
+streamlit run src/dashboard.py
+```
+
+The dashboard reads `data/final_report.json`,
+`docs/comparison_summary.json`, `logs/audit_trail.json`, and
+`data/multi_seed_report.json` directly. It does not rerun or modify the pipeline.
+
 Run stages individually from the repository root:
 
 ```powershell
@@ -182,24 +252,30 @@ The tests cover reproducible data generation, schema validity, fail-closed detec
 Current verified result:
 
 ```text
-29 passed
+70 passed
 ```
+
+Current full-suite line coverage is 73%. The ingestion boundary, webhook
+adapter, intervention router, and dashboard are covered at 81–92%; the
+remaining gaps are primarily optional Gemini/network branches and CLI-only
+error paths.
 
 ## Reproducible results
 
-Using the committed policy constants and current seeds, the 100-mandate synthetic portfolio produced:
+The statistically honest comparison uses 20 deterministic seeds over the same
+100-mandate portfolio. Values below are the mean and observed min–max range,
+not a selectively chosen single run:
 
-| Metric | Smart strategy | Naive baseline |
-|---|---:|---:|
-| Total at-risk amount | ₹4,223,068 | ₹4,223,068 |
-| Recovered mandates | 42 | 15 |
-| Recovery rate by count | 42.00% | 15.00% |
-| Recovered amount | ₹1,414,448 | ₹650,672 |
-| Recovery rate by amount | 33.49% | 15.41% |
+| Metric | Smart strategy | Naive baseline | Smart uplift |
+|---|---:|---:|---:|
+| Recovery rate by count | 43.50% (38.00–49.00%) | 14.85% (13.00–17.00%) | 28.65 pp (24.00–33.00 pp) |
+| Recovery rate by amount | 39.45% (33.49–46.68%) | 17.40% (13.54–21.71%) | 22.05 pp (14.10–27.79 pp) |
+| Recovered amount | ₹1,665,904 mean (₹1,414,448–₹1,971,495) | ₹734,717 mean (₹571,879–₹916,787) | ₹931,187 mean (₹595,340–₹1,173,704) |
 
-The smart strategy achieved a **27 percentage-point uplift** and **₹763,776 additional simulated recovery**. The naive strategy produced 149 rejected attempts because fixed retry times landed outside permitted windows.
-
-These figures demonstrate the behavior of the chosen synthetic seed and illustrative probabilities; they are not claims about real-world recovery performance.
+The single-seed JSON reports remain useful for replaying one exact audit trail,
+but pitch-level performance claims use the multi-seed distribution. These are
+still synthetic results based on illustrative probabilities, not claims about
+real-world recovery performance.
 
 ## Baseline design
 
@@ -233,6 +309,10 @@ upi-recovery-agent/
 ├── src/
 │   ├── __init__.py
 │   ├── constants.py
+│   ├── time_utils.py
+│   ├── ingest.py
+│   ├── webhook_server.py
+│   ├── intervention_router.py
 │   ├── generate_data.py
 │   ├── detect.py
 │   ├── decide.py
@@ -241,9 +321,11 @@ upi-recovery-agent/
 │   ├── act.py
 │   ├── baseline.py
 │   ├── multi_seed_eval.py
+│   ├── dashboard.py
 │   ├── find_failure_case.py
 │   └── run_all.py
 ├── data/                     # stage outputs, single-seed and multi-seed reports
+│   └── webhook_events.sqlite3 # created when the webhook server receives events
 ├── logs/
 │   └── audit_trail.json
 ├── docs/
@@ -269,13 +351,22 @@ Root-level `run_all.py` and `find_failure_case.py` are retained as convenience/c
 - The simulation does not model fees, settlement, idempotency keys, network timeouts, or reconciliation.
 - AI safety checks are intentionally lightweight and would require stronger policy evaluation in production.
 
-## Future improvements
+## Future Improvements
 
 - Introduce provider-specific calendars and configurable regional time zones.
-- Add idempotent command handling and payment-provider adapters behind interfaces.
+- Build a calibrated recovery-scoring model from privacy-safe historical
+  outcomes. It would rank interventions inside deterministic policy bounds;
+  it would never replace retriability, caps, execution windows, or stop rules.
+- Replace the demo SQLite webhook dedupe set with end-to-end idempotent command
+  handling, durable processing leases, and a dead-letter queue with replay and
+  operator tooling.
+- Add chaos and fault-injection tests for duplicate/out-of-order webhooks,
+  provider timeouts, process crashes between dedupe and audit writes, corrupted
+  payloads, partial storage failures, and retry storms.
+- Add payment-provider adapters behind interfaces.
 - Store events in an append-only database with correlation IDs and immutable audit metadata.
 - Add queue-based execution, retries for infrastructure failures, and observability metrics.
-- Calibrate recovery probabilities from privacy-safe historical aggregates.
-- Add experiment confidence intervals rather than comparing only one synthetic seed.
+- Add confidence intervals and significance tests on top of the current
+  multi-seed min/max and standard-deviation report.
 - Add approval workflows and support-ticket integrations for escalated payments.
 - Strengthen message evaluation with locale, accessibility, and compliance review.
