@@ -51,6 +51,12 @@ final_report.json ────────────────┴──► c
 audit_trail.json ──► find_failure_case.py ──► failure_case_example.md
 ```
 
+External Razorpay `payment.failed` events enter through `src/ingest.py`.
+Pydantic validates the consumed webhook subset and the normalized mandate at
+this trust boundary. Malformed events are logged and rejected; successful
+normalization returns an ordinary dictionary, so Pydantic does not leak into
+the deterministic pipeline stages.
+
 The baseline deliberately starts from the original raw dataset, not smart-pipeline output. This keeps the population, amounts, failure mix, seed, retry cap, and probability assumptions constant so the experiment measures strategy rather than input differences.
 
 See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for stage contracts and trust boundaries.
