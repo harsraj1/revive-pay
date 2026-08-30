@@ -1,4 +1,4 @@
-# UPI Recovery Agent
+# RevivePay — AI Revenue Recovery
 
 An educational Python backend project that models recovery of failed recurring UPI AutoPay payments. It decides whether a failure may be retried, creates legal retry schedules, applies category-aware escalation, generates customer messages, simulates recovery, and compares the result with a naive fixed-interval strategy.
 
@@ -7,6 +7,41 @@ The central engineering principle is:
 > Deterministic rules for hard business constraints; AI only for judgment and natural-language tasks.
 
 This is a simulation and portfolio project. It does not connect to NPCI, banks, payment service providers, or real customer accounts.
+
+## Demo dashboard
+
+The single-page Streamlit dashboard turns the pipeline's existing JSON outputs
+into a pitch-ready operational view. It shows money at risk, simulated recovery,
+smart-vs-baseline uplift, the failure mix, the human escalation queue, a complete
+mandate decision trace, and the statistically honest 20-seed evaluation. The
+figures below are deterministic demo results, not production recovery claims.
+
+Run it from the repository root:
+
+```powershell
+streamlit run src/dashboard.py
+```
+
+### Portfolio overview
+
+![RevivePay dashboard showing amount at risk, recovered amount, recovery rate, uplift, and failure-reason distribution](docs/images/dashboard-overview.png)
+
+### Escalation queue
+
+![RevivePay escalation queue showing high-priority mandates, policy actions, and intervention reasons](docs/images/dashboard-escalation-queue.png)
+
+### Auditable mandate decision trace
+
+![RevivePay mandate trace showing deterministic detection, routing, and escalation decisions](docs/images/dashboard-decision-trace.png)
+
+![RevivePay mandate trace showing the customer message, final action, and multi-seed comparison](docs/images/dashboard-message-multiseed.png)
+
+<details>
+<summary>Compact dashboard capture</summary>
+
+![Compact RevivePay dashboard overview](docs/images/dashboard-overview-compact.jpeg)
+
+</details>
 
 ## Problem
 
